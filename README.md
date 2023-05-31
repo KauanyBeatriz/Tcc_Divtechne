@@ -18,6 +18,7 @@ pip install flask_login
 pip install email_validator
 
 pip install pillow
+
 .
 
 .
