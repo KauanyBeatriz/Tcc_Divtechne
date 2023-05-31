@@ -1,0 +1,442 @@
+@charset "utf-8";
+
+html[tema="claro"] {
+  /*variaveis da paleta de cores do tema claro*/
+  --rodape-1: #130203; /*rodape*/
+  --navbar-2: #006987; /*navBar*/
+  --botao-3: #023D54; /*botao*/
+  --efeito-4:#DFEDF2; /*efeito*/
+  --texto-5: #031D2E; /*texto invertido*/
+  --texto-6: #eeeeee; /*texto*/
+  --fundo-7: #fcfcfd; /*fundo*/
+  --card-8: #6E8F98;/*fundo*/
+  /*fim das variaveis da paleta de cores do tema claro*/
+}
+
+html[tema="escuro"] {
+  /*variaveis da paleta de cores do tema escuro*/
+  --rodape-1: #130203; /*rodape*/
+  --navbar-2: #02050C; /*navBar*/
+  --botao-3: #11233E; /*botao*/
+  --efeito-4: #3A6375; /*efeito*/
+  --texto-5: #d2d2d2; /*texto invertido*/
+  --texto-6: #d2d2d2; /*texto*/
+  --fundo-7: #060C16; /*fundo*/
+  /*fim das variaveis da paleta de cores do tema escuro*/
+}
+
+html[tema="daltonico"] {
+  /*variaveis da paleta de cores do tema daltonico*/
+  --rodape-1: #e40000; /*rodape*/
+  --navbar-2: #bd1749; /*navBar*/
+  --botao-3: #703975; /*botao*/
+  --efeito-4: #56565c; /*botao*/
+  --texto-5: #000000; /*texto*/
+  --fundo-6: #4e8e97; /*fundo*/
+  --fundo-7: #8a974e; /*fundo*/
+  /*fim das variaveis da paleta de cores do tema daltonico*/
+}
+
+:root {
+  --tran-02: all 0.2s ease;
+  --tran-03: all 0.3s ease;
+  --tran-04: all 0.4s ease;
+  --tran-05: all 0.5s ease;
+}
+
+* {
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+  transition: var(--tran-05);
+  scroll-behavior: smooth;
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+  background-color: var(--fundo-7);
+  transition: var(--tran-05);
+  overflow-x: hidden;
+  font-family: "Inter", sans-serif;
+  scroll-behavior: smooth;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+/* pagina */
+#pagina{
+  overflow-y: hidden;
+}
+
+section {
+    height: 100vh;
+}
+
+
+/*  conteudo da pagina */
+
+#cardpagina .card{
+  position: inherit;
+  background-color: var(--navbar-2);
+  border-radius: 4px ;
+  color: var(--texto-6);
+}
+
+#cardpagina .card .funcao{
+  color: var(--texto-6);
+}
+
+#cardpagina button .icon{
+  font-size: 36px;
+    color: var(--texto-6);
+}
+
+#cardpagina button .icon:hover{
+  font-size: 36px;
+    color:#ff0000;
+}
+
+#cardpagina button{
+  border: none;
+}
+
+#cardpagina button .icon:active {
+  font-size: 36px;
+  color: #bc0000;
+  transition: var(--tran-03);
+}
+
+#cardpagina .card h4{
+  color: var(--texto-6);
+}
+
+.idioma .habilidades{
+  color:var(--texto-5);
+  background-color: var(--efeito-4);
+  border-radius: 4px;
+}
+
+.tecnologia .habilidades{
+  color:var(--texto-5);
+  background-color: var(--efeito-4);
+  border-radius: 4px;
+}
+
+/*  modal */
+.modal-header { 
+  background-color: var(--botao-8);
+  border-radius:4px 4px 0px 0px;
+}
+
+.modal-header h5{ 
+  background-color: var(--botao-8);
+  border-radius:4px 4px 0px 0px;
+}
+
+.modal-body {
+  background-color: var(--fundo-7);
+}
+
+.modal-body label {
+  color: var(--texto-5);
+}
+
+.modal-body .form-floating label {
+  color:#031D2E;
+}
+
+.modal-body input {
+  background-color:#ffffff;
+  border-radius: 4px;
+  border:1px solid #cecece;
+}
+
+.modal-body input::-webkit-input-placeholder { 
+  color:#031D2E;
+}
+
+.modal-body input:-ms-input-placeholder {
+  color:#031D2E;
+}
+
+.modal-body input::placeholder {
+  color:#031D2E;
+}
+
+.modal-body select {
+  background-color:#ffffff;
+  border-radius: 4px;
+  border:1px solid #cecece;
+}
+
+.modal-body textarea {
+  background-color:#ffffff;
+  border-radius: 4px;
+  border:1px solid #cecece;
+}
+
+
+
+
+.modal-footer {
+  background-color:var(--fundo-7);
+  color: var(--texto-5);
+  border-radius:0px 0px 4px 4px;
+}
+
+.borda {
+  background-color:#ffffff00!important;
+}
+
+.borda::before {
+background-color:#ffffff00!important;
+}
+
+
+
+/*  ----     responsividade     -----*/
+
+/*@media (min-width) para regular determinados elementos em diferentes tamanhos de tela de acordo com os elementos do bootstrap (sm,md,lg,lx,lxx)*/
+@media (min-width: 100px) {
+
+/*  conteudo */
+  #cardpagina {
+    height: 95vh;
+    overflow-y: scroll;
+    transition: var(--tran-05);
+  }
+
+  #cardpagina::-webkit-scrollbar {
+  display: none;
+  }
+
+  #cardpagina img {
+    border-radius: 4px;
+    height: 500px;
+    width: 500px;
+    object-fit: cover;
+  }
+  
+  #cardpagina .card .idioma {
+    color: var(--texto-6);
+    font-size: 14px;
+  } 
+
+  #cardpagina .card .tecnologia {
+    color: var(--texto-6);
+    font-size: 14px;
+  }
+
+  #cardpagina .card .texto {
+    color: var(--texto-6);
+    font-size: 14px;
+  }
+}
+
+
+/*sm*/
+@media (min-width: 576px) {
+
+ /*  conteudo */
+  #cardpagina {
+    height: 95vh;
+    overflow-y: scroll;
+    transition: var(--tran-05);
+  }
+
+  #cardpagina::-webkit-scrollbar {
+    display: none;
+  }
+
+  #cardpagina img {
+    border-radius: 4px;
+    height: 500px;
+    width: 500px;
+    object-fit: cover;
+  }
+
+  #cardpagina .card .idioma {
+    color: var(--texto-6);
+    font-size: 14px;
+  } 
+
+  #cardpagina .card .tecnologia {
+    color: var(--texto-6);
+    font-size: 14px;
+  }
+
+  #cardpagina .card .texto {
+    color: var(--texto-6);
+    font-size: 14px;
+  } 
+}
+
+
+/*md*/
+@media (min-width: 768px) {
+  
+/*  conteudo */
+  #cardpagina {
+  height: 95vh;
+  overflow-y: scroll;
+  transition: var(--tran-05);
+  }
+  
+  #cardpagina img {
+    border-radius: 4px;
+    height: 200px;
+    width: 200px;
+    object-fit: cover;
+  }
+
+  #cardpagina .card .idioma {
+    color: var(--texto-6);
+    font-size: 14px;
+  } 
+
+  #cardpagina .card .tecnologia {
+    color: var(--texto-6);
+    font-size: 14px;
+  }
+
+  #cardpagina .card .texto {
+    color: var(--texto-6);
+    font-size: 14px;
+  } 
+}
+
+
+/*lg*/
+@media (min-width: 992px){
+/*  conteudo */
+  #pagina{
+    width: 80vw;
+    height: 100vh;
+    margin: 0px;
+    padding: 0px;
+  }
+
+  #cardpagina{
+    height: 90vh;
+    overflow-y: scroll;
+    transition: var(--tran-05);
+  }
+
+
+  #cardpagina img {
+    border-radius: 4px;
+    height: 175px;
+    width: 175px;
+    object-fit: cover;
+  }
+
+  #cardpagina .card .idioma {
+    color: var(--texto-6);
+    font-size: 15px;
+  } 
+
+  #cardpagina .card .tecnologia {
+    color: var(--texto-6);
+    font-size: 15px;
+  }
+
+  #cardpagina .card .texto {
+    color: var(--texto-6);
+    font-size: 15px;
+  }  
+}
+
+
+/*lx*/
+@media (min-width: 1200px){
+ 
+/*  conteudo */ 
+  #pagina {
+    width: 80vw;
+    height: 100vh;
+    margin: 0px;
+    padding: 0px;
+  }
+  
+  #cardpagina {
+    height: 90vh;
+    overflow-y: scroll;
+    transition: var(--tran-05);
+  }
+
+
+  #cardpagina img {
+    border-radius: 4px;
+    height: 185px;
+    width: 185px;
+    object-fit: cover;
+  }
+  
+  #cardpagina .card .idioma {
+    color: var(--texto-6);
+    font-size: 15px;
+  } 
+
+  #cardpagina .card .tecnologia {
+    color: var(--texto-6);
+    font-size: 15px;
+  }
+
+  #cardpagina .card .texto {
+    color: var(--texto-6);
+    font-size: 15px;
+  }   
+}
+
+
+/*lxx*/
+@media (min-width: 1400px) {
+
+/*  conteudo */ 
+  #pagina {
+    width: 84vw;
+    height: 100vh;
+    margin: 0px;
+    padding: 0px;
+  }
+   
+  #cardpagina {
+    height: 90vh;
+    overflow-y: scroll;
+    transition: var(--tran-05);
+  }
+
+  #cardpagina img {
+    border-radius: 4px;
+    height: 185px;
+    width: 185px;
+    object-fit: cover;
+  }
+
+  #cardpagina .card .idioma {
+    color: var(--texto-6);
+    font-size: 15px;
+  } 
+
+  #cardpagina .card .tecnologia {
+    color: var(--texto-6);
+    font-size: 15px;
+  }
+
+  #cardpagina .card .texto {
+    color: var(--texto-6);
+    font-size: 15px;
+  }  
+}
+
+/*  ----     animações     -----*/
+
+/*  ----     importações     -----*/
+
+/*importação da font*/
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
