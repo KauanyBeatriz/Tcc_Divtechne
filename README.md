@@ -19,9 +19,6 @@ pip install email_validator
 
 pip install pillow
 
-.
-
-.
 
 
 Baixar arquivo
