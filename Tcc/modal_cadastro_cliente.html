@@ -1,0 +1,97 @@
+<!--    Modal do cadastro de cliente  -->   
+<div class="modal fade" id="cliente" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered modal-md">
+        <div class="modal-content">
+
+            <div class="modal-header" id="modalhome">
+                <h1 class="modal-title fs-5" id="exampleModalToggleLabel">Cadastro de Cliente</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+
+            <div class="modal-body">
+<!--    form   -->
+            <form method="POST" id="msform1" enctype="multipart/form-data">
+                {{ form_cliente.csrf_token }}
+                <fieldset>
+                    <div class="row">
+                            
+                        <div class="col-11 mb-3 mx-auto">
+                           <label for="validationServer01" class="form-label m-0 p-0">Nome:</label>                                  
+                           <input type="text" class="form-control input" placeholder="Digite seu Nome"  id="nm_cliente" name="nm_cliente" aria-label="First name">                               
+                        </div>                      
+
+                        <div class="col-11 mb-3 mx-auto">
+                            <label for="exampleInputEmail1" class="form-label m-0 p-0">E-mail:</label>
+                            <input type="email" class="form-control input" id="email_cliente" name="email_cliente" placeholder="Digite seu E-mail"> 
+                        </div>
+
+                        <div class="col-11 mb-3 mx-auto">
+                            <label for="exampleInputPassword1" class="form-label m-0 p-0">Senha:</label>
+                            <input type="password" class="form-control input" placeholder="Digite sua Senha" id="senha_cliente" name="senha_cliente">
+                        </div>
+
+                        <div class="col-11 mb-3 mx-auto">
+                            <label for="exampleInputPassword1" class="form-label m-0 p-0">Confirmar senha:</label>
+                            <input type="password" class="form-control input" placeholder="Digite sua Senha novamente" id="exampleInputPassword2">
+                        </div>
+
+                    </div>
+                    <button class="btn btn-primary next action-button botao"   type="button" name="next" value="Next">Próximo</button>
+                </fieldset>
+                       
+                <fieldset>
+                    <div class="row">
+
+                        <div class="col-11 mb-3 mx-auto">
+                            <label for="validationServer01" class="form-label m-0 p-0">CNPj:</label>
+                            <input type="text" class="form-control input" placeholder="Digite seu cnpj"  id="cnpj" name="cnpj" aria-label="First name">                               
+                        </div>
+
+                        <div class="col-11 mb-3 mx-auto">
+                            <label for="validationServer01" class="form-label m-0 p-0">Nacionalidade:</label>
+                            <input type="text" class="form-control input" placeholder="Digite sua Nacionalidade" id="nacionalidade" name="nacionalidade">
+                        </div>
+
+                        <div class="col-11 mb-3 mx-auto">
+                            <label for="exampleInputEmail1" class="form-label m-0 p-0">Telefone:</label>
+                            <input type="number" class="form-control input" id="telefone_cliente" name="telefone_cliente"  aria-describedby="emailHelp"> 
+                        </div>
+
+                        <div class="col-11 mb-3 mx-auto">
+                            <label for="exampleInputEmail1" class="form-label m-0 p-0">Data de Nascimento/abertura:</label>
+                            <input type="date" class="form-control input" id="dt_nasc_cliente" name="dt_nasc_cliente"  aria-describedby="emailHelp"> 
+                        </div>
+
+                    </div>   
+                    <button class="btn btn-primary next action-button botao"  type="button" name="next" value="Next">Próximo</button> 
+                    <button class="btn btn-primary previous action-button-previous botao"  type="button" name="previous" value="Previous">Voltar</button>
+                </fieldset> 
+                
+                <fieldset>
+                    <div class="row">     
+                                
+                        <div class="col-11 mb-3 mx-auto">
+                            <label for="inputGroupFile01" class="form-label m-0 p-0">imagem:</label>
+                            <input type="file" class="form-control input" id="inputGroupFile02" placeholder="Escolha uma foto de perfil"> 
+                        </div>
+
+                        <div class="col-11 mb-3 mx-auto">
+                            <label for="validationServer01" class="form-label m-0 p-0">Facebook:</label>
+                            <input type="text" class="form-control input" placeholder="coloque o seu link de perfil"  id="facebook_cliente" name="facebook_cliente" aria-label="First name">                               
+                        </div>
+
+                        <div class="col-11 mb-3 mx-auto">
+                            <label for="validationServer01" class="form-label m-0 p-0">Intagram:</label>
+                            <input type="text" class="form-control input" placeholder="coloque o seu link de perfil"  id="instagram_cliente" name="instagram_cliente" aria-label="First name">                               
+                        </div>
+                            
+                    </div>
+                    <button class="btn btn-primary next action-button botao" type="submit" name="cad_cliente" value="cad_cliente">Cadastrar</button>
+                    <button class="btn btn-primary previous action-button-previous botao"  type="button" name="previous" value="Previous">Voltar</button>
+                </fieldset>  
+            </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!--    fim do Modal do cadastro de cliente     -->

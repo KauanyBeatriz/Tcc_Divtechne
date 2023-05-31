@@ -1,0 +1,956 @@
+<!DOCTYPE html>
+<html lang="pt">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+<!--    Versão usada do Bootstrap foi a 5.3    -->
+        <!--    Link do Bootstrap >> https://getbootstrap.com/docs/5.3/getting-started/introduction/  -->
+
+<!--    Link do Bootstrap >>   -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+        <link rel="shortcut icon" href="img/Icons/favicon_io (1)/favicon-32x32.png" type="image/x-icon">	
+        <link href="./Bootstrap/css/bootstrap.css" type=" text/css" rel="stylesheet">
+
+<!--    Link do Bootstrap >>  https://boxicons.com/ -->
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+        <link href="Css/perfil.css" rel="stylesheet" type=" text/css">
+        <link href="Css/navbar.css" rel="stylesheet" type=" text/css">
+        <link href="Css/botao.css" rel="stylesheet" type="text/css">
+
+        <title>Perfil | DIVTECHNE</title>
+    </head>
+
+    <body>
+    <!--    inicio da navbar    -->
+
+    
+    <input class="form-check-input" type="checkbox" id="check">
+        
+    <nav class="navbar navbar-dark navbar-expand-lg  sidebar" for="check">
+           
+        <div class="container-fluid m-0 ">
+            <header class="container-fluid m-0 p-0">
+                <div class="container-fluid d-flex m-0 p-0">
+
+                    <button class="navbar-toggler m-0 p-0 pt-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample" id="navbutton">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <a class="navbar-brand mx-auto my-auto" href="index.html">
+                        <center class="d-flex mx-auto">
+
+                            <img src="img/Icons/favicon_io (1)/favicon-32x32.png" width="36px" height="36px" class="mx-auto my-auto">
+                            <span>
+                                <p class="my-auto pt-1 mx-auto logospan ms-2">DIVTECHNE</p>
+                            </span>
+                        </center>
+                    </a>
+                    
+                    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" id="navbutton">
+                        <span>...</span>
+                    </button>
+                </div>
+                
+<!--    inicio do off-canvas navbar    -->
+                <div class="offcanvas offcanvas-end " tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
+
+                    <div class="offcanvas-header" id="offcanvas">
+                        <h5 class="offcanvas-title mx-auto mt-4" id="offcanvasDarkNavbarLabel">DIVTECHNE</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+
+                    <div class="offcanvas-body" > 
+
+                        <div class="row m-0 p-0 mx-auto my-auto" id="offbody">                              
+
+                            <div class="col-md-10 col-lg-12 mx-auto mt-5 m-0 p-0">
+                                <ul class="navbar-nav row m-0 p-0 mx-auto">
+
+                                    <div class="col-12 mx-auto mb-4 m-0 p-0 navlink">
+                                        <li class="nav-item m-0 p-0 navlink">
+                                            <li class="nav-item row dropstart m-0 p-0">
+
+                                                <a class="col-1 col-lg-2 mx-auto ps-4 fecha" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                                   <center><i class='bx bxs-home' id="icone"></i></center> 
+                                                </a>  
+                                                
+                                                <span class="container col-7 col-lg-8 m-0 p-0 mx-auto my-auto" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                                    <a class="nav-link my-auto"  id="droplinknavbar">Perfil</a>
+                                                </span>
+
+                                                <ul class="dropdown-menu mb-2">
+
+                                                    <li id="drop"><a class="dropdown-item" href="C_home.html">Vagas</a></li>
+                                                    <li id="drop"><a class="dropdown-item" href="C_portifolio.html">portifólio</a></li>
+                                                    <li id="drop"><a class="dropdown-item" href="C_projetos.html">Projetos</a></li>
+
+                                                </ul>
+                                            </li>
+                                            
+                                        </li>
+                                    </div>
+
+                                    <div class="col-12 mx-auto mb-4 m-0 p-0 navlink">
+                                        <li class="nav-item navlink">
+                                            <li class="nav-item row dropstart m-0 p-0">
+                                                <a class="col-1 col-lg-2 mx-auto ps-4 fecha" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class='bx bxs-customize' id="icone"></i></a>  
+                                                
+                                                <span class="container col-7 col-lg-8 m-0 p-0 mx-auto my-auto" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                                    <a class="nav-link my-auto" id="droplinknavbar">Novo</a>
+                                                </span>
+
+                                                <ul class="dropdown-menu mb-2">
+
+                                                    <li id="drop"><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#Vaga">Vaga</a></li>
+                                                    <li id="drop"><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#Serviço">Serviço</a></li>
+                                                    <li id="drop"><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#Projeto">Projeto</a></li>
+
+                                                </ul>
+                                            </li>
+                                            
+                                        </li>
+                                    </div>
+
+                                    <div class="col-12 mx-auto mb-4 m-0 p-0 navlink">
+                                        <li class="nav-item navlink">       
+                                            <div class="nav-item row mx-auto m-0 p-0">
+
+                                                <a href="#" class="col-1 col-lg-2 mx-auto ps-4 fecha"><i class='bx bxs-chat' id="icone"></i></a>
+
+                                                <span class="container col-7 col-lg-8 m-0 p-0 mx-auto my-auto">
+                                                    <a href="#" class="nav-link my-auto" id="droplinknavbar">Mensagem</a>
+                                                </span>   
+                                            </div>
+                                        </li>
+                                    </div>
+
+                                    <div class="col-12 mx-auto mb-4 m-0 p-0 navlink">
+                                        <li class="nav-item navlink">       
+                                            <div class="nav-item row mx-auto m-0 p-0">
+
+                                                <a href="#" class="col-1 col-lg-2 mx-auto ps-4 fecha"><i class='bx bxs-bell-ring' id="icone"></i></a>
+
+                                                <span class="container col-7 col-lg-8 m-0 p-0 mx-auto my-auto">
+                                                    <a href="#" class="nav-link my-auto" id="droplinknavbar">Notificação</a>
+                                                </span>   
+                                            </div>
+                                        </li>
+                                    </div>
+                                    
+                                    <div class="col-12 mx-auto mb-4 m-0 p-0 navlink">
+                                        <li class="nav-item navlink">       
+                                            <div class="row mx-auto m-0 p-0">
+                                                <a data-bs-toggle="modal" data-bs-target="#config" class="col-1 col-lg-2 mx-auto ps-4 fecha"><i class='bx bxs-cog' id="icone"></i></a>
+                                                <span class="container col-7 col-lg-8 m-0 p-0 mx-auto my-auto">
+                                                    <a class="nav-link my-auto" id="droplinknavbar" data-bs-toggle="modal" data-bs-target="#config">Configuração</a>
+                                                </span>
+                                            </div>
+                                        </li>
+                                    </div>
+
+                                    <div class="col-12 mx-auto mb-4 m-0 p-0 navlink">
+                                        <li class="nav-item navlink">       
+                                            <div class="row mx-auto m-0 p-0">
+                                                <a href="#" class="col-1 col-lg-2 mx-auto ps-4 fecha"><i class='bx bxs-log-out' id="icone"></i></a>
+                                                <span class="container col-7 col-lg-8 m-0 p-0 mx-auto my-auto">
+                                                    <a href="#" class="nav-link my-auto" id="droplinknavbar">Sair</a>
+                                                </span>
+                                            </div>
+                                        </li>
+                                    </div>
+                                    
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+<!--    fim do inicio do off-canvas navbar    -->
+
+        </div>
+    </nav>
+<!--    fim do inicio da navbar    -->
+
+
+<!--    pagina  -->
+    <div class="container-fluid h-100 m-0 p-0" id="pagina">
+        <div class="container-fluid row mx-auto h-100 p-0 m-0">
+       
+<!--    perfil  -->
+            <div class="container-fluid col-12 col-lg-3 m-0 p-0">       
+                <nav class="navbar navbar-expand-lg h-100" id="perfil">
+
+                    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+                        <div class="offcanvas-header">
+                            <h5 class="offcanvas-title" id="offcanvasExampleLabel">DIVTECHNE</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                        </div>
+
+                        <div class="offcanvas-body" >
+                            
+                            <div class="container-fluid row mx-auto menu">
+                            
+                                <div class="container col-12 mx-auto m-0 p-0">                                      
+                                    <img src="./Img/vanessa.jpg" class="img-fluid rounded-circle border">
+                                </div>
+
+                                <div class="container col-10 mx-auto link">
+                                    <li class="itemLink">                
+                                        <a href="#">Nome</a>
+                                    </li>
+                                </div>
+
+                                <div class="container col-10 mx-auto link">
+                                    <li class="itemLink">                
+                                        <a href="C_favoritos.html">Favoritos</a>
+                                    </li>
+                                </div>
+
+                                <div class="container col-10 mx-auto link">
+                                    <li class="itemLink">                
+                                        <a href="C_minhasVagas.html">Minhas vagas</a>
+                                    </li>
+                                </div>
+
+
+                                <div class="container col-10 mx-auto link">
+                                    <li class="itemLink">                
+                                        <a href="C_meusServicos.html">Meus serviços</a>
+                                    </li>
+                                </div>
+
+                                <div class="container col-10 mx-auto link">
+                                    <li class="itemLink">                
+                                        <a href="C_meusProjetos.html">Meus projetos</a>
+                                    </li>
+                                </div>
+
+                                <div class="container col-12 mx-auto mt-5 pb-5">
+                                    <div class="row mx-auto">
+                                        <div class="col-3 mx-auto"><i class='bx bxl-facebook-square' id="icone"></i></div>
+                                        <div class="col-3 mx-auto"><i class='bx bxl-instagram-alt' id="icone"></i></div>
+                                        <div class="col-3 mx-auto"><i class='bx bxl-linkedin-square' id="icone"></i></div>
+                                    </div>
+                                </div>
+
+                            </div>                                                            
+                        </div>
+                    </div>
+                </nav>
+            </div>
+<!--    fim do perfil  -->
+
+<!--    conteudo da pagina  -->
+                <div class="container-fluid col-12 col-lg-9 m-0 p-0 mx-auto"id="Paginaconteudo" >
+                    <section>                 
+                        <div class="container-fluid row mx-auto" id="cardpagina">
+                            <div class="container-fluid col-12 col-md-11 mx-auto mt-5 card">                           
+                                
+                                <div class="container-fluid mt-3 mb-5">
+                                    <div class="container row mx-auto m-0 p-0">
+
+                                        <div class="container col-11 mt-3 mb-1 mx-auto">                                     
+                                            <div class="container row text-center ">
+                                                <h2 class="col-5 mx-auto">Meu perfil</h2>                             
+                                            </div>
+                                        </div>
+
+                                        <div class="container col-12 col-md-4 col-lg-3 me-0 ms-0 pe-0 ps-0 mx-auto my-auto">
+                                            <div class="row mx-auto my-auto m-0 p-0">
+                                                <div class="container col-12 m-0 p-0 mx-auto my-auto">
+                                                <center><img src="./Img/marcio.jpg" class="img-fluid mx-auto"></center>   
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        
+                                        <div class="col-12 col-md-8 col-lg-9 m-0 p-0">
+                                            <div class="row">
+
+                                                <div class="container col-12 mt-4 mb-1" >                                     
+                                                    <div class="container-fluid"><h4>Marcio Ferreira de Andrade</h4></div>
+                                                </div>
+
+                                                <div class="container col-12 col-md-6 mb-1" >                                     
+                                                    <div class="container-fluid"><h6>Status:</h6></div>
+                                                </div>
+
+                                                <div class="container col-12 col-md-6 mb-1" >                                     
+                                                    <div class="container-fluid"><h6>meu nivel</h6></div>
+                                                </div>
+
+                                                <div class="container col-12 mb-1 idioma">
+                                                    <label for="validationServer01" class="form-label ms-2 ps-1">idiomas:</label>
+                                                    <div class="container">
+                                                        <div class="row">
+                                                            <div class="col-5 col-md-4 col-lg-3 text-center col-lg-3 m-1 p-1 m-0 p-0 mx-auto">
+                                                                <div class="container habilidades">
+                                                                    Inglês
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="col-5 col-md-4 col-lg-3  text-center col-lg-3  m-1 p-1 m-0 p-0 mx-auto">
+                                                                <div class="container habilidades">
+                                                                    Espanhol
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="col-5 col-md-4 col-lg-3  text-center col-lg-3  m-1 p-1 m-0 p-0 mx-auto">
+                                                                <div class="container habilidades">
+                                                                    Alemão
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="col-5 col-md-4 col-lg-3  text-center col-lg-3  m-1 p-1 m-0 p-0 mx-auto">
+                                                                <div class="container habilidades">
+                                                                    Francês
+                                                                </div>
+                                                            </div>
+                                                        
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>                                 
+                                                                                                                                    
+                                        <div class="container col-12 mt-3 mb-3 m-0 p-0 tecnologia">
+                                            <label for="validationServer01" class="form-label ms-2 ps-1">Tecnologias:</label>
+                                            <div class="container-fluid">
+                                                <div class="row">
+
+                                                    <div class="col-5 col-md-4 col-lg-3  text-center col-lg-3  m-1 p-1 m-0 p-0 mx-auto">
+                                                        <div class="container habilidades">
+                                                            <p>PhP</p>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-5 col-md-4 col-lg-3  text-center col-lg-3  m-1 p-1 m-0 p-0 mx-auto">
+                                                        <div class="container habilidades">
+                                                            <p>C#</p>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-5 col-md-4 col-lg-3  text-center col-lg-3  m-1 p-1 m-0 p-0 mx-auto">
+                                                        <div class="container habilidades">
+                                                            <p>Python</p>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-5 col-md-4 col-lg-3  text-center col-lg-3  m-1 p-1 m-0 p-0 mx-auto">
+                                                        <div class="container habilidades">
+                                                            <p>Java</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="container col-12 mb-1 texto">
+                                            <label for="validationServer01" class="form-label m-0 p-0">E-mail:</label>
+                                            <div class="container-fluid">
+                                                <div class="row">
+                                                    <div class="col-12  m-1 p-1 m-0 p-0 mx-auto">
+                                                        <p class="caixa">Lu@lu.</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="container col-12 mb-1 texto">
+                                            <label for="validationServer01" class="form-label m-0 p-0">Facebook:</label>
+                                            <div class="container-fluid">
+                                                <div class="row">
+                                                    <div class="col-12  m-1 p-1 m-0 p-0 mx-auto">
+                                                        <p class="caixa">Lu@lu.</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="container col-12 mb-1 texto">
+                                            <label for="validationServer01" class="form-label m-0 p-0">Instagram:</label>
+                                            <div class="container-fluid">
+                                                <div class="row">
+                                                    <div class="col-12  m-1 p-1 m-0 p-0 mx-auto">
+                                                        <p class="caixa">Lu@lu.</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="container col-12 mb-1 texto">
+                                            <label for="validationServer01" class="form-label m-0 p-0">Linkedin:</label>
+                                            <div class="container-fluid">
+                                                <div class="row">
+                                                    <div class="col-12  m-1 p-1 m-0 p-0 mx-auto">
+                                                        <p class="caixa">Lu@lu.</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="container col-12 mb-1 texto">
+                                            <label for="validationServer01" class="form-label m-0 p-0">Outro:</label>
+                                            <div class="container-fluid">
+                                                <div class="row">
+                                                    <div class="col-12  m-1 p-1 m-0 p-0 mx-auto">
+                                                        <p class="caixa">Lu@lu.</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="container col-12 mb-2 texto">
+                                            <label for="validationServer01" class="form-label m-0 p-0">Sobre mim:</label>
+                                            <div class="container-fluid">
+                                                <div class="row">
+                                                    <div class="col-12 m-1 p-1 m-0 p-0 mx-auto">
+                                                        <p class="caixa">Tenho 34 anos, sou Back-end com conhecimento e experiência em PhP, C#, Python, mas a linguagem que mais tenho familiaridade experiencia é o Java.</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="container col-12 mx-auto my-auto">
+                                            <div class="row">
+                                                <div class="col-4 ms-auto">
+                                                    <a class="btn btn-primary botao2" data-bs-target="#editar" data-bs-toggle="modal">Editar Perfil</a>
+                                                </div>
+                                            </div>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            
+                            </div>
+
+                        </div>
+                        <br>
+
+                    </section>
+                </div>
+<!--    conteudo da pagina  --> 
+            </div>  
+        </div>
+<!--    fim da pagina  -->       
+
+<!--    editar perfil   -->
+        <div class="modal fade" id="editar" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered modal-lg">
+                <div class="modal-content">
+
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalToggleLabel">edita perfil<h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+
+                    <form>
+                        <div class="modal-body">
+                            <div class="row">
+
+                                <div class="col-12 col-md-11 mb-3 mx-auto">
+                                    <div class="row  m-0 p-0">
+
+                                        <div class="col-7 col-md-4 my-auto mx-auto">
+                                            <div class="row p-0 m-0">
+                                                <div class="col-12 m-0 p-0">
+                                                    <img src="./Img/codigo.jpg" class="img-fluid">
+                                                </div>
+
+                                                <div class="col-12 m-0 p-0">
+                                                    <input class="form-control borda" type="file" id="formFile">
+                                                </div>
+                                            </div>
+                                        </div> 
+
+                                        <div class="col-12 col-md-8  m-0 p-0">
+                                            <div class="row">
+
+                                                <div class="col-11 col-md-12 mt-3 mx-auto">
+                                                    <label for="validationServer01" class="form-label m-0 p-0">Nome:</label>
+                                                    <input type="text" class="form-control input" placeholder="Digite o nome da sua empresa" id="exampleInputPassword1">
+                                                </div>
+
+                                                <div class="col-11 col-md-12 mt-3 mx-auto">
+                                                    <label for="validationServer01" class="form-label m-0 p-0">Função:</label>
+                                                    <input type="text" class="form-control input" placeholder="Digite o nome da sua empresa" id="exampleInputPassword1">
+                                                </div>
+
+                                                <div class="col-11 col-md-12 mb-3 mt-3 mx-auto">
+                                                    <select class="form-select" aria-label="Default select example">
+                                                        <option selected>Selecione o nivel</option>
+                                                        <option value="1">One</option>
+                                                        <option value="2">Two</option>
+                                                        <option value="3">Three</option>
+                                                    </select>
+                                                </div>
+
+                                                <div class="col-5  mb-2 mx-auto">
+                                                    <a class="btn btn-primary mx-auto botao2" data-bs-target="#idi" data-bs-toggle="modal">idioma</a>                 
+                                                </div>
+                
+                                                <div class="col-5  mb-2 mx-auto">
+                                                    <a class="btn btn-primary botao2" data-bs-target="#tec" data-bs-toggle="modal">Tecnologias</a>                           
+                                                </div>
+                
+                                            </div>
+                                        </div> 
+
+                                    </div>
+                                </div> 
+
+                                <div class="col-11 mb-3 mx-auto">
+                                    <label for="validationServer01" class="form-label m-0 p-0">E-mail:</label>
+                                    <input type="text" class="form-control input" placeholder="Digite a Localização" id="exampleInputPassword1">
+                                </div>
+
+                                <div class="col-11 mb-3 mx-auto">
+                                    <label for="validationServer01" class="form-label m-0 p-0">facebook:</label>
+                                    <input type="text" class="form-control input" placeholder="Digite a Localização" id="exampleInputPassword1">
+                                </div>
+                                
+                                <div class="col-11 mb-3 mx-auto">
+                                    <label for="validationServer01" class="form-label m-0 p-0">Instagram:</label>
+                                    <input type="text" class="form-control input" placeholder="Digite a Localização" id="exampleInputPassword1">
+                                </div>
+
+                                <div class="col-11 mb-3 mx-auto">
+                                    <label for="validationServer01" class="form-label m-0 p-0">Linkedin:</label>
+                                    <input type="text" class="form-control input" placeholder="Digite a Localização" id="exampleInputPassword1">
+                                </div>
+
+                                <div class="col-11 mb-3 mx-auto">
+                                    <label for="validationServer01" class="form-label m-0 p-0">Outro:</label>
+                                    <input type="text" class="form-control input" placeholder="Digite a Localização" id="exampleInputPassword1">
+                                </div>
+
+                                <div class="col-11 mb-3 mx-auto">
+                                    <div class="form-floating">
+                                        <textarea class="form-control input" placeholder="Leave a comment here" id="DescriçãoVaga"></textarea>
+                                        <label for="DescriçãoVaga">Sobre mim:</label>
+                                    </div>
+                                </div>
+
+                            </div>   
+                        </div>
+
+                        <div class="modal-footer">
+                            <button type="submit" class="btn botao">Salvar</button> 
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+ <!--   fim do editar perfil    -->
+
+<!--    moldais de cadastro das vagas serviços e projeto    -->
+        <div class="modal fade" id="Projeto" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered modal-lg">
+                <div class="modal-content">
+
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalToggleLabel">Cadastro de Projeto</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+
+                    <form>
+                        <div class="modal-body"> 
+                                        
+                            <div class="row">
+
+                                <div class="col-11 mb-3 mx-auto">
+                                    <div class="row  m-0 p-0">
+
+                                        <div class="col-12 m-0 p-0">
+                                            <div class="row">
+
+                                                <div class="col-11 col-md-12 mt-3 mb-3 mx-auto">
+                                                    <label for="validationServer01" class="form-label m-0 p-0">Nome do projeto:</label>
+                                                    <input type="text" class="form-control input" placeholder="Digite o nome da sua empresa" id="exampleInputPassword1">
+                                                </div>
+                                                
+                                                <div class="col-11 col-md-12 mb-3 mx-auto">
+                                                    <select class="form-select input" aria-label="Default select example">
+                                                        <option selected>Selecione o nivel</option>
+                                                        <option value="1">One</option>
+                                                        <option value="2">Two</option>
+                                                        <option value="3">Three</option>
+                                                    </select>
+                                                </div>
+
+                                                <div class="col-5 mb-3 mx-auto">
+                                                    <a class="btn btn-primary mx-auto botao2" data-bs-target="#idi" data-bs-toggle="modal">idioma</a>                 
+                                                </div>
+                
+                                                <div class="col-5 mb-3 mx-auto">
+                                                    <a class="btn btn-primary botao2" data-bs-target="#tec" data-bs-toggle="modal">Tecnologias</a>                           
+                                                </div>
+                
+                                            </div>
+                                        </div> 
+
+                                    </div>
+                                </div> 
+
+                                <div class="col-11 mb-3 mx-auto">
+                                    <div class="form-floating">
+                                        <textarea class="form-control input" placeholder="Leave a comment here" id="DescriçãoEmpresa"></textarea>
+                                        <label for="DescriçãoEmpresa">Descrição do projeto:</label>
+                                    </div>
+                                </div>
+
+                                <div class="col-11 mb-3 mx-auto">
+                                    <div class="form-floating">
+                                        <textarea class="form-control input" placeholder="Leave a comment here" id="Proposta"></textarea>
+                                        <label for="Proposta">Proposta:</label>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-11 mb-3 mx-auto">
+                                    <div class="form-floating">
+                                        <textarea class="form-control input" placeholder="Leave a comment here" id="Beneficios"></textarea>
+                                        <label for="Beneficios">Objetivo do projeto:</label>
+                                    </div>
+                                </div>
+
+                                <div class="col-11 mb-3 mx-auto">
+                                    <div class="form-floating">
+                                        <textarea class="form-control input" placeholder="Leave a comment here" id="Beneficios"></textarea>
+                                        <label for="Beneficios">Orçamento do projeto:</label>
+                                    </div>
+                                </div>
+
+                                <div class="col-11 mb-3 mx-auto">
+                                    <div class="form-floating">
+                                        <textarea class="form-control input" placeholder="Leave a comment here" id="Beneficios"></textarea>
+                                        <label for="Beneficios">Parcerias necessarias:</label>
+                                    </div>
+                                </div>                               
+
+                            </div>                                
+                        </div>
+
+                        <div class="modal-footer">
+                            <button type="submit" class="btn botao">Cadastar</button> 
+                        </div>
+                    <form>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="modal fade" id="Vaga" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered modal-lg">
+                <div class="modal-content">
+
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalToggleLabel">Cadastro de vaga</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+
+                    <form>
+                        <div class="modal-body">
+                            <div class="row">
+
+                                <div class="col-12 col-md-11 mb-3 mx-auto">
+                                    <div class="row  m-0 p-0">
+
+                                        <div class="col-7 col-md-4 my-auto mx-auto">
+                                            <div class="row p-0 m-0">
+                                                <div class="col-12 m-0 p-0">
+                                                    <img src="./Img/codigo.jpg" class="img-fluid">
+                                                </div>
+
+                                                <div class="col-12 m-0 p-0">
+                                                    <input class="form-control borda" type="file" id="formFile">
+                                                </div>
+                                            </div>
+                                        </div> 
+
+                                        <div class="col-12 col-md-8  m-0 p-0">
+                                            <div class="row">
+
+                                                <div class="col-11 col-md-12 mt-3 mx-auto">
+                                                    <label for="validationServer01" class="form-label m-0 p-0">Nome da empresa:</label>
+                                                    <input type="text" class="form-control input" placeholder="Digite o nome da sua empresa" id="exampleInputPassword1">
+                                                </div>
+
+                                                <div class="col-11 col-md-12 mb-3 mt-3 mx-auto">
+                                                    <select class="form-select" aria-label="Default select example">
+                                                        <option selected>Selecione o nivel</option>
+                                                        <option value="1">One</option>
+                                                        <option value="2">Two</option>
+                                                        <option value="3">Three</option>
+                                                    </select>
+                                                </div>
+
+                                                <div class="col-5  mb-2 mx-auto">
+                                                    <a class="btn btn-primary mx-auto botao2" data-bs-target="#idi" data-bs-toggle="modal">idioma</a>                 
+                                                </div>
+                
+                                                <div class="col-5  mb-2 mx-auto">
+                                                    <a class="btn btn-primary botao2" data-bs-target="#tec" data-bs-toggle="modal">Tecnologias</a>                           
+                                                </div>
+                
+                                            </div>
+                                        </div> 
+
+                                    </div>
+                                </div> 
+
+                                <div class="col-11 mb-3 mx-auto">
+                                    <label for="nomevaga" class="form-label m-0 p-0">Nome da vaga:</label>
+                                    <input type="text" class="form-control input" placeholder="Digite o nome da vaga" id="nomevaga">
+                                </div>
+
+                                <div class="col-11 mb-3 mx-auto">
+                                    <label for="validationServer01" class="form-label m-0 p-0">Localização:</label>
+                                    <input type="text" class="form-control input" placeholder="Digite a Localização" id="exampleInputPassword1">
+                                </div>
+
+                                <div class="col-11 mb-3 mx-auto">
+                                    <label for="validationServer01" class="form-label m-0 p-0">Faixa salarial:</label>
+                                    <input type="text" class="form-control input" placeholder="Digite o valor" id="exampleInputPassword1">
+                                </div>
+                                
+
+                                <div class="col-11 mb-3 mx-auto">
+                                    <div class="form-floating">
+                                        <textarea class="form-control input" placeholder="Leave a comment here" id="Beneficios"></textarea>
+                                        <label for="Beneficios">Beneficios:</label>
+                                    </div>
+                                </div>
+
+                                <div class="col-11 mb-3 mx-auto">
+                                    <div class="form-floating">
+                                        <textarea class="form-control input" placeholder="Leave a comment here" id="DescriçãoEmpresa"></textarea>
+                                        <label for="DescriçãoEmpresa">Descrição da empresa:</label>
+                                    </div>
+                                </div>
+
+                                <div class="col-11 mb-3 mx-auto">
+                                    <div class="form-floating">
+                                        <textarea class="form-control input" placeholder="Leave a comment here" id="DescriçãoVaga"></textarea>
+                                        <label for="DescriçãoVaga">Descrição da vaga:</label>
+                                    </div>
+                                </div>
+
+                            </div>   
+                        </div>
+
+                        <div class="modal-footer">
+                            <button type="submit" class="btn botao">Cadastar</button> 
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="modal fade" id="Serviço" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered modal-lg">
+                <div class="modal-content">
+
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalToggleLabel">Cadastro de Serviço</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+
+                    <form>
+                        <div class="modal-body">
+                            <div class="row">
+
+                                <div class="col-11 mb-3 mx-auto">
+                                    <div class="row  m-0 p-0">
+
+                                        <div class="col-12 m-0 p-0">
+                                            <div class="row">
+
+                                                <div class="col-11 col-md-12 mt-3 mb-3 mx-auto">
+                                                    <label for="validationServer01" class="form-label m-0 p-0">Nome do projeto:</label>
+                                                    <input type="text" class="form-control input" placeholder="Digite o nome da sua empresa" id="exampleInputPassword1">
+                                                </div>
+                                                
+                                                <div class="col-11 col-md-12 mb-3 mx-auto">
+                                                    <select class="form-select input" aria-label="Default select example">
+                                                        <option selected>Selecione o nivel</option>
+                                                        <option value="1">One</option>
+                                                        <option value="2">Two</option>
+                                                        <option value="3">Three</option>
+                                                    </select>
+                                                </div>
+
+                                                <div class="col-5 mb-3 mx-auto">
+                                                    <a class="btn btn-primary mx-auto botao2" data-bs-target="#idi" data-bs-toggle="modal">idioma</a>                 
+                                                </div>
+                
+                                                <div class="col-5 mb-3 mx-auto">
+                                                    <a class="btn btn-primary botao2" data-bs-target="#tec" data-bs-toggle="modal">Tecnologias</a>                           
+                                                </div>
+                
+                                            </div>
+                                        </div> 
+
+                                    </div>
+                                </div> 
+
+                                <div class="col-11 mb-3 mx-auto">
+                                    <label for="nomevaga" class="form-label m-0 p-0">Nome da serviço:</label>
+                                    <input type="text" class="form-control input" placeholder="Digite o nome do serviço" id="nomevaga">
+                                </div>
+
+                                <div class="col-11 mb-3 mx-auto">
+                                    <label for="validationServer01" class="form-label m-0 p-0">Localização:</label>
+                                    <input type="text" class="form-control input" placeholder="Digite a Localização" id="exampleInputPassword1">
+                                </div>
+
+                                <div class="col-11 mb-3 mx-auto">
+                                    <label for="validationServer01" class="form-label m-0 p-0">Faixa salarial:</label>
+                                    <input type="text" class="form-control input" placeholder="Digite o valor" id="exampleInputPassword1">
+                                </div>
+
+                                <div class="col-11 mb-3 mx-auto">
+                                    <div class="form-floating">
+                                        <textarea class="form-control input" placeholder="Leave a comment here" id="Beneficios"></textarea>
+                                        <label for="Beneficios">Beneficios:</label>
+                                    </div>
+                                </div>
+
+                                <div class="col-11 mb-3 mx-auto">
+                                    <div class="form-floating">
+                                        <textarea class="form-control input" placeholder="Leave a comment here" id="DescriçãoEmpresa"></textarea>
+                                        <label for="DescriçãoEmpresa">Descrição da empresa:</label>
+                                    </div>
+                                </div>
+
+                                <div class="col-11 mb-3 mx-auto">
+                                    <div class="form-floating">
+                                        <textarea class="form-control input" placeholder="Leave a comment here" id="DescriçãoVaga"></textarea>
+                                        <label for="DescriçãoVaga">Descrição do serviço:</label>
+                                    </div>
+                                </div>
+
+                            </div>   
+                        </div>
+
+                        <div class="modal-footer">
+                            <button type="submit" class="btn botao">Cadastar</button> 
+                        </div>
+                    <form>
+                </div>
+            </div>
+        </div>
+       
+
+<!--    fim moldais de cadastro das vagas serviços e projeto    -->     
+
+
+        <div class="modal fade" id="tec" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+            <div class="modal-dialog modal-dialog-scrollable modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalToggleLabel">tecnologias</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <form>
+                        <div class="modal-body">
+                        
+                                <div class="row">
+
+            <!--    joga pro banco    -->
+                                    <div class="col-11 col-md-6 col-lg-4 mb-3 mx-auto">
+                                        <div class="form-check">
+                                            <input class="form-check-input ms-1 me-1" type="checkbox" value="" id="technologia">
+                                            <label class="form-check-label" for="technologia"> HTML </label>
+                                        </div>
+                                    </div>
+            <!--    ----------------  -->
+
+                                </div>
+                                
+                        </div>
+                        <div class="modal-footer">
+                            <button class="btn btn-primary botao" data-bs-target="#Etapa3cliente" data-bs-toggle="modal">Salvar</button>
+                        </div>
+                </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="idi" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+            <div class="modal-dialog modal-dialog-scrollable modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalToggleLabel">idiomas</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <form>
+                        <div class="modal-body">
+                        
+                                <div class="row">
+
+            <!--    joga pro banco    -->
+                                    <div class="col-11 col-md-6 col-lg-4 mb-3 mx-auto">
+                                        <div class="form-check">
+                                            <input class="form-check-input ms-1 me-1" type="checkbox" value="" id="idioma">
+                                            <label class="form-check-label" for="idioma"> HTML </label>
+                                        </div>
+                                    </div>
+            <!--   ---------------    -->
+
+                                </div>
+                            
+                        </div>
+                        <div class="modal-footer">
+                            <button class="btn btn-primary botao" data-bs-target="#Etapa3cliente" data-bs-toggle="modal">Salvar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="config" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered modal-lg">
+                <div class="modal-content">
+
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalToggleLabel">Configurações</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+            
+                    <div class="modal-body"> 
+                        
+                        <div class="row">
+                            <div class="col-4 ">
+
+                                    <div class="dropdown">
+                                    <a class="btn btn-secondary dropdown-toggle d-flex botao" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" id="droplinknavbar">
+                                        <i class='bx bxs-sun' id="icone"></i>
+                                        <p class="my-auto ms-2 me-1">Temas</p>
+                                    </a>
+                                    
+                                    <ul class="dropdown-menu" id="dropNavbar">
+                                        <li><a class="dropdown-item" href="#" id="tema-toggler-claro">Claro</a></li>
+                                        <li><a class="dropdown-item" href="#" id="tema-toggler-escuro">Modo Escuro</a></li>
+                                        <li><a class="dropdown-item" href="#" id="tema-toggler-daltonico">Modo Daltônico</a></li>
+                                    </ul>
+                                    </div>
+                            </div>
+                        </div>    
+                                           
+                    </div>
+                  
+                </div>
+            </div>
+        </div>
+<!--    fim do moldal da pagina    -->
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js" integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N" crossorigin="anonymous"></script>  
+<script src="Js/nav.js"></script>
+<script src="Js/temas.js"></script>
+</body>
+</html>
