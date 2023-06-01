@@ -1,0 +1,150 @@
+<!--    inicio da navbar    -->
+
+    <input class="form-check-input" type="checkbox" id="check">
+
+
+        <nav class="navbar navbar-dark navbar-expand-lg  sidebar" for="check">
+
+            <div class="container-fluid m-0 ">
+                <header class="container-fluid m-0 p-0">
+                    <div class="container-fluid d-flex m-0 p-0">
+
+                        <button class="navbar-toggler m-0 p-0 pt-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample" id="navbutton">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+
+                        <a class="navbar-brand mx-auto my-auto" href="{{ url_for('homepage') }}">
+                            <center class="d-flex mx-auto">
+
+                                <img src="{{ url_for('static', filename='fixos/Img/Icons/favicon_io (1)/favicon-32x32.png') }}" width="36px" height="36px" class="mx-auto my-auto">
+                                <span>
+                                    <p class="my-auto pt-1 mx-auto logospan ms-2">DIVTECHNE</p>
+                                </span>
+                            </center>
+                        </a>
+
+                        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" id="navbutton">
+                            <span>...</span>
+                        </button>
+                    </div>
+
+<!--    inicio do off-canvas navbar    -->
+                    <div class="offcanvas offcanvas-end " tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
+
+                        <div class="offcanvas-header" id="offcanvas">
+                            <h5 class="offcanvas-title mx-auto mt-4" id="offcanvasDarkNavbarLabel">DIVTECHNE</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                        </div>
+
+                        <div class="offcanvas-body" >
+
+                            <div class="row m-0 p-0 mx-auto my-auto" id="offbody">
+
+                                <div class="col-md-10 col-lg-12 mx-auto mt-5 m-0 p-0">
+                                    <ul class="navbar-nav row m-0 p-0 mx-auto">
+
+                                        <div class="col-12 mx-auto mb-4 m-0 p-0 navlink">
+                                            <li class="nav-item m-0 p-0 navlink">
+                                                <li class="nav-item row dropstart m-0 p-0">
+
+                                                    <a class="col-1 col-lg-2 mx-auto ps-4 fecha" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                                       <center><i class='bx bxs-home' id="icone"></i></center>
+                                                    </a>
+
+                                                    <span class="container col-7 col-lg-8 m-0 p-0 mx-auto my-auto" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                                        <a class="nav-link my-auto"  id="droplinknavbar">Profissionais</a>
+                                                    </span>
+
+                                                    <ul class="dropdown-menu mb-2">
+
+                                                        <li id="drop"><a class="dropdown-item" href="{{ url_for('home_cliente') }}">Profissionais</a></li>
+                                                        <li id="drop"><a class="dropdown-item" href="C_portifolio.html">Portifólio</a></li>
+
+                                                    </ul>
+                                                </li>
+
+                                            </li>
+                                        </div>
+
+                                        <div class="col-12 mx-auto mb-4 m-0 p-0 navlink">
+                                            <li class="nav-item navlink">
+                                                <li class="nav-item row dropstart m-0 p-0">
+                                                    <a class="col-1 col-lg-2 mx-auto ps-4 fecha" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class='bx bxs-customize' id="icone"></i></a>
+
+                                                    <span class="container col-7 col-lg-8 m-0 p-0 mx-auto my-auto" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                                        <a class="nav-link my-auto" id="droplinknavbar">Novo</a>
+                                                    </span>
+
+                                                    <ul class="dropdown-menu mb-2">
+
+                                                        <li id="drop"><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#Vaga">Vaga</a></li>
+                                                        <li id="drop"><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#Serviço">Serviço</a></li>
+                                                        <li id="drop"><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#Projeto">Projeto</a></li>
+
+                                                    </ul>
+                                                </li>
+
+                                            </li>
+                                        </div>
+
+                                        <div class="col-12 mx-auto mb-4 m-0 p-0 navlink">
+                                            <li class="nav-item navlink">
+                                                <div class="nav-item row mx-auto m-0 p-0">
+
+                                                    <a href="#" class="col-1 col-lg-2 mx-auto ps-4 fecha"><i class='bx bxs-chat' id="icone"></i></a>
+
+                                                    <span class="container col-7 col-lg-8 m-0 p-0 mx-auto my-auto">
+                                                        <a href="#" class="nav-link my-auto" id="droplinknavbar">Mensagem</a>
+                                                    </span>
+                                                </div>
+                                            </li>
+                                        </div>
+
+                                        <div class="col-12 mx-auto mb-4 m-0 p-0 navlink">
+                                            <li class="nav-item navlink">
+                                                <div class="nav-item row mx-auto m-0 p-0">
+
+                                                    <a href="#" class="col-1 col-lg-2 mx-auto ps-4 fecha"><i class='bx bxs-bell-ring' id="icone"></i></a>
+
+                                                    <span class="container col-7 col-lg-8 m-0 p-0 mx-auto my-auto">
+                                                        <a href="#" class="nav-link my-auto" id="droplinknavbar">Notificação</a>
+                                                    </span>
+                                                </div>
+                                            </li>
+                                        </div>
+
+                                        <div class="col-12 mx-auto mb-4 m-0 p-0 navlink">
+                                            <li class="nav-item navlink">
+                                                <div class="row mx-auto m-0 p-0">
+                                                    <a data-bs-toggle="modal" data-bs-target="#config" class="col-1 col-lg-2 mx-auto ps-4 fecha"><i class='bx bxs-cog' id="icone"></i></a>
+                                                    <span class="container col-7 col-lg-8 m-0 p-0 mx-auto my-auto">
+                                                        <a class="nav-link my-auto" id="droplinknavbar" data-bs-toggle="modal" data-bs-target="#config">Configuração</a>
+                                                    </span>
+                                                </div>
+                                            </li>
+                                        </div>
+
+                                        <div class="col-12 mx-auto mb-4 m-0 p-0 navlink">
+                                            <li class="nav-item navlink">
+                                                <div class="row mx-auto m-0 p-0">
+                                                    <a href="#" class="col-1 col-lg-2 mx-auto ps-4 fecha"><i class='bx bxs-log-out' id="icone"></i></a>
+                                                    <span class="container col-7 col-lg-8 m-0 p-0 mx-auto my-auto">
+                                                        <a href="{{ url_for('logout') }}" class="nav-link my-auto" id="droplinknavbar">Sair</a>
+                                                    </span>
+                                                </div>
+                                            </li>
+                                        </div>
+
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </header>
+<!--    fim do inicio do off-canvas navbar    -->
+            </div>
+        </nav>
+<!--    fim do inicio da navbar    -->
+
+<!-- Modal de configurações -->
+{% include 'cliente/modal_tema.html' %}

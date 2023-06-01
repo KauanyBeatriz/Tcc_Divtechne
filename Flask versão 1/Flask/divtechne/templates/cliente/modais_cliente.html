@@ -1,0 +1,367 @@
+<!--    moldal da pagina    -->
+
+<!--    moldal de projeto    -->
+        <div class="modal fade" id="Projeto" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered modal-lg">
+                <div class="modal-content">
+
+                    <div class="modal-header" id="modalhome">
+                        <h1 class="modal-title fs-5" id="exampleModalToggleLabel">Cadastro de Projeto</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+
+                    <form method="POST">
+                        {{ form_projeto.csrf_token }}
+                        <div class="modal-body">
+
+                            <div class="row">
+
+                                <div class="col-11 mb-3 mx-auto">
+                                    <div class="row  m-0 p-0">
+
+                                        <div class="col-12 col-md-8  m-0 p-0">
+                                            <div class="row">
+
+                                                <div class="col-11 col-md-12 mb-3 mt-3 mx-auto">
+                                                    {{ form_projeto.nome_projeto.label(class="form-label m-0 p-0") }}
+                                                    {{ form_projeto.nome_projeto(class="form-control input") }}
+                                                </div>
+
+
+                                                <div class="col-11 col-md-12 mb-3 mt-3 mx-auto">
+                                                    {{ form_projeto.empregador_projeto.label(class="form-label m-0 p-0") }}
+                                                    {{ form_projeto.empregador_projeto(class="form-control input") }}
+                                                </div>
+
+
+                                                <div class="col-11 col-md-12 mb-3 mt-3 mx-auto">
+                                                    {{ form_projeto.tecnologia_projeto.label(class="form-label m-0 p-0") }}
+                                                    {{ form_projeto.tecnologia_projeto(class="form-control input") }}
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <div class="col-11 mb-3 mx-auto">
+                                    <div class="form-floating">
+                                        {{ form_projeto.descricao_projeto.label(class="form-label m-0 p-0") }}
+                                        {{ form_projeto.descricao_projeto(class="form-control input") }}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="modal-footer" id="modalhome2">
+                            {{ form_projeto.botao_projeto(class="btn botao") }}
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+<!----------------------------------------------------- FORMULARIO DE VAGA -----------------------------------------------------!-->
+
+        <div class="modal fade" id="Vaga" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered modal-lg">
+                <div class="modal-content">
+
+                    <div class="modal-header" id="modalhome">
+                        <h1 class="modal-title fs-5" id="exampleModalToggleLabel">Cadastro de vaga</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+
+                    <form method="POST" enctype="multipart/form-data">
+                        {{ form_vaga.csrf_token }}
+                        <div class="modal-body">
+                            <div class="row">
+
+                                <div class="col-12 col-md-11 mb-3 mx-auto">
+                                    <div class="row  m-0 p-0">
+
+                                        <div class="col-12 col-md-8  m-0 p-0">
+                                            <div class="row">
+
+                                                <div class="col-11 col-md-12 mb-3 mt-3 mx-auto">
+                                                    {{ form_vaga.nome_vaga.label(class="form-label m-0 p-0") }}
+                                                    {{ form_vaga.nome_vaga(class="form-control input") }}
+                                                </div>
+
+                                                <div class="col-11 col-md-12 mb-3 mt-3 mx-auto">
+                                                    {{ form_vaga.foto_vaga.label(class="form-label m-0 p-0") }}
+                                                    {{ form_vaga.foto_vaga(class="form-control input") }}
+                                                </div>
+
+                                                <div class="col-11 col-md-12 mb-3 mt-3 mx-auto">
+                                                    {{ form_vaga.empresa_vaga.label(class="form-label m-0 p-0") }}
+                                                    {{ form_vaga.empresa_vaga(class="form-control input") }}
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <div class="col-11 mb-3 mx-auto">
+                                    {{ form_vaga.endereco_vaga.label(class="form-label m-0 p-0") }}
+                                    {{ form_vaga.endereco_vaga(class="form-control input") }}
+                                </div>
+
+                                <div class="col-11 mb-3 mx-auto">
+                                    {{ form_vaga.salario_vaga.label(class="form-label m-0 p-0") }}
+                                    {{ form_vaga.salario_vaga(class="form-control input") }}
+                                </div>
+
+                                <div class="col-11 mb-3 mx-auto">
+                                    {{ form_vaga.requisitos_vaga.label(class="form-label m-0 p-0") }}
+                                    {{ form_vaga.requisitos_vaga(class="form-control input") }}
+                                </div>
+
+                                <div class="col-11 mb-3 mx-auto">
+                                    {{ form_vaga.nivel_vaga.label(class="form-label m-0 p-0") }}
+                                    {{ form_vaga.nivel_vaga(class="form-control input") }}
+                                </div>
+
+                                <div class="col-11 mb-3 mx-auto">
+                                    {{ form_vaga.beneficios_vaga.label(class="form-label m-0 p-0") }}
+                                    {{ form_vaga.beneficios_vaga(class="form-control input") }}
+                                </div>
+
+
+                                <div class="col-11 mb-3 mx-auto">
+                                    {{ form_vaga.idioma_vaga.label(class="form-label m-0 p-0") }}
+                                    {{ form_vaga.idioma_vaga(class="form-control input") }}
+                                </div>
+
+                                <div class="col-11 mb-3 mx-auto">
+                                    <div class="form-floating">
+                                        {{ form_vaga.descricao_empresa_vaga.label(class="form-label m-0 p-0") }}
+                                        {{ form_vaga.descricao_empresa_vaga(class="form-control input") }}
+                                    </div>
+                                </div>
+
+                                <div class="col-11 mb-3 mx-auto">
+                                    <div class="form-floating">
+                                        {{ form_vaga.descricao_vaga.label(class="form-label m-0 p-0") }}
+                                        {{ form_vaga.descricao_vaga(class="form-control input") }}
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="modal-footer" id="modalhome2">
+                            {{ form_vaga.botao_vaga(class="btn botao") }}
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="modal fade" id="Serviço" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered modal-lg">
+                <div class="modal-content">
+
+                    <div class="modal-header" id="modalhome">
+                        <h1 class="modal-title fs-5" id="exampleModalToggleLabel">Cadastro de Serviço</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+
+                    <form method="POST">
+                        {{ form_servico.csrf_token }}
+                        <div class="modal-body">
+                            <div class="row">
+
+                                <div class="col-12 col-md-11 mb-3 mx-auto">
+                                    <div class="row  m-0 p-0">
+
+                                        <div class="col-12 col-md-8  m-0 p-0">
+                                            <div class="row">
+
+                                                <div class="col-11 col-md-12 mb-3 mt-3 mx-auto">
+                                                    {{ form_servico.nome_servico.label(class="form-label m-0 p-0") }}
+                                                    {{ form_servico.nome_servico(class="form-control input") }}
+                                                </div>
+
+                                                <div class="col-11 col-md-12 mb-3 mt-3 mx-auto">
+                                                    {{ form_servico.empregador_servico.label(class="form-label m-0 p-0") }}
+                                                    {{ form_servico.empregador_servico(class="form-control input") }}
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <div class="col-11 mb-3 mx-auto">
+                                    {{ form_servico.salario_servico.label(class="form-label m-0 p-0") }}
+                                    {{ form_servico.salario_servico(class="form-control input") }}
+                                </div>
+
+                                <div class="col-11 mb-3 mx-auto">
+                                    {{ form_servico.requisitos_servico.label(class="form-label m-0 p-0") }}
+                                    {{ form_servico.requisitos_servico(class="form-control input") }}
+                                </div>
+
+                                <div class="col-11 mb-3 mx-auto">
+                                    <div class="form-floating">
+                                        {{ form_servico.descricao_servico.label(class="form-label m-0 p-0") }}
+                                        {{ form_servico.descricao_servico(class="form-control input") }}
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="modal-footer" id="modalhome2">
+                            {{ form_servico.botao_servico(class="btn botao") }}
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+
+<!--    filtro da da pesquisa    -->
+
+        <div class="modal fade" id="tecnologias" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+            <div class="modal-dialog modal-dialog-scrollable modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header" id="modalhome">
+                        <h1 class="modal-title fs-5" id="exampleModalToggleLabel">tecnologias</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <form>
+                    <div class="modal-body">
+                        <div class="row">
+
+<!--    joga pro banco    -->
+                            <div class="col-11 col-md-6 col-lg-4 mb-3 mx-auto">
+                                <div class="form-check">
+                                    <input class="form-check-input ms-1 me-1" type="checkbox" value="" id="technologia">
+                                    <label class="form-check-label" for="technologia"> HTML </label>
+                                </div>
+                            </div>
+<!--    ----------------  -->
+
+                        </div>
+                    </div>
+
+                    <div class="modal-footer" id="modalhome2">
+                        <button class="btn btn-primary botao" data-bs-target="#Etapa3cliente" data-bs-toggle="modal">Salvar</button>
+                    </div>
+                </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="idiomas" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+            <div class="modal-dialog modal-dialog-scrollable modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header" id="modalhome">
+                        <h1 class="modal-title fs-5" id="exampleModalToggleLabel">idiomas</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <form>
+                        <div class="modal-body">
+
+                                <div class="row">
+
+    <!--    joga pro banco    -->
+                                    <div class="col-11 col-md-6 col-lg-4 mb-3 mx-auto">
+                                        <div class="form-check">
+                                            <input class="form-check-input ms-1 me-1" type="checkbox" value="" id="idioma">
+                                            <label class="form-check-label" for="idioma"> HTML </label>
+                                        </div>
+                                    </div>
+    <!--   ---------------    -->
+
+                                </div>
+
+                        </div>
+                        <div class="modal-footer" id="modalhome2">
+                            <button class="btn btn-primary botao" data-bs-target="#Etapa3cliente" data-bs-toggle="modal">Salvar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+<!--    fim filtro da da pesquisa    -->
+
+
+        <div class="modal fade" id="tec" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+            <div class="modal-dialog modal-dialog-scrollable modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header" id="modalhome">
+                        <h1 class="modal-title fs-5" id="exampleModalToggleLabel">tecnologias</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <form>
+                        <div class="modal-body">
+
+                                <div class="row">
+
+            <!--    joga pro banco    -->
+                                    <div class="col-11 col-md-6 col-lg-4 mb-3 mx-auto">
+                                        <div class="form-check">
+                                            <input class="form-check-input ms-1 me-1" type="checkbox" value="" id="technologia">
+                                            <label class="form-check-label" for="technologia"> HTML </label>
+                                        </div>
+                                    </div>
+            <!--    ----------------  -->
+
+                                </div>
+
+                        </div>
+                        <div class="modal-footer" id="modalhome2">
+                            <button class="btn btn-primary botao" data-bs-target="#Etapa3cliente" data-bs-toggle="modal">Salvar</button>
+                        </div>
+                </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="idi" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+            <div class="modal-dialog modal-dialog-scrollable modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header" id="modalhome">
+                        <h1 class="modal-title fs-5" id="exampleModalToggleLabel">idiomas</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <form>
+                        <div class="modal-body">
+
+                                <div class="row">
+
+            <!--    joga pro banco    -->
+                                    <div class="col-11 col-md-6 col-lg-4 mb-3 mx-auto">
+                                        <div class="form-check">
+                                            <input class="form-check-input ms-1 me-1" type="checkbox" value="" id="idioma">
+                                            <label class="form-check-label" for="idioma"> HTML </label>
+                                        </div>
+                                    </div>
+            <!--   ---------------    -->
+
+                                </div>
+
+                        </div>
+                        <div class="modal-footer" id="modalhome2">
+                            <button class="btn btn-primary botao" data-bs-target="#Etapa3cliente" data-bs-toggle="modal">Salvar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+<!--    fim do moldal da pagina    -->

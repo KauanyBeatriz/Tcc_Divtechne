@@ -1,0 +1,1111 @@
+@charset "utf-8";
+
+html[tema="claro"] {
+    /*variaveis da paleta de cores do tema claro*/
+    --rodape-1: #130203; /*rodape*/
+    --navbar-2: #006987; /*navBar*/
+    --botao-3: #023D54; /*botao*/
+    --efeito-4:#DFEDF2; /*efeito*/
+    --texto-5: #031D2E; /*texto invertido*/
+    --texto-6: #eeeeee; /*texto*/
+    --fundo-7: #fcfcfd; /*fundo*/
+    --botao-8: #aaaaaa;/*card*/
+    --card-9: #11233E;/*card*/
+    --texto-10:#f9f9f9; /*texto*/
+    /*fim das variaveis da paleta de cores do tema claro*/
+  }
+  
+  html[tema="escuro"] {
+    /*variaveis da paleta de cores do tema escuro*/
+    --rodape-1: #130203; /*rodape*/
+    --navbar-2: #02050C; /*navBar*/
+    --botao-3: #c2c2c2; /*botao*/
+    --efeito-4: #3A6375; /*efeito*/
+    --texto-5: #d2d2d2; /*texto invertido*/
+    --texto-6: #f9f9f9; /*texto*/
+    --fundo-7: #0d192d; /*fundo*/
+    --botao-8: #aaaaaa;/*card*/
+    --card-9:  #11233E;/*card*/
+    --texto-10: #031D2E; /*texto*/
+    /*fim das variaveis da paleta de cores do tema escuro*/
+  }
+
+html[tema="daltonico"] {
+  /*variaveis da paleta de cores do tema daltonico*/
+  --rodape-1: #e40000; /*rodape*/
+  --navbar-2: #0388A6; /*navBar*/
+  --botao-3: #; /*botao*/
+  --efeito-4: #56565c; /*botao*/
+  --texto-5: #000000; /*texto*/
+  --texto-6: #AEF9ED; /*fundo*/
+  --fundo-7: #00111B; /*fundo*/
+  --card-8: #6E8F98;/*card*/
+  --card-9: #DFEDF2;/*card*/
+  /*fim das variaveis da paleta de cores do tema daltonico*/
+}
+
+:root {
+  --tran-02: all 0.2s ease;
+  --tran-03: all 0.3s ease;
+  --tran-04: all 0.4s ease;
+  --tran-05: all 0.5s ease;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+  transition: var(--tran-05);
+  scroll-behavior: smooth;
+}
+
+body {
+  height: auto;
+  background-color: var(--fundo-7);
+  transition: var(--tran-05);
+  font-family: "Inter", sans-serif;
+  scroll-behavior: smooth;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+/*NavBar*/
+#Nav {
+  font-weight: bolder;
+  width: 100vw;
+}
+
+#navbutton {
+  border: none;
+  box-shadow: 0 0 0 0;
+}
+
+#navbutton :hover {
+/*para tira a borda do botao pre-configurado do bootstrap*/
+  border: none !important;
+  outline: none;
+  box-shadow: 0 0 0 0;
+}
+
+#navlink li {
+  list-style: none;
+}
+
+/*offcanvas do navbar*/
+.offcanvas h5 {
+  color: var(--rodape-1);
+  font-weight: 700;
+  letter-spacing: 1px;
+  font-family: sans-serif;
+}
+/*fim do Navbar*/
+
+
+/*modals*/
+
+.modal-header { 
+  background-color: var(--botao-8);
+  border-radius:4px 4px 0px 0px;
+}
+
+.modal-header h5{ 
+  background-color: var(--botao-8);
+  border-radius:4px 4px 0px 0px;
+}
+
+.modal-body {
+  background-color: var(--fundo-7);
+}
+
+.modal-body label {
+  color: var(--texto-5);
+}
+
+#cadastro .modal-body img {
+  width: 200px;
+  height: 200px;
+}
+
+.modal-body input {
+  background-color:#ffffff;
+  border-radius: 4px;
+  border:1px solid #cecece;
+}
+
+.modal-body select {
+  background-color:#ffffff;
+  border-radius: 4px;
+  border:1px solid #cecece;
+}
+
+.modal-footer {
+  background-color:var(--fundo-7);
+  color: var(--texto-5);
+  border-radius:0px 0px 4px 4px;
+}
+
+.borda {
+  background-color:#ffffff00!important;
+}
+
+.borda::before {
+background-color:#ffffff00!important;
+}
+
+#linkModal {
+  left: 0;
+  padding-left: 0;
+  margin-left: 10%;
+  position: absolute;
+  color: var(--card-8);
+  text-decoration: none;
+}
+
+#linkModal2 {
+  color: var(--card-8);
+  text-decoration: none;
+}
+
+#link {
+  text-decoration: none;
+  color: var(--texto-6);
+}
+
+li {
+  list-style-type: none;
+}
+
+/*@media (min-width) para regular determinados elementos em diferentes tamanhos de tela de acordo com os elementos do bootstrap (sm,md,lg,lx,lxx)*/
+@media (min-width: 100px) {
+
+  .navbar {
+    background-color: var(--navbar-2);
+    transition: var(--tran-04);
+    width: 100vw;
+  }
+  
+  .navbar li a {
+    text-decoration: none;
+    font-weight: 100;
+    font-size: 15px;
+    letter-spacing: 1px;
+    display: flex;
+    cursor: pointer;
+  }
+
+  #navlink {
+    margin-top:8px;
+  }
+
+  #navlink:hover {
+    background-color: var(--efeito-4);
+    color: var(--texto-6);
+    border-radius: 4px;
+    transition: var(--tran-03);
+  }
+
+  #droplinknavbar {
+   text-align: center;
+    margin-left: 30%;
+    color:var(--navbar-2);
+  }
+  
+  #droplinknavbar:hover {
+    color: var(--texto-6);
+    transition: var(--tran-02);
+  }
+
+  #drop a {
+    color: var(--navbar-2)!important;
+  }
+  
+  #drop a:hover {
+    background-color: var(--efeito-4);
+    color: var(--texto-6)!important;
+    transition: var(--tran-03);
+  }
+  
+  #icone {   
+    color: var(--botao-3);
+    font-size:36px;
+    margin-right:5px;
+  }
+
+  #icone:houver {
+    color:var(--rodape-1)
+  }
+
+
+/*banner*/
+  #banner {
+    object-fit: cover;
+    background-size: cover;
+    width: 100vw;
+    height: 100%;
+  }
+
+
+/*inicio do sobre nos */
+  #sobre {
+    height: auto;
+    color: var(--texto-5);
+  }    
+  
+  #sobre h3 {
+    color: var(--texto-5);
+  }
+
+
+/*porque usar divtechne*/
+  #vantagens {
+    background-color: var(--botao-3);
+    color: var(--texto-6);
+  }
+   
+  #vantagens img {
+    width: 250px;
+    height: 250px;
+  }
+
+  #vantagens h3 {
+    color: var(--texto-6);
+  }
+
+
+/*nossos programadores*/
+  #cards {
+    height: auto;
+  }
+
+  #cards h3 {
+    color: var(--texto-5);
+  }
+  .card { 
+    background-color: var(--card-9);
+  }
+
+  #cards img {
+    border: 1px solid var(--texto-6);
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 4px 4px 0px 0px;
+  }
+
+  .card .nome { 
+    color:var(--texto-6);
+  }
+
+  .card .sobre {
+    color:var(--texto-6);
+    opacity: 0.9;
+  }
+
+  #atributos {
+    background-color: var(--efeito-4);
+    color: var(--texto-5);
+    font-size: 11px;
+    border-radius: 4px;
+  }
+
+
+/*rodape*/
+  #rodape {
+    background-color: var(--rodape-1);
+    color:var(--texto-6)
+  }
+
+  #icone2 {
+    font-size: 36px;   
+    color: var(--texto-6);
+  }
+  
+  #icone2:hover {
+    color: var(--efeito-4);
+    opacity: 0.7;
+    transition: var(--tran-03);
+  }
+}
+
+
+/*sm*/
+@media (min-width: 576px) {
+/*navbar*/
+  .navbar {
+    background-color: var(--navbar-2);
+    transition: var(--tran-04);
+  }
+
+  .navbar li a {
+    text-decoration: none;
+    font-weight: 100;
+    font-size: 15px;
+    letter-spacing: 1px;
+    display: flex;
+    cursor: pointer;
+  }
+
+  #navlink {
+    margin-top:8px;
+  }
+
+  #navlink:hover {
+    background-color: var(--efeito-4);
+    border-radius: 4px;
+    transition: var(--tran-03);
+  }
+
+  #droplinknavbar {
+    text-align: center;
+     margin-left: 30%;
+     color:var(--navbar-2);
+  }
+   
+  #droplinknavbar:hover {
+    color: var(--texto-6);
+    transition: var(--tran-02);
+  }
+
+  #drop a {
+    color: var(--navbar-2)!important;
+  }
+  
+  #drop a:hover {
+    background-color: var(--efeito-4);
+    color: var(--texto-6)!important;
+    transition: var(--tran-03);
+  }
+  
+  #icone {  
+    color: var(--botao-3);
+    font-size:36px;
+    margin-right:5px;
+  }
+
+  #icone:houver {
+    color:var(--rodape-1)
+  }
+
+/*banner*/
+  #banner {
+    object-fit: cover;
+    background-size: cover;
+    width: 100vw;
+    height: 100%;
+  }
+
+
+/*inicio do sobre nos */
+   #sobre {
+    height: auto;
+    color: var(--texto-5);
+  }    
+  
+  #sobre h3 {
+    color: var(--texto-5);
+  }
+
+
+/*porque usar divtechne*/
+  #vantagens {
+    background-color: var(--botao-3);
+    color: var(--texto-6);
+  }
+   
+  #vantagens img {
+    width: 250px;
+    height: 250px;
+  }
+
+  #vantagens h3 {
+    color: var(--texto-6);
+  }
+
+
+/*nossos programadores*/
+  #cards {
+    height: auto;
+  }
+
+  #cards h3 {
+    color: var(--texto-5);
+  }
+
+  .card { 
+    background-color: var(--botao-3);
+  }
+
+  #cards img {
+    border: 1px solid var(--texto-6);
+    width: 105px;
+    height: 105px;
+    object-fit: cover;
+    border-radius: 4px 4px 0px 0px;
+  }
+
+  .card .nome {
+    color:var(--texto-6);
+  }
+
+  .card .sobre {
+    color:var(--texto-6);
+    opacity: 0.9;
+  }
+
+  #atributos {
+    background-color: var(--efeito-4);
+    color: var(--texto-5);
+    font-size: 11px;
+    border-radius: 4px;
+  }
+
+
+/*rodape*/
+  #rodape {
+    background-color: var(--rodape-1);
+    color:var(--texto-6)
+  }
+
+  #icone2 {
+    font-size: 36px;   
+    color: var(--texto-6);
+  }
+  
+  #icone2:hover {
+    color: var(--efeito-4);
+    opacity: 0.7;
+    transition: var(--tran-03);
+  }
+
+}
+
+
+/*md*/
+@media (min-width: 768px) {
+  /*navbar*/
+  .navbar {
+    background-color: var(--navbar-2);
+    transition: var(--tran-04);
+  }
+
+  .navbar li a {
+    text-decoration: none;
+    font-weight: 100;
+    font-size: 15px;
+    letter-spacing: 1px;
+    display: flex;
+    cursor: pointer;
+  }
+
+  #navlink {
+    margin-top:8px;
+  }
+
+  #navlink:hover {
+    background-color: var(--efeito-4);
+    border-radius: 4px;
+    transition: var(--tran-03);
+  }
+
+  #droplinknavbar {
+    text-align: center;
+     margin-left: 30%;
+     color:var(--navbar-2);
+   }
+   
+   #droplinknavbar:hover {
+     color: var(--texto-6);
+     transition: var(--tran-02);
+   }
+ 
+   #drop a {
+     color: var(--navbar-2)!important;
+   }
+   
+   #drop a:hover {
+     background-color: var(--efeito-4);
+     color: var(--texto-6)!important;
+     transition: var(--tran-03);
+   }
+  
+  #icone {  
+    color: var(--botao-3);
+    font-size:36px;
+    margin-right:5px;
+  }
+
+  #icone:houver {
+    color:var(--rodape-1)
+  }
+
+
+/*banner*/
+  #banner {
+    object-fit: cover;
+    background-size: cover;
+    width: 100vw;
+    height: 100%;
+  }
+
+
+/*inicio do sobre nos */
+  #sobre {
+    height: auto;
+    color: var(--texto-5);
+  }    
+
+  #sobre h3 {
+    color: var(--texto-5);
+  }
+
+
+/*porque usar divtechne*/
+  #vantagens {
+    background-color: var(--botao-3);
+    color: var(--texto-6);
+  }
+
+  #vantagens img {
+    width: 240px;
+    height: 240px;
+  }
+
+  #vantagens h3 {
+    color: var(--texto-6);
+  }
+
+  
+/*nossos programadores*/
+  #cards {
+    height: auto;
+  }
+
+  #cards h3 {
+    color: var(--texto-5);
+  }
+
+  .card {
+    background-color: var(--card-9);
+  }
+
+  #cards img {
+    border: 1px solid var(--texto-6);
+    width: 105px;
+    height: 105px;
+    object-fit: cover;
+    border-radius: 4px 4px 0px 0px;
+  }
+
+  .card .nome {
+    color:var(--texto-6);
+  }
+
+  .card .sobre {
+    color:var(--texto-6);
+    opacity: 0.9;
+  }
+
+  #atributos {
+    background-color: var(--efeito-4);
+    color: var(--texto-5);
+    font-size: 11px;
+    border-radius: 4px;
+  }
+
+
+/*rodape*/
+  #rodape {
+    background-color: var(--rodape-1);
+    color:var(--texto-6)
+  }
+
+  #icone2 {
+    font-size: 36px;   
+    color: var(--texto-6);
+  }
+  
+  #icone2:hover {
+    color: var(--efeito-4);
+    opacity: 0.7;
+    transition: var(--tran-03);
+  }
+}
+
+
+/*lg*/
+@media (min-width: 992px) {
+  /*NavBar*/
+  .navbar {
+    background-color: rgba(0, 0, 0, 0.425);
+    transition: var(--tran-04);
+  }
+
+  .navbar li a {
+    text-decoration: none;
+    color:var(--texto-6); 
+    font-weight: 100;
+    font-size: 15px;
+    letter-spacing: 1px;
+    display: flex;
+    cursor: pointer;
+  }
+
+  .mudaCor {
+    background-color: var(--navbar-2);
+    color: var(--texto-6)!important;
+    transition: var(--tran-05);
+  }
+  
+  .navbar li a:houver {
+    color: var(--texto-6)!important; 
+  }
+ 
+  #navlink:hover { 
+    background-color:#00000000;
+    transition: var(--tran-03);
+  }
+
+  #droplinknavbar { 
+    margin-left: -30%!important;  
+    color: var(--texto-6)!important;
+  }
+  
+  #droplinknavbar:hover {     
+    color: var(--efeito-4)!important;
+    transition: var(--tran-03);    
+  }
+  
+  #drop a:hover {
+   background-color: var(--efeito-4);
+   color: var(--texto-5)!important;
+   transition: var(--tran-03);
+  }
+
+  #icone {
+    color: var(--texto-6);
+    font-size:24px;
+    margin-right:5px;
+  }
+
+  #icone:houver {
+    color:var(--efeito-4);
+    transition: var(--tran-03);
+  }
+ 
+
+/*banner*/
+  #banner {
+    object-fit: cover;
+    background-size: cover;
+    width: 100vw;
+    height: 100%;
+  }
+
+
+/*inicio do sobre nos */
+  #sobre {
+    height: 50vh;
+    color: var(--texto-5);
+  }
+    
+  #sobre h3 {
+    color: var(--texto-5);
+  }
+
+
+/*porque usar divtechne*/
+  #vantagens {
+    background-color: var(--botao-3);
+    color: var(--texto-6);
+  }
+
+  #vantagens img {
+    width: 230px;
+    height: 230px;
+  }
+
+  #vantagens h3 {
+    color: var(--texto-6);
+  }
+
+
+/*nossos programadores*/
+  #cards {
+    height: auto;
+  }
+
+  #cards h3 {
+    color: var(--texto-5);
+  }
+
+  .card {
+    background-color: var(--card-9);
+  }
+
+  #cards img {
+    border: 1px solid var(--texto-6);
+    width: 105px;
+    height: 105px;
+    object-fit: cover;
+    border-radius: 4px 4px 0px 0px;
+  }
+
+  .card .nome {
+    color:var(--texto-6);
+  }
+
+  .card .sobre {
+    color:var(--texto-6);
+    opacity: 0.9;
+  }
+
+  #atributos {
+    background-color: var(--efeito-4);
+    color: var(--texto-5);
+    font-size: 11px;
+    border-radius: 4px;
+  }
+
+
+/*rodape*/
+  #rodape {
+    background-color: var(--rodape-1);
+    color:var(--texto-6)
+  }
+
+  #icone2 {
+    font-size: 36px;   
+    color: var(--texto-6);
+  }
+  
+  #icone2:hover {
+    color: var(--efeito-4);
+    opacity: 0.7;
+    transition: var(--tran-03);
+  }
+}
+
+
+/*lx*/
+@media (min-width: 1200px) {
+
+  /*NavBar*/
+  .navbar {
+    background-color: rgba(0, 0, 0, 0.425);
+    transition: var(--tran-04);
+  }
+
+   .navbar li a {
+    text-decoration: none;
+    color:var(--texto-6); 
+    font-weight: 100;
+    font-size: 15px;
+    letter-spacing: 1px;
+    display: flex;
+    cursor: pointer;
+  }
+
+  .mudaCor {
+    background-color: var(--navbar-2);
+    color: var(--texto-6)!important;
+    transition: var(--tran-05);
+  }
+  
+  .navbar li a:hover {
+    color: var(--texto-6)!important; 
+  }
+ 
+  #navlink:hover {
+    background-color:#00000000;
+    transition: var(--tran-03);
+  }
+
+  #droplinknavbar { 
+    margin-left: -30%!important;  
+    color: var(--texto-6)!important;
+  }
+  
+  #droplinknavbar:hover {     
+    color: var(--efeito-4)!important;
+    transition: var(--tran-03);    
+  }
+
+    
+  #drop a:hover {
+    background-color: var(--efeito-4);
+    color: var(--texto-5)!important;
+    transition: var(--tran-03);
+  }
+
+  #icone {
+    color: var(--texto-6);
+    font-size:24px;
+    margin-right:5px;
+  }
+
+  #icone:hover {
+    color:var(--efeito-4);
+    transition: var(--tran-03);
+  }
+
+
+/*banner*/
+  #banner {
+    object-fit: cover;
+    background-size: cover;
+    width: 100vw;
+    height: 100%;
+  }
+
+
+/*inicio do sobre nos */
+  #sobre {
+    height: 50vh;
+    color: var(--texto-5);
+  }
+    
+  #sobre h3 {
+    color: var(--texto-5);
+  }
+
+
+/*porque usar divtechne*/
+  #vantagens {
+    background-color: var(--botao-3);
+    color: var(--texto-6);
+  }
+
+  #vantagens img {
+    width: 220px;
+    height: 220px;
+  }
+
+  #vantagens h3 {
+    color: var(--texto-6);
+  }
+
+  #vantagens p {
+    padding-top: 10%;
+  }
+
+
+/*nossos programadores*/
+  #cards {
+    height: auto;
+  }
+
+  #cards h3 {
+    color: var(--texto-5);
+  }
+
+  .card {
+    background-color: var(--card-9);
+  }
+
+  #cards img {
+    border: 1px solid var(--texto-6);
+    width: 110px;
+    height: 110px;
+    object-fit: cover;
+    border-radius: 4px 4px 0px 0px;
+  }
+
+  .card .nome {
+    color:var(--texto-6);
+  }
+
+  .card .sobre {
+    color:var(--texto-6);
+    opacity: 0.9;
+  }
+
+  #atributos {
+    background-color: var(--efeito-4);
+    color: var(--texto-5);
+    font-size: 11px;
+    border-radius: 4px;
+  }
+   
+
+/*rodape*/
+  #rodape {
+    background-color: var(--rodape-1);
+    color:var(--texto-6)
+  }
+
+  #icone2 {
+    font-size: 36px;   
+    color: var(--texto-6);
+  }
+  
+  #icone2:hover {
+    color: var(--efeito-4);
+    opacity: 0.7;
+    transition: var(--tran-03);
+  }
+}
+
+
+/*lxx*/
+@media (min-width: 1400px){
+/*NavBar*/
+  .navbar {
+    background-color: rgba(0, 0, 0, 0.425);
+    transition: var(--tran-04);
+  }
+
+   .navbar li a {
+    text-decoration: none;
+    color:var(--texto-6); 
+    font-weight: 100;
+    font-size: 15px;
+    letter-spacing: 1px;
+    display: flex;
+    cursor: pointer;
+  }
+
+  .mudaCor {
+    background-color: var(--navbar-2);
+    color: var(--texto-6);
+    transition: var(--tran-05);
+  }
+ 
+  #navlink:hover {
+    background-color:#00000000;
+    transition: var(--tran-03);
+  }
+
+  #droplinknavbar { 
+    margin-left: -30%!important;  
+    color: var(--texto-6)!important;
+  }
+  
+  #droplinknavbar:hover {     
+    color: var(--efeito-4)!important;
+    transition: var(--tran-02);    
+  }
+   
+  #drop a:hover {
+    background-color: var(--efeito-4);
+    color: var(--texto-5)!important;
+    transition: var(--tran-02);
+   }
+
+  #icone {
+    color: var(--texto-6);
+    font-size:24px;
+    margin-right:5px;
+  }
+
+  #icone:hover {
+    color:var(--efeito-4);
+    transition: var(--tran-03);
+  }
+ 
+
+/*banner*/
+  #banner {
+    object-fit: cover;
+    background-size: cover;
+    width: 100vw;
+    height: 100%;
+  }
+
+
+/*inicio do sobre nos */
+  #sobre {
+    height: 50vh;
+    color: var(--texto-5);
+  }
+    
+  #sobre h3 {
+    color: var(--texto-5);
+  }
+
+
+/*porque usar divtechne*/
+  #vantagens {
+    background-color: var(--card-9);
+    color: var(--texto-6);
+  }
+
+  #vantagens img {
+    width: 220px;
+    height: 220px;
+  }
+
+  #vantagens h3 {
+    color: var(--texto-6);
+  }
+
+  #vantagens p {
+    padding-top: 10%;
+  }
+
+
+/*nossos programadores*/
+  #cards {
+    height: auto;
+  }
+
+  #cards h3 {
+    color: var(--texto-5);
+  }
+
+  .card {
+    background-color: var(--card-9);
+  }
+
+  #cards img {
+    border: 1px solid var(--texto-6);
+    width: 110px;
+    height: 110px;
+    object-fit: cover;
+    border-radius: 4px 4px 0px 0px;
+  }
+
+  .card .nome {
+    color:var(--texto-6);
+  }
+
+  .card .sobre {
+    color:var(--texto-6);
+    opacity: 0.9;
+  }
+  
+  #atributos {
+    background-color: var(--efeito-4);
+    color: var(--texto-5);
+    font-size: 11px;
+    border-radius: 4px;
+  }
+   
+
+/*rodape*/
+  #rodape {
+    background-color: var(--rodape-1);
+    color:var(--texto-6)
+  }
+
+  #icone2 {
+    font-size: 36px;   
+    color: var(--texto-6);
+  }
+  
+  #icone2:hover {
+    color: var(--efeito-4);
+    opacity: 0.7;
+    transition: var(--tran-03);
+  }
+}
+
+/*  ----     animações     -----*/
+
+/*  ----     importações     -----*/
+
+/*importação da font*/
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
