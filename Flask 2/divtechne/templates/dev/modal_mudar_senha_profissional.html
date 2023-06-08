@@ -1,0 +1,91 @@
+<!--    Modal do esqueci senha -->
+<div class="modal fade" id="editarSenha" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <h1 class="modal-title fs-5 ps-2">Editar Senha</h1>
+                <button type="button button-dark" class="btn-close " data-bs-dismiss="modal" aria-label="Close" id="Close"></button>
+            </div>
+
+            <div class="modal-body">
+<!--    form   -->
+                <form method="POST" action="">
+                    {{ form_editar_senha.csrf_token }}
+                    <div class="row">
+
+                        <div class="col-10 mb-2 mx-auto">
+                            {{ form_editar_senha.senha_atual.label(class="form-control-label") }}
+
+                                  <!-- caso tenha algum erro de preenchimento do campo !-->
+                                  {% if form_editar_senha.senha_atual.errors %}
+                                    <!-- Marca a borda da caixa do campo em vermelho pela classe is-invalid !-->
+                                    {{ form_editar_senha.senha_atual(class="form-control is-invalid") }}
+                                  <!-- E exibe a mensagem de erro personalizada pela classe invalid-feedback !-->
+                                  <div class="invalid-feedback">
+                                    {% for erro in form_editar_senha.senha_atual.errors %}
+                                        {{ erro }}
+                                    {% endfor %}
+                                  </div>
+
+                                  <!-- Caso contrário exibe a caixa normalmente !-->
+                                  {% else %}
+                                    {{ form_editar_senha.senha_atual(class="form-control") }}
+                                  {% endif %}
+                        </div>
+
+                        <div class="col-10 mb-2 mx-auto">
+                            <div class="mb-3">
+                                {{ form_editar_senha.senha_nova.label(class="form-control-label") }}
+
+                                  <!-- caso tenha algum erro de preenchimento do campo !-->
+                                  {% if form_editar_senha.senha_nova.errors %}
+                                    <!-- Marca a borda da caixa do campo em vermelho pela classe is-invalid !-->
+                                    {{ form_editar_senha.senha_nova(class="form-control is-invalid") }}
+                                  <!-- E exibe a mensagem de erro personalizada pela classe invalid-feedback !-->
+                                  <div class="invalid-feedback">
+                                    {% for erro in form_editar_senha.senha_nova.errors %}
+                                        {{ erro }}
+                                    {% endfor %}
+                                  </div>
+
+                                  <!-- Caso contrário exibe a caixa normalmente !-->
+                                  {% else %}
+                                    {{ form_editar_senha.senha_nova(class="form-control") }}
+                                  {% endif %}
+                            </div>
+                        </div>
+
+                        <div class="col-10 mb-2 mx-auto">
+                            <div class="mb-3">
+                                {{ form_editar_senha.confirmacao_senha_nova.label(class="form-control-label") }}
+
+                                  <!-- caso tenha algum erro de preenchimento do campo !-->
+                                  {% if form_editar_senha.confirmacao_senha_nova.errors %}
+                                    <!-- Marca a borda da caixa do campo em vermelho pela classe is-invalid !-->
+                                    {{ form_editar_senha.confirmacao_senha_nova(class="form-control is-invalid") }}
+                                  <!-- E exibe a mensagem de erro personalizada pela classe invalid-feedback !-->
+                                  <div class="invalid-feedback">
+                                    {% for erro in form_editar_senha.confirmacao_senha_nova.errors %}
+                                        {{ erro }}
+                                    {% endfor %}
+                                  </div>
+
+                                  <!-- Caso contrário exibe a caixa normalmente !-->
+                                  {% else %}
+                                    {{ form_editar_senha.confirmacao_senha_nova(class="form-control") }}
+                                  {% endif %}
+                            </div>
+                        </div>
+
+                    </div>
+
+                     <div class="modal-footer">
+                        {{ form_editar_senha.botao_editar_senha_profissional(class="btn botao", id="botao") }}
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!--    fim do Modal do esqueci senha -->

@@ -1,0 +1,569 @@
+@charset "utf-8";
+
+html[tema="claro"] {
+  /*variaveis da paleta de cores do tema claro*/
+  --rodape-1: #130203; /*rodape*/
+  --navbar-2: #006987; /*navBar*/
+  --botao-3: #023D54; /*botao*/
+  --efeito-4:#DFEDF2; /*efeito*/
+  --texto-5: #031D2E; /*texto invertido*/
+  --texto-6: #eeeeee; /*texto*/
+  --fundo-7: #fcfcfd; /*fundo*/
+  --card-8: #6E8F98;/*fundo*/
+  /*fim das variaveis da paleta de cores do tema claro*/
+}
+
+html[tema="escuro"] {
+  /*variaveis da paleta de cores do tema escuro*/
+  --rodape-1: #130203; /*rodape*/
+  --navbar-2: #02050C; /*navBar*/
+  --botao-3: #11233E; /*botao*/
+  --efeito-4: #3A6375; /*efeito*/
+  --texto-5: #d2d2d2; /*texto invertido*/
+  --texto-6: #d2d2d2; /*texto*/
+  --fundo-7: #060C16; /*fundo*/
+  /*fim das variaveis da paleta de cores do tema escuro*/
+}
+
+html[tema="daltonico"] {
+  /*variaveis da paleta de cores do tema daltonico*/
+  --rodape-1: #e40000; /*rodape*/
+  --navbar-2: #bd1749; /*navBar*/
+  --botao-3: #703975; /*botao*/
+  --efeito-4: #56565c; /*botao*/
+  --texto-5: #000000; /*texto*/
+  --fundo-6: #4e8e97; /*fundo*/
+  --fundo-7: #8a974e; /*fundo*/
+  /*fim das variaveis da paleta de cores do tema daltonico*/
+}
+
+:root {
+  --tran-02: all 0.2s ease;
+  --tran-03: all 0.3s ease;
+  --tran-04: all 0.4s ease;
+  --tran-05: all 0.5s ease;
+}
+
+* {
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+  transition: var(--tran-05);
+  scroll-behavior: smooth;
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+  background-color: var(--fundo-7);
+  transition: var(--tran-05);
+  overflow-x: hidden;
+  font-family: "Inter", sans-serif;
+  scroll-behavior: smooth;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+seletor::selection{
+  background-color: #000000;
+}
+
+/* pagina */
+#pagina {
+  overflow-y: hidden;
+}
+  
+
+
+/*  modal */
+.modal-header { 
+  background-color: var(--botao-8);
+  border-radius:4px 4px 0px 0px;
+}
+
+.modal-header h5{ 
+  background-color: var(--botao-8);
+  border-radius:4px 4px 0px 0px;
+}
+
+.modal-body {
+  background-color: var(--fundo-7);
+}
+
+.modal-body label {
+  color: var(--texto-5);
+}
+
+.modal-body .form-floating label {
+  color:#031D2E;
+}
+
+.modal-body input {
+  background-color:#ffffff;
+  border-radius: 4px;
+  border:1px solid #cecece;
+}
+
+.modal-body input::-webkit-input-placeholder { 
+  color:#031D2E;
+}
+
+.modal-body input:-ms-input-placeholder {
+  color:#031D2E;
+}
+
+.modal-body input::placeholder {
+  color:#031D2E;
+}
+
+.modal-body select {
+  background-color:#ffffff;
+  border-radius: 4px;
+  border:1px solid #cecece;
+}
+
+.modal-body textarea {
+  background-color:#ffffff;
+  border-radius: 4px;
+  border:1px solid #cecece;
+}
+
+.modal-footer {
+  background-color:var(--fundo-7);
+  color: var(--texto-5);
+  border-radius:0px 0px 4px 4px;
+}
+
+  /*  ----     responsividade     -----*/
+
+/*@media (min-width) para regular determinados elementos em diferentes tamanhos de tela de acordo com os elementos do bootstrap (sm,md,lg,lx,lxx)*/
+@media (min-width: 100px) {
+/* touch */
+#touch{
+  background-color: #00000000;
+  width: 5%; 
+  height: 100vh;
+  position:fixed;
+  z-index: 1;
+}
+  /*  conteudo */
+  .navbar .offcanvas-body .list{
+    height: 100vh;
+  }
+
+ .meus-contatos{
+    height: 95vh;
+    overflow-y: scroll;
+ } 
+
+ .meus-contatos::-webkit-scrollbar {
+  display: none;
+}
+
+ .contato{
+  background-color: var(--navbar-2);
+  border-radius: 4px;
+  text-decoration: none;
+ }
+
+ .contato img{
+  height: 70px;
+  width: 85px;
+  border-radius: 50%;
+  border: 1px solid var(--texto-6);
+  object-fit: cover;
+ }
+
+ .contato .itens p{
+  color: var(--texto-6);
+ }
+
+  /*  lista de grupos */
+  .meus-grupos{
+    height: 95vh;
+    overflow-y: scroll;
+   } 
+  
+   .meus-grupos::-webkit-scrollbar {
+    display: none;
+  }
+  
+   .grupo{
+    background-color: var(--navbar-2);
+    border-radius: 4px;
+    text-decoration: none;
+   }
+  
+   .grupo img{
+    height: 70px;
+    width: 85px;
+    border-radius: 50%;
+    border: 1px solid var(--texto-6);
+    object-fit: cover;
+   }
+  
+   .grupo .itens p{
+    color: var(--texto-6);
+   }
+
+/* pagina */
+  #pagina {
+    position:absolute;
+    height: 100vh;
+    margin: 0px;
+    padding: 0px;
+  }
+
+  #Paginaconteudo{
+    position:relative;
+    height: 100vh;
+    width: 100vw;
+    transition: var(--tran-05);
+  }
+
+
+  /*usuario da conversa*/
+  #Paginaconteudo .chat .usuario{
+    background-color: var(--navbar-2);
+    height: 8vh;  
+    bottom: 0;
+    margin-top: 8vh;
+    position: relative;
+    opacity: 0.9;
+  }
+
+  #Paginaconteudo .chat .usuario img{
+    height: 7vh;
+    width: 7vw;
+    border-radius: 50%;
+    border: 1px solid var(--texto-6);
+    object-fit: cover;
+  }
+  
+  #Paginaconteudo .chat .usuario .itens h4{
+    color: var(--texto-6);
+  }
+
+
+/*painel de mensagem*/
+  #Paginaconteudo .chat .conversa{
+    height: 76vh;
+    overflow-y: scroll; 
+    bottom: 0;   
+    position: relative;
+  }
+
+  #Paginaconteudo .chat .conversa::-webkit-scrollbar {
+    display: none;
+  }
+
+  #Paginaconteudo .chat .conversa .user-receber .container{
+    background-color: var(--texto-5);
+    border-radius: 10px;
+    padding: 4px;
+    opacity: 0.9;
+    color: var(--texto-10);
+  }
+
+  #Paginaconteudo .chat .conversa .user-enviar .container{
+    background-color: var(--texto-5);
+    border-radius: 10px;
+    padding: 4px;
+    color: var(--texto-10);
+  }
+
+  #Paginaconteudo .chat .conversa::-webkit-scrollbar {
+    display: none;
+  }
+  
+
+/*escrever mensagem*/
+  #Paginaconteudo .chat .digita{
+    background-color: var(--navbar-2);
+    height: 8vh;
+    position: relative;
+    opacity: 0.9;
+    bottom: 0;
+  }
+
+  #Paginaconteudo .chat .digita .file{
+    width: 8%;
+    border-radius: 4px;
+  }
+
+  #Paginaconteudo .chat .digita .file .icon{
+    color: var(--texto-10);
+    margin-top: 8%;
+    font-size: 28px;
+  }
+
+  #Paginaconteudo .chat .digita .file .icon:hover{
+    color: var(--texto-5);
+  }
+
+  #Paginaconteudo .chat .digita .pesquisa{
+    width: 85%;
+  }
+
+  #Paginaconteudo .chat .digita .pesquisa input{
+    border-radius: 4px;
+  }
+
+  #Paginaconteudo .chat .digita .pesquisa .icon{
+    color: var(--texto-10);
+    margin-top: 8%;
+    font-size: 28px;
+  }
+
+  #Paginaconteudo .chat .digita .pesquisa .icon:hover{
+    color: var(--texto-5);
+  }
+
+}
+
+
+/*sm*/
+@media (min-width: 576px) {
+ 
+
+
+}
+
+/*md*/
+@media (min-width: 768px) {
+  
+
+}
+
+/*lg*/
+@media (min-width: 992px){
+/* touch */
+#touch{
+  position:relative !important;
+  width: 25%;
+}
+
+/*  lista de conversa */
+  .navbar .offcanvas-body .list{
+    background-color:var(--navbar-2);
+    height: 100vh;
+  }
+
+/*  lista de contatos */
+ .meus-contatos{
+  background-color: var(--texto-6);
+  height: 95vh;
+  overflow-y: scroll;
+ } 
+
+ .meus-contatos::-webkit-scrollbar {
+  display: none;
+}
+
+ .contato{
+  background-color: var(--navbar-2);
+  border-radius: 4px;
+  text-decoration: none;
+ }
+
+ .contato img{
+  height: 70px;
+  width: 85px;
+  border-radius: 50%;
+  border: 1px solid var(--texto-6);
+  object-fit: cover;
+ }
+
+ .contato .itens p{
+  color: var(--texto-6);
+ }
+
+ /*  lista de grupos */
+ .meus-grupos{
+  background-color: var(--texto-6);
+  height: 95vh;
+  overflow-y: scroll;
+ } 
+
+ .meus-grupos::-webkit-scrollbar {
+  display: none;
+}
+
+ .grupo{
+  background-color: var(--navbar-2);
+  border-radius: 4px;
+  text-decoration: none;
+ }
+
+ .grupo img{
+  height: 70px;
+  width: 85px;
+  border-radius: 50%;
+  border: 1px solid var(--texto-6);
+  object-fit: cover;
+ }
+
+ .grupo .itens p{
+  color: var(--texto-6);
+ }
+
+  
+/* pagina */
+  #pagina {
+    position:absolute !important;
+    width: 80vw;
+    height: 100vh;
+    margin: 0px;
+    padding: 0px;
+  }
+
+  #Paginaconteudo {
+    position:relative !important;
+    height: 100vh;
+    width: 75%;
+    transition: var(--tran-05);
+  }
+  
+  /*usuario da conversa*/
+  #Paginaconteudo .chat .usuario{
+    background-color: var(--navbar-2);
+    height: 8vh !important; 
+    position: relative !important;
+    bottom: 0 !important;
+    margin-top: 0 !important;
+  }
+
+  #Paginaconteudo .chat .usuario img{
+    height: 7vh !important;
+    width: 7vh !important;
+    border-radius: 50%;
+    border: 1px solid var(--texto-6);
+    object-fit: cover;
+  }
+  
+  #Paginaconteudo .chat .usuario .itens h4{
+    color: var(--texto-6);
+  }
+
+/*painel de mensagem*/
+  #Paginaconteudo .chat .conversa{
+    height: 84vh !important;
+    position: relative !important;
+    bottom: 0 !important;
+    overflow-y: scroll;
+  }
+
+  #Paginaconteudo .chat .conversa .user-receber .container{
+    background-color: var(--texto-5);
+    border-radius: 10px;
+    padding: 4px;
+    opacity: 0.9;
+    color: var(--texto-10);
+  }
+
+  
+  #Paginaconteudo .chat .conversa .user-enviar .container{
+    background-color: var(--texto-5);
+    border-radius: 10px;
+    padding: 4px;
+    color: var(--texto-10);
+  }
+
+  #Paginaconteudo .chat .conversa::-webkit-scrollbar {
+    display: none;
+  }
+  
+
+/*escrever mensagem*/
+  #Paginaconteudo .chat .digita{
+    background-color: var(--navbar-2);
+    height: 8vh !important;
+    position: relative !important;
+    opacity: 0.9;
+    bottom: 0 !important;
+  }
+
+  #Paginaconteudo .chat .digita .file{
+    width: 8%;
+    border-radius: 4px;
+  }
+ 
+  #Paginaconteudo .chat .digita .file label{
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+  }
+
+  #Paginaconteudo .chat .digita .file label .icon{
+    color: var(--texto-10);
+    margin-top: 8%;
+    font-size: 28px;
+  }
+
+  #Paginaconteudo .chat .digita .file label input[type="file"]{
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+
+  }
+
+  #Paginaconteudo .chat .digita .file .icon:hover{
+    color: var(--texto-5);
+  }
+
+  #Paginaconteudo .chat .digita .pesquisa{
+    width: 90%;
+  }
+
+  #Paginaconteudo .chat .digita .pesquisa input{
+    border-radius: 4px;
+    position:relative;
+  }
+
+  #Paginaconteudo .chat .digita .pesquisa .icon{
+    color: var(--texto-10);
+    margin-top: 8%;
+    font-size: 28px;
+  }
+
+  #Paginaconteudo .chat .digita .pesquisa .icon:hover{
+    color: var(--texto-5);
+  }
+
+}
+
+/*lx*/
+@media (min-width: 1200px) {
+
+/* pagina */
+  #pagina{
+    width: 80vw;
+    height: 100vh;
+    margin: 0px;
+    padding: 0px;
+  }
+
+
+}
+
+/*lxx*/
+@media (min-width: 1400px) {
+
+
+/*  conteudo */ 
+    #pagina{
+      width: 84vw;
+      height: 100vh;
+      margin: 0px;
+      padding: 0px;
+    }
+    
+   
+  }

@@ -1,0 +1,463 @@
+@charset "utf-8";
+
+html[tema="claro"] {
+    /*variaveis da paleta de cores do tema claro*/
+    --rodape-1: #130203; /*rodape*/
+    --navbar-2: #006987; /*navBar*/
+    --botao-3: #023D54; /*botao*/
+    --efeito-4:#DFEDF2; /*efeito*/
+    --texto-5: #031D2E; /*texto invertido*/
+    --texto-6: #eeeeee; /*texto*/
+    --fundo-7: #fcfcfd; /*fundo*/
+    --botao-8: #aaaaaa;/*card*/
+    --card-9: #11233E;/*card*/
+    --texto-10:#f9f9f9; /*texto*/
+    /*fim das variaveis da paleta de cores do tema claro*/
+  }
+  
+  html[tema="escuro"] {
+    /*variaveis da paleta de cores do tema escuro*/
+    --rodape-1: #130203; /*rodape*/
+    --navbar-2: #02050C; /*navBar*/
+    --botao-3: #c2c2c2; /*botao*/
+    --efeito-4: #3A6375; /*efeito*/
+    --texto-5: #d2d2d2; /*texto invertido*/
+    --texto-6: #f9f9f9; /*texto*/
+    --fundo-7: #0d192d; /*fundo*/
+    --botao-8: #aaaaaa;/*card*/
+    --card-9:  #11233E;/*card*/
+    --texto-10: #031D2E; /*texto*/
+    /*fim das variaveis da paleta de cores do tema escuro*/
+  }
+  
+  html[tema="daltonico"] {
+    /*variaveis da paleta de cores do tema daltonico*/
+    --rodape-1: #e40000; /*rodape*/
+    --navbar-2: #0388A6; /*navBar*/
+    --botao-3: #; /*botao*/
+    --efeito-4: #56565c; /*botao*/
+    --texto-5: #000000; /*texto*/
+    --texto-6: #AEF9ED; /*fundo*/
+    --fundo-7: #00111B; /*fundo*/
+    --card-8: #6E8F98;/*card*/
+    --card-9: #DFEDF2;/*card*/
+    --texto-10:#f9f9f9; /*texto*/
+    /*fim das variaveis da paleta de cores do tema daltonico*/
+  }
+
+:root{
+  --tran-02: all 0.2s ease;
+  --tran-03: all 0.3s ease;
+  --tran-04: all 0.4s ease;
+  --tran-05: all 0.5s ease;
+}
+
+*{
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+  transition: var(--tran-05);
+}
+
+  /*  ----     responsividade     -----*/
+
+/*@media (min-width) para regular determinados elementos em diferentes tamanhos de tela de acordo com os elementos do bootstrap (sm,md,lg,lx,lxx)*/
+@media (min-width: 100px) {
+
+    .botao { 
+        font-family: sans-serif; 
+        background-color: var(--botao-3);
+        color:var(--texto-10);
+        border: 1px solid var(--botao-3); 
+        font-size: 14px;   
+        align-items: center;
+        text-align: center;
+        transition: var(--tran-04);
+    }
+    
+    .botao:hover {
+        background-color: var(--efeito-4);
+        color:var(--texto-5);
+        transition: var(--tran-03);
+        border: 1px solid var(--botao-3);
+    }
+
+    #botao {
+        font-family: sans-serif;
+        background-color: var(--botao-3);
+        color:var(--texto-10);
+        border: 1px solid var(--botao-3);
+        font-size: 14px;
+        align-items: center;
+        text-align: center;
+        transition: var(--tran-04);
+    }
+
+    #botao:hover {
+        background-color: var(--efeito-4);
+        color:var(--texto-5);
+        transition: var(--tran-03);
+        border: 1px solid var(--botao-3);
+    }
+ 
+      
+    .botao2 {
+        width: 100%;
+        background-color: var(--botao-3);
+        color:var(--texto-10);
+        border: 1px solid var(--botao-3);  
+        align-items: center;
+        text-align: center;
+        font-size: 14px; 
+        cursor: pointer;
+        transition: var(--tran-04);
+    }
+    
+    .botao2:hover {
+        background-color: var(--efeito-4);
+        color:var(--texto-5);
+        transition: var(--tran-03);
+        border: 1px solid var(--botao-3);
+    }  
+    
+    .navbar .offcanvas-body .list .botao3{    
+        background-color: var(--texto-6);
+        color:var(--botao-3);  
+        font-size: 16px; 
+        cursor: pointer;
+        border-radius: 4px 4px 0px 0px;
+        transition: var(--tran-04);
+        
+    }
+
+    .navbar .offcanvas-body .list .botao3.active{
+        background-color: var(--navbar-2);
+        color: var(--texto-6);
+        border-color: var(--texto-6);
+        transition: var(--tran-03);
+    }
+     
+    .navbar .offcanvas-body .list .botao3:hover{
+        background-color: var(--efeito-4);
+        color:var(--texto-5);
+        transition: var(--tran-03);
+    }
+}
+
+/*sm*/
+@media (min-width: 576px) {
+
+    .botao {
+        background-color: var(--botao-3);
+        color:var(--texto-10);
+        border: 1px solid var(--botao-3); 
+        font-family: sans-serif;   
+        font-size: 14px;   
+        align-items: center;
+        text-align: center;
+        cursor: pointer;
+        transition: var(--tran-04);
+    }
+      
+    .botao:hover {
+        background-color: var(--efeito-4);
+        color:var(--texto-5);
+        transition: var(--tran-03);
+        border: 1px solid var(--botao-3);
+    }
+ 
+    
+    .botao2 {
+        width: 100%;
+        background-color: var(--botao-3);
+        color:var(--texto-10);
+        border: 1px solid var(--botao-3); 
+        align-items: center;
+        text-align: center;
+        font-size: 14px; 
+        cursor: pointer;
+        transition: var(--tran-04);
+    }
+      
+    .botao2:hover {
+        background-color: var(--efeito-4);
+        color:var(--texto-5);
+        transition: var(--tran-03);
+        border: 1px solid var(--botao-3);
+    }
+
+    .navbar .offcanvas-body .list .botao3.active{
+        background-color: var(--navbar-2);
+        color: var(--texto-6);
+        border-color: var(--texto-6);
+        transition: var(--tran-03);
+    }
+     
+    .navbar .offcanvas-body .list .botao3:hover{
+        background-color: var(--efeito-4);
+        color:var(--texto-5);
+        transition: var(--tran-03);
+    }
+
+}
+
+/*md*/
+@media (min-width: 768px) {
+
+    .botao {
+        background-color: var(--botao-3);
+        color:var(--texto-10);
+        border: 1px solid var(--botao-3);    
+        font-size: 14px;   
+        align-items: center;
+        text-align: center;
+        cursor: pointer;
+        transition: var(--tran-04);
+    }
+    
+    .botao:hover {
+        background-color: var(--efeito-4);
+        color:var(--texto-5);
+        transition: var(--tran-03);
+        border: 1px solid var(--botao-3);
+    }
+      
+
+    .botao2 {
+        width: 100%;
+        background-color: var(--botao-3);
+        color:var(--texto-10);
+        border: 1px solid var(--botao-3);  
+        align-items: center;
+        text-align: center;
+        font-size: 14px; 
+        cursor: pointer;
+        transition: var(--tran-04);
+    }
+      
+    .botao2:hover {
+        background-color: var(--efeito-4);
+        color:var(--texto-5);
+        transition: var(--tran-03);
+        border: 1px solid var(--botao-3);
+    }
+
+    .navbar .offcanvas-body .list .botao3.active{
+        background-color: var(--navbar-2);
+        color: var(--texto-6);
+        border-color: var(--texto-6);
+        transition: var(--tran-03);
+    }
+     
+    .navbar .offcanvas-body .list .botao3:hover{
+        background-color: var(--efeito-4);
+        color:var(--texto-5);
+        transition: var(--tran-03);
+    }
+
+}
+
+/*lg*/
+@media (min-width: 992px) {
+
+    .botao{
+        background-color: var(--botao-3);
+        color:var(--texto-10);
+        border: 1px solid var(--botao-3);
+        font-size: 15px;   
+        align-items: center;
+        text-align: center;
+        cursor: pointer;
+        transition: var(--tran-04);
+    }
+      
+    .botao:hover {
+        background-color: var(--efeito-4);
+        color:var(--texto-5);
+        transition: var(--tran-03);
+        border: 1px solid var(--botao-3);
+    }
+      
+
+    .botao2 {
+        width: 100%;
+        background-color: var(--botao-3);
+        color:var(--texto-10);
+        border: 1px solid var(--botao-3); 
+        align-items: center;
+        text-align: center;
+        font-size: 15px; 
+        cursor: pointer;
+        transition: var(--tran-04);
+    }
+      
+    .botao2:hover {
+        background-color: var(--efeito-4);
+        color:var(--texto-5);
+        transition: var(--tran-03);
+        border: 1px solid var(--botao-3);
+    }
+
+    .navbar .offcanvas-body .list .botao3{
+        background-color: var(--navbar-2);
+        color: var(--texto-6);  
+        font-size: 16px; 
+        cursor: pointer;
+        border-radius: 4px 4px 0px 0px;
+        transition: var(--tran-04);
+        
+    }
+
+    .navbar .offcanvas-body .list .botao3.active{
+        background-color: var(--texto-6);
+        color:var(--navbar-2);
+        border-color: var(--texto-6);
+        transition: var(--tran-03);
+    }
+     
+    .navbar .offcanvas-body .list .botao3:hover{
+        background-color: var(--efeito-4);
+        color:var(--texto-5);
+        transition: var(--tran-03);
+    }
+}
+
+/*lx*/
+@media (min-width: 1200px) {
+
+    .botao {
+        background-color: var(--botao-3);
+        color:var(--texto-10);
+        border: 1px solid var(--botao-3);
+        font-size: 15px;   
+        align-items: center;
+        text-align: center;
+        cursor: pointer;
+        transition: var(--tran-04);
+    }
+    
+    .botao:hover {
+        background-color: var(--efeito-4);
+        color:var(--texto-6);
+        transition: var(--tran-03);
+        border: 1px solid var(--botao-3);
+    }
+
+    
+    .botao2 {
+        width: 100%;
+        background-color: var(--botao-3);
+        color:var(--texto-10);
+        border: 1px solid var(--botao-3);  
+        align-items: center;
+        text-align: center;
+        font-size: 15px; 
+        cursor: pointer;
+        transition: var(--tran-04);
+    }
+    
+    .botao2:hover {
+        background-color: var(--efeito-4);
+        color:var(--texto-5);
+        transition: var(--tran-03);
+        border: 1px solid var(--botao-3);
+    }
+
+    .navbar .offcanvas-body .list .botao3{
+        background-color: var(--navbar-2);
+        color: var(--texto-6);  
+        font-size: 16px; 
+        cursor: pointer;
+        border-radius: 4px 4px 0px 0px;
+        transition: var(--tran-04);
+        
+    }
+
+    .navbar .offcanvas-body .list .botao3.active{
+        background-color: var(--texto-6);
+        color:var(--navbar-2);
+        border-color: var(--texto-6);
+        transition: var(--tran-03);
+    }
+     
+    .navbar .offcanvas-body .list .botao3:hover{
+        background-color: var(--efeito-4);
+        color:var(--texto-5);
+        transition: var(--tran-03);
+    }
+
+}
+
+/*lxx*/
+@media (min-width: 1400px) {
+
+    .botao{
+        background-color: var(--botao-3);
+        color:var(--texto-10);
+        border: 1px solid var(--botao-3);
+        font-size: 16px;   
+        align-items: center;
+        text-align: center;
+        cursor: pointer;
+        transition: var(--tran-04);
+    }
+      
+    .botao:hover {
+        background-color: var(--efeito-4);
+        color:var(--texto-5);
+        transition: var(--tran-03);
+        border: 1px solid var(--botao-3);
+    }
+     
+    .botao2 {
+        width: 100%;
+        background-color: var(--botao-3);
+        color:var(--texto-10);
+        border: 1px solid var(--botao-3); 
+        align-items: center;
+        text-align: center;
+        font-size: 16px; 
+        cursor: pointer;
+        transition: var(--tran-04);
+    }
+      
+    .botao2:hover {
+        background-color: var(--efeito-4);
+        color:var(--texto-5);
+        transition: var(--tran-03);
+        border: 1px solid var(--botao-3);
+    }
+
+    .navbar .offcanvas-body .list .botao3{
+        background-color: var(--navbar-2);
+        color: var(--texto-6);  
+        font-size: 16px; 
+        cursor: pointer;
+        border-radius: 4px 4px 0px 0px;
+        transition: var(--tran-04);
+        
+    }
+
+    .navbar .offcanvas-body .list .botao3.active{
+        background-color: var(--texto-6);
+        color:var(--navbar-2);
+        border-color: var(--texto-6);
+        transition: var(--tran-03);
+    }
+     
+    .navbar .offcanvas-body .list .botao3:hover{
+        background-color: var(--efeito-4);
+        color:var(--texto-5);
+        transition: var(--tran-03);
+    }
+      
+}
+
+/*  ----     animações     -----*/
+
+/*  ----     importações     -----*/
+
+/*importação da font*/
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");

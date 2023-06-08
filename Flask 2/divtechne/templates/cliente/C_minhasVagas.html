@@ -1,0 +1,117 @@
+{% extends 'cliente/C_home.html' %}
+
+{% block head %}
+<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+<link href="{{ url_for('static', filename='css/trabalho.css') }}" rel="stylesheet" type=" text/css">
+<link href="{{ url_for('static', filename='css/navbar.css') }}" rel="stylesheet" type=" text/css">
+<link href="{{ url_for('static', filename='css/botao.css') }}" rel="stylesheet" type="text/css">
+{% endblock %}
+
+{% block titulo %}
+        <title>DIVTECHNE | Minhas Vagas</title>
+{% endblock %}
+
+{% block card %}
+<div class="container-fluid col-12 col-sm-11 col-md-10 mx-auto mt-3 pb-4" id="cardpagina">
+    {% for vaga in cliente.vagas %}
+        <div class="container-fluid mt-3 mb-5 card">
+            <div class="container row mx-auto m-0 p-0 pt-3">
+
+            {% if current_user == vaga.cliente %}
+            <div class="container col-12 mt-3 mx-auto">
+                <div class="container d-flex text-center">
+                    <h2 class="mx-auto funcao">Vaga</h2>
+                    <button class="btn mr-auto"><a href="{{ url_for('ver_mais_vaga', id=vaga.id) }}"><i class='bx bxs-edit me-auto icon'></i></a></button>
+                    <button class="btn mr-auto"><a href="#"><i class='bx bxs-user me-auto icon'></i></a></button>
+                    <button class="btn mr-auto"><a href="{{ url_for('excluir_vaga', id=vaga.id) }}"><i class='bx bxs-trash-alt me-auto icon'></i></a></button>
+                </div>
+            </div>
+            {% else %}
+            <div class="container col-12 mt-3 mx-auto">
+                <div class="container d-flex text-center">
+                    <h2 class="mx-auto funcao">Vaga</h2>
+                    <button class="btn mr-auto"><a href="{{ url_for('ver_mais_vaga', id=vaga.id) }}"><i class='bx bxs-message-rounded-add me-auto icon'></i></a></button>
+                </div>
+            </div>
+            {% endif %}
+
+                <div class="container col-12 col-lg-3 me-0 ms-0 pe-0 ps-0 mx-auto my-auto">
+                    <div class="row mx-auto my-auto m-0 p-0">
+                        <div class="container col-12 m-0 p-0 mx-auto my-auto">
+                          <center><img src="{{ url_for('static', filename='posts/{}'.format(vaga.foto)) }}" class="img-fluid mx-auto"</center>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-12 col-lg-9 m-0 p-0">
+                    <div class="row">
+
+                        <div class="container col-12 mt-4 mb-2" >
+                            <div class="container-fluid"><h4>{{ vaga.nome }}</h4></div>
+                        </div>
+
+                        <div class="container col-12 mb-2" >
+                            <div class="container-fluid"><h6>{{ vaga.nivel }}</h6></div>
+                        </div>
+
+
+                        <div class="container col-12 mb-1 idioma">
+                            <label for="validationServer01" class="form-label ms-2 ps-1">idiomas:</label>
+                            <div class="container">
+                                <div class="row mx-auto p-1">
+
+                                    <div class="col-5 col-md-4 col-lg-3  text-center col-lg-3  m-1 p-1 m-0 p-0 me-auto">
+                                        <div class="container habilidades">
+                                            {{ vaga.idioma }}
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container col-12 mx-auto mt-3 mb-3 m-0 p-0 tecnologia">
+                    <label for="validationServer01" class="form-label ms-2 ps-1">Requesitos tecnologicos:</label>
+                    <div class="container-fluid">
+                        <div class="row mx-auto p-1">
+
+                            <div class="col-5 col-md-4 col-lg-3  text-center col-lg-3  m-1 p-1 m-0 p-0 me-auto">
+                                <div class="container habilidades">
+                                    <p>{{ vaga.requisitos }}</p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container col-12 texto">
+                    <label for="validationServer01" class="form-label m-0 p-0">Descrição da Empresa:</label>
+                    <div class="container-fluid">
+                        <div class="row m-0 p-0">
+                            <div class="col-12  m-1 p-1 m-0 p-0 mx-auto">
+                                <p class="caixa">{{ vaga.descricao_empresa }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container col-12 texto">
+                    <label for="validationServer01" class="form-label m-0 p-0">Descrição da Vaga:</label>
+                    <div class="container-fluid">
+                        <div class="row m-0 p-0">
+                            <div class="col-12  m-1 p-1 m-0 p-0 mx-auto">
+                                <p class="caixa">{{ vaga.descricao }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+{% endfor %}
+</div>
+{% endblock %}

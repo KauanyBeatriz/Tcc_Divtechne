@@ -1,0 +1,79 @@
+<!--    inicio da navbar    -->
+        <nav class="navbar navbar-dark navbar-expand-lg fixed-top m-0 p-2" id="Nav">
+            <div class="container-fluid m-0 p-0">
+
+                <a class="navbar-brand mx-auto my-auto" href="index.html">
+                    <center class="d-flex"><img src="{{ url_for('static', filename='fixos/Img/Icons/favicon_io (1)/favicon-32x32.png') }}" width="36px" height="36px" class="mx-auto my-auto ms-3 me-2 ">
+                    <p class="my-auto pt-1">DIVTECHNE</p></center>
+                </a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" id="navbutton">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+<!--    inicio do off-canvas navbar    -->
+                <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
+
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title mx-auto mt-4" id="offcanvasDarkNavbarLabel">DIVTECHNE</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+
+                    <div class="offcanvas-body" >
+                        <ul class="navbar-nav justify-content-end flex-grow-1">
+
+<!--    login/cadastro  -->
+
+                            <li class="nav-item me-0 p-0 ms-1" id="navlink">
+                                <a class="nav-link my-auto" data-bs-toggle="modal" data-bs-target="#cadastro" id="droplinknavbar">
+                                    <i class='bx bxs-user-detail icone' id="icone"></i>
+                                    <p class="my-auto me-1">Cadastre-se</p>
+                                </a>
+                            </li>
+
+                            <li class="nav-item me-1 ms-1" id="navlink">
+                                <a class="nav-link my-auto " data-bs-toggle="modal" data-bs-target="#login" id="droplinknavbar">
+                                    <i class='bx bxs-log-in d-flex' id="icone"></i>
+                                    <p class="my-auto me-1">Login</p>
+                                </a>
+                            </li>
+
+
+<!--    modos de cores -->
+                            <li class="nav-item dropdown me-1 ms-1" id="navlink">
+
+                                <a class="nav-link my-auto" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" id="droplinknavbar">
+                                    <i class='bx bxs-sun' id="icone"></i>
+                                    <p class="my-auto me-1">Temas</p>
+                                </a>
+
+                                <ul class="dropdown-menu dropdown-menu-md-end" id="dropNavbar">
+
+                                    <!-- Modo Claro -->
+                                    <li id="drop">
+                                        <a class="dropdown-item" href="#" id="tema-toggler-claro">Modo Claro</a>
+                                    </li>
+
+                                    <!-- Modo Escuro -->
+                                    <li id="drop">
+                                        <a class="dropdown-item" href="#" id="tema-toggler-escuro">Modo Escuro</a>
+                                    </li>
+
+                                    <!-- Modo Daltonico -->
+                                    <li id="drop">
+                                        <a class="dropdown-item" href="#" id="tema-toggler-daltonico">Modo Daltônico</a>
+                                    </li>
+
+                                </ul>
+
+                            </li>
+
+                        </ul>
+                    </div>
+
+                </div>
+<!--    fim do inicio do off-canvas navbar    -->
+
+            </div>
+        </nav>
+<!--    fim do inicio da navbar    -->

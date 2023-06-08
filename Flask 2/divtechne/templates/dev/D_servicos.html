@@ -1,0 +1,80 @@
+{% extends 'dev/D_home.html' %}
+
+{% block head %}
+        <!--    Link do Bootstrap >>  https://boxicons.com/ -->
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+        <link href="{{ url_for('static', filename='css/trabalho.css') }}" rel="stylesheet" type=" text/css">
+        <link href="{{ url_for('static', filename='css/navbar.css') }}" rel="stylesheet" type=" text/css">
+        <link href="{{ url_for('static', filename='css/botao.css') }}" rel="stylesheet" type="text/css">
+{% endblock %}
+
+{% block titulo %}
+        <title>DIVTECHNE | Serviços</title>
+{% endblock %}
+
+<!--    conteudo da pagina  -->
+{% block card %}
+<div class="container-fluid col-12 col-sm-11 col-md-10 mx-auto mt-3 pb-4" id="cardpagina">
+{% for servico in servicos %}
+
+    <div class="container-fluid mt-3 mb-5 card">
+        <div class="container row mx-auto m-0 p-0 pt-3">
+
+
+            <div class="col-12 m-0 p-0">
+                <div class="row">
+
+                    <div class="container col-12 mt-4 mb-2" >
+                        <div class="container-fluid"><h4>{{ servico.nome }}</h4></div>
+                    </div>
+            </div>
+
+            <div class="container col-12 mx-auto mt-3 mb-3 m-0 p-0 tecnologia">
+                <label for="validationServer01" class="form-label ms-2 ps-1">Tecnologias necessárias:</label>
+                <div class="container-fluid">
+                    <div class="row mx-auto p-1">
+
+                        <div class="col-5 col-md-4 col-lg-3  text-center col-lg-3  m-1 p-1 m-0 p-0 me-auto">
+                            <div class="container habilidades">
+                                <p>{{ servico.requisitos }}</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="container col-12 mb-2 texto">
+                <label for="validationServer01" class="form-label m-0 p-0">Empregador:</label>
+                <div class="container-fluid">
+                    <div class="row m-0 p-0">
+                        <div class="col-12 m-1 p-1 m-0 p-0 mx-auto">
+                            <p class="caixa">{{ servico.empregador }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="container col-12 texto">
+                <label for="validationServer01" class="form-label m-0 p-0">Descrição do serviço:</label>
+                <div class="container-fluid">
+                    <div class="row m-0 p-0">
+                        <div class="col-12  m-1 p-1 m-0 p-0 mx-auto">
+                            <p class="caixa">{{ servico.descricao }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container col-12 m-0 p-0 mb-3 mx-auto my-auto">
+                <div class="row mt-3  mb-2 m-0 p-0">
+                    <div class="col-6 col-md-5 col-lg-4 me-auto"><a class="btn btn-primary botao2" href="{{ url_for('ver_mais_servico_profissional', id=servico.id) }}">Ver mais</a></div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+        </div>
+    {% endfor %}
+{% endblock %}

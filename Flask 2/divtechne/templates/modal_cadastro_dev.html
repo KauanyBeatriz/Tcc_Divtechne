@@ -1,0 +1,121 @@
+<!--    Inicio do Modal do cadastro  Dev   -->
+<div class="modal fade" id="profissional" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered modal-md">
+        <div class="modal-content">
+
+            <div class="modal-header" id="modalhome">
+                <h1 class="modal-title fs-5" id="exampleModalToggleLabel">Cadastro de Profissional</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+
+                <div class="modal-body">
+<!--    form   -->
+                    <form method="POST" id="msform" enctype="multipart/form-data">
+                {{ form_profissional.csrf_token }}
+                <fieldset>
+                    <div class="row">
+                        <div class="col-11 mb-3 mx-auto">
+                            {{ form_profissional.nome.label(class="form-label m-0 p-0") }}
+                            {{ form_profissional.nome(class="form-control input") }}
+                        </div>
+
+                        <div class="col-11 mb-3 mx-auto">
+                            {{ form_profissional.email.label(class="form-label m-0 p-0") }}
+                            {{ form_profissional.email(class="form-control input") }}                        
+                        </div>
+
+                        <div class="col-11 mb-3 mx-auto">
+                            {{ form_profissional.senha.label(class="form-label m-0 p-0") }}
+                            {{ form_profissional.senha(class="form-control input") }}                      
+                        </div>
+
+                        <div class="col-11 mb-3 mx-auto">
+                            {{ form_profissional.confirmacao_senha.label(class="form-label m-0 p-0") }}
+                            {{ form_profissional.confirmacao_senha(class="form-control input") }}                       
+                        </div>
+                    </div>
+                    <button class="btn btn-primary next action-button botao"   type="button" name="next" value="Next">Próximo</button>
+                </fieldset>
+
+                <fieldset>
+                    <div class="row">
+
+                        <div class="col-11 mb-3 mx-auto">
+                            {{ form_profissional.nacionalidade.label(class="form-label m-0 p-0") }}
+                            {{ form_profissional.nacionalidade(class="form-control input") }}                        
+                        </div>
+
+                        <div class="col-11 mb-3 mx-auto">
+                            {{ form_profissional.cpf.label(class="form-label m-0 p-0") }}
+                            {{ form_profissional.cpf(class="form-control input") }}                        
+                        </div>
+
+                        <div class="col-11 mb-3 mx-auto">
+                            {{ form_profissional.telefone.label(class="form-label m-0 p-0") }}
+                            {{ form_profissional.telefone(class="form-control input") }}                        
+                        </div>
+
+                        <div class="col-11 mb-3 mx-auto">
+                            {{ form_profissional.data_nascimento.label(class="form-label m-0 p-0") }}
+                            {{ form_profissional.data_nascimento(class="form-control input") }}
+                        </div>
+
+                    </div>
+                    <button class="btn btn-primary next action-button botao"  type="button" name="next" value="Next">Próximo</button>
+                    <button class="btn btn-primary previous action-button-previous botao"  type="button" name="previous" value="Previous">Voltar</button>
+                </fieldset>
+
+                <fieldset>
+                    <div class="row">
+
+                        <div class="col-11 mb-3 mx-auto">
+                            {{ form_profissional.foto.label(class="form-label m-0 p-0") }}
+                            {{ form_profissional.foto() }}
+                        </div>
+
+                        <div class="col-11 mb-3 mx-auto">
+                            {{ form_profissional.escolaridade.label(class="form-label m-0 p-0") }}
+                            {{ form_profissional.escolaridade(class="form-control input") }}
+                        </div>
+
+                        <div class="col-11 mb-3 mx-auto">
+                            {{ form_profissional.idioma.label(class="form-label m-0 p-0") }}
+                            {{ form_profissional.idioma(class="form-control input") }}
+                        </div>
+
+                        <div class="col-11 mb-3 mx-auto">
+                            {{ form_profissional.tecnologia.label(class="form-label m-0 p-0") }}
+                            {{ form_profissional.tecnologia(class="form-control input") }}
+                        </div>
+
+
+                    </div>
+                    <button class="btn btn-primary next action-button botao"  type="button" name="next" value="Next">Próximo</button>
+                    <button class="btn btn-primary previous action-button-previous botao"  type="button" name="previous" value="Previous">Voltar</button>
+                </fieldset>
+
+                <fieldset>
+                    <div class="row">
+
+                        <div class="col-11 mb-3 mx-auto">
+                            {{ form_profissional.github.label(class="form-label m-0 p-0") }}
+                            {{ form_profissional.github(class="form-control input") }}
+                        </div>
+
+                        <div class="col-11 mb-3 mx-auto">
+                            <div class="form-floating borda">
+                                {{ form_profissional.descricao.label(class="form-label m-0 p-0") }}
+                                {{ form_profissional.descricao(class="form-control input") }}
+                            </div>
+                        </div>
+
+                    </div>
+                    {{ form_profissional.botao_dev(class="btn btn-primary previous action-button-previous botao", id="botao") }}
+                    <button class="btn btn-primary previous action-button-previous botao"  type="button" name="previous" value="Previous">Voltar</button>
+                </fieldset>
+
+            </form>
+                </div>
+        </div>
+    </div>
+</div>

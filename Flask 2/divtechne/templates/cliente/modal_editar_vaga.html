@@ -1,0 +1,203 @@
+<!--    editar perfil   -->
+        <div class="modal fade" id="editarvaga" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered modal-lg">
+                <div class="modal-content">
+
+                    <div class="modal-header" id="modalhome">
+                        <h1 class="modal-title fs-5" id="exampleModalToggleLabel">Editar Vaga</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+
+                    <form method="POST" action="" enctype="multipart/form-data">
+                        {{ form.csrf_token }}
+                        <div class="modal-body">
+                            <div class="row">
+
+                                <div class="col-12 col-md-11 mb-3 mx-auto">
+                                    <div class="row  m-0 p-0">
+
+                                <div class="col-11 mb-3 mx-auto">
+                                    {{ form.foto_vaga.label() }}
+                                    {{ form.foto_vaga(class="form-control-file") }}
+                                    {% if form.foto_vaga.errors %}
+                                        {% for erro in form.foto_vaga.errors %}
+                                            <span class="text-danger">{{ erro }}</span>
+                                            <br>
+                                        {% endfor %}
+                                    {% endif %}
+                                </div>
+
+                                <div class="col-11 mb-3 mx-auto">
+                                  {{ form.nome_vaga.label(class="form-control-label") }}
+
+                                  <!-- caso tenha algum erro de preenchimento do campo !-->
+                                  {% if form.nome_vaga.errors %}
+                                    <!-- Marca a borda da caixa do campo em vermelho pela classe is-invalid !-->
+                                    {{ form.nome_vaga(class="form-control is-invalid") }}
+                                  <!-- E exibe a mensagem de erro personalizada pela classe invalid-feedback !-->
+                                  <div class="invalid-feedback">
+                                    {% for erro in form.nome_vaga.errors %}
+                                      {{ erro }}
+                                    {% endfor %}
+                                  </div>
+
+                                  <!-- Caso contrário exibe a caixa normalmente !-->
+                                  {% else %}
+                                    {{ form.nome_vaga(class="form-control") }}
+                                  {% endif %}
+                                </div>
+
+                                <div class="col-11 mb-3 mx-auto">
+                                  {{ form.empresa_vaga.label(class="form-control-label") }}
+
+                                  <!-- caso tenha algum erro de preenchimento do campo !-->
+                                  {% if form.empresa_vaga.errors %}
+                                    <!-- Marca a borda da caixa do campo em vermelho pela classe is-invalid !-->
+                                    {{ form.empresa_vaga(class="form-control is-invalid") }}
+                                  <!-- E exibe a mensagem de erro personalizada pela classe invalid-feedback !-->
+                                  <div class="invalid-feedback">
+                                    {% for erro in form.empresa_vaga.errors %}
+                                      {{ erro }}
+                                    {% endfor %}
+                                  </div>
+
+                                  <!-- Caso contrário exibe a caixa normalmente !-->
+                                  {% else %}
+                                    {{ form.empresa_vaga(class="form-control") }}
+                                  {% endif %}
+                                </div>
+
+                                <div class="col-11 mb-3 mx-auto">
+                                  {{ form.requisitos_vaga.label(class="form-control-label") }}
+
+                                  <!-- caso tenha algum erro de preenchimento do campo !-->
+                                  {% if form.requisitos_vaga.errors %}
+                                    <!-- Marca a borda da caixa do campo em vermelho pela classe is-invalid !-->
+                                    {{ form.requisitos_vaga(class="form-control is-invalid") }}
+                                  <!-- E exibe a mensagem de erro personalizada pela classe invalid-feedback !-->
+                                  <div class="invalid-feedback">
+                                    {% for erro in form.requisitos_vaga.errors %}
+                                      {{ erro }}
+                                    {% endfor %}
+                                  </div>
+
+                                  <!-- Caso contrário exibe a caixa normalmente !-->
+                                  {% else %}
+                                    {{ form.requisitos_vaga(class="form-control") }}
+                                  {% endif %}
+                                </div>
+                                        
+                                <div class="col-11 mb-3 mx-auto">
+                                  {{ form.nivel_vaga.label(class="form-control-label") }}
+
+                                  <!-- caso tenha algum erro de preenchimento do campo !-->
+                                  {% if form.nivel_vaga.errors %}
+                                    <!-- Marca a borda da caixa do campo em vermelho pela classe is-invalid !-->
+                                    {{ form.nivel_vaga(class="form-control is-invalid") }}
+                                  <!-- E exibe a mensagem de erro personalizada pela classe invalid-feedback !-->
+                                  <div class="invalid-feedback">
+                                    {% for erro in form.nivel_vaga.errors %}
+                                      {{ erro }}
+                                    {% endfor %}
+                                  </div>
+
+                                  <!-- Caso contrário exibe a caixa normalmente !-->
+                                  {% else %}
+                                    {{ form.nivel_vaga(class="form-control") }}
+                                  {% endif %}
+                                </div>        
+                                        
+                                <div class="col-11 mb-3 mx-auto">
+                                  {{ form.beneficios_vaga.label(class="form-control-label") }}
+
+                                  <!-- caso tenha algum erro de preenchimento do campo !-->
+                                  {% if form.beneficios_vaga.errors %}
+                                    <!-- Marca a borda da caixa do campo em vermelho pela classe is-invalid !-->
+                                    {{ form.beneficios_vaga(class="form-control is-invalid") }}
+                                  <!-- E exibe a mensagem de erro personalizada pela classe invalid-feedback !-->
+                                  <div class="invalid-feedback">
+                                    {% for erro in form.beneficios_vaga.errors %}
+                                      {{ erro }}
+                                    {% endfor %}
+                                  </div>
+
+                                  <!-- Caso contrário exibe a caixa normalmente !-->
+                                  {% else %}
+                                    {{ form.beneficios_vaga(class="form-control") }}
+                                  {% endif %}
+                                </div>
+                                        
+                                 <div class="col-11 mb-3 mx-auto">
+                                  {{ form.salario_vaga.label(class="form-control-label") }}
+
+                                  <!-- caso tenha algum erro de preenchimento do campo !-->
+                                  {% if form.salario_vaga.errors %}
+                                    <!-- Marca a borda da caixa do campo em vermelho pela classe is-invalid !-->
+                                    {{ form.salario_vaga(class="form-control is-invalid") }}
+                                  <!-- E exibe a mensagem de erro personalizada pela classe invalid-feedback !-->
+                                  <div class="invalid-feedback">
+                                    {% for erro in form.salario_vaga.errors %}
+                                      {{ erro }}
+                                    {% endfor %}
+                                  </div>
+
+                                  <!-- Caso contrário exibe a caixa normalmente !-->
+                                  {% else %}
+                                    {{ form.salario_vaga(class="form-control") }}
+                                  {% endif %}
+                                </div>       
+
+                                <div class="col-11 mb-3 mx-auto">
+                                  {{ form.descricao_vaga.label(class="form-control-label") }}
+
+                                  <!-- caso tenha algum erro de preenchimento do campo !-->
+                                  {% if form.descricao_vaga.errors %}
+                                    <!-- Marca a borda da caixa do campo em vermelho pela classe is-invalid !-->
+                                    {{ form.descricao_vaga(class="form-control is-invalid") }}
+                                  <!-- E exibe a mensagem de erro personalizada pela classe invalid-feedback !-->
+                                  <div class="invalid-feedback">
+                                    {% for erro in form.descricao_vaga.errors %}
+                                      {{ erro }}
+                                    {% endfor %}
+                                  </div>
+
+                                  <!-- Caso contrário exibe a caixa normalmente !-->
+                                  {% else %}
+                                    {{ form.descricao_vaga(class="form-control") }}
+                                  {% endif %}
+                                </div>
+                                        
+                                <div class="col-11 mb-3 mx-auto">
+                                  {{ form.descricao_empresa_vaga.label(class="form-control-label") }}
+
+                                  <!-- caso tenha algum erro de preenchimento do campo !-->
+                                  {% if form.descricao_empresa_vaga.errors %}
+                                    <!-- Marca a borda da caixa do campo em vermelho pela classe is-invalid !-->
+                                    {{ form.descricao_empresa_vaga(class="form-control is-invalid") }}
+                                  <!-- E exibe a mensagem de erro personalizada pela classe invalid-feedback !-->
+                                  <div class="invalid-feedback">
+                                    {% for erro in form.descricao_empresa_vaga.errors %}
+                                      {{ erro }}
+                                    {% endfor %}
+                                  </div>
+
+                                  <!-- Caso contrário exibe a caixa normalmente !-->
+                                  {% else %}
+                                    {{ form.descricao_empresa_vaga(class="form-control") }}
+                                  {% endif %}
+                                </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="modal-footer" id="modalhome2">
+                            {{ form.botao_editar_vaga(class="btn botao") }}
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+ <!--   fim do editar perfil    -->
