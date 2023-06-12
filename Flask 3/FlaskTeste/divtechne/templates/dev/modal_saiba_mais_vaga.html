@@ -1,0 +1,164 @@
+<!--    modal do saiba mais das vagas   -->
+
+<div class="modal fade" id="SaibaMaisVaga" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalToggleLabel">Mais detalhes sobre a vaga</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+
+            <form>
+                <div class="modal-body m-0 p-0">
+                    <div class="container-fluid m-0 p-0 card">
+                        <div class="container row mx-auto m-0 pt-3">
+
+                            <div class="container col-12 col-lg-3 me-0 ms-0 pe-0 ps-0 mx-auto my-auto">
+                                <div class="row mx-auto my-auto m-0 p-0">
+                                    <div class="container col-12 mx-auto my-auto">
+                                    <center><img src="{{ url_for('static', filename='posts/{}'.format(vaga.foto)) }}" class="img-fluid mx-auto"></center>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="col-12 col-lg-9 m-0 p-0">
+                                <div class="row">
+
+                                    <div class="container col-12 mt-4 mb-2" >
+                                        <div class="container-fluid"><h4>{{ vaga.nome }}</h4></div>
+                                    </div>
+
+                                    <div class="container col-12 mb-1 idioma">
+                                        <label for="validationServer01" class="form-label ms-2 ps-1">Idiomas:</label>
+                                        <div class="container">
+                                            <div class="row mx-auto p-1">
+
+                                                <div class="col-5 col-md-4 col-lg-3 text-center col-lg-3 m-1 p-1 m-0 p-0 mx-auto">
+                                                    <div class="container habilidades">
+                                                        {{ vaga.idioma }}
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="container col-12 mx-auto mb-1 m-0 p-0 tecnologia">
+                                <label for="validationServer01" class="form-label ms-2 ps-1">Tecnologias necessárias:</label>
+                                <div class="container-fluid">
+                                    <div class="row mx-auto p-1">
+
+                                        <div class="col-5 col-md-4 col-lg-3  text-center col-lg-3  m-1 p-1 m-0 p-0 mx-auto">
+                                            <div class="container habilidades">
+                                                <p>{{ vaga.requisitos }}</p>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="container col-6 mb-1 texto">
+                                <label for="validationServer01" class="form-label m-0 p-0">Data:</label>
+                                <div class="container-fluid">
+                                    <div class="row">
+                                        <div class="col-12  m-1 p-1 m-0 p-0 mx-auto">
+                                            <p class="caixa">{{ vaga.data_criacao }}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="container col-6 mb-1 texto">
+                                <label for="validationServer01" class="form-label m-0 p-0">Horário:</label>
+                                <div class="container-fluid">
+                                    <div class="row">
+                                        <div class="col-12  m-1 p-1 m-0 p-0 mx-auto">
+                                            <p class="caixa">{{ vaga.data_criacao }}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="container col-12 texto">
+                                <label for="validationServer01" class="form-label m-0 p-0">Nível:</label>
+                                <div class="container-fluid">
+                                    <div class="row">
+                                        <div class="col-12  m-1 p-1 m-0 p-0 mx-auto">
+                                            <p class="caixa">{{ vaga.nivel }}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="container col-12 texto">
+                                <label for="validationServer01" class="form-label m-0 p-0">Salário:</label>
+                                <div class="container-fluid">
+                                    <div class="row">
+                                        <div class="col-12  m-1 p-1 m-0 p-0 mx-auto">
+                                            <p class="caixa">{{ vaga.salario }}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="container col-12 texto">
+                                <label for="validationServer01" class="form-label m-0 p-0">Benefícios:</label>
+                                <div class="container-fluid">
+                                    <div class="row">
+                                        <div class="col-12  m-1 p-1 m-0 p-0 mx-auto">
+                                            <p class="caixa">{{ vaga.beneficios }}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="container col-12 texto">
+                                <label for="validationServer01" class="form-label m-0 p-0">Descrição da Empresa:</label>
+                                <div class="container-fluid">
+                                    <div class="row">
+                                        <div class="col-12  m-1 p-1 m-0 p-0 mx-auto">
+                                            <p class="caixa">{{ vaga.descricao_empresa }}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="container col-12" id="nome">
+                                <label for="validationServer01" class="form-label m-0 p-0">Descrição da vaga:</label>
+                                <div class="container-fluid">
+                                    <div class="row">
+                                        <div class="col-12  m-1 p-1 m-0 p-0 mx-auto">
+                                            <p class="caixa">{{ vaga.descricao }}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="container col-12" id="nome">
+                                <label for="validationServer01" class="form-label m-0 p-0">Endereço:</label>
+                                <div class="container-fluid">
+                                    <div class="row">
+                                        <div class="col-12  m-1 p-1 m-0 p-0 mx-auto">
+                                            <p class="caixa">{{ vaga.endereco }}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="submit" class="btn botao">Cancelar</button>
+                    <button type="submit" class="btn botao">Cadastar-se</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="pt">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+<!--    Versão usada do Bootstrap foi a 5.3    -->
+        <!--    Link do Bootstrap >> https://getbootstrap.com/docs/5.3/getting-started/introduction/  -->
+
+<!--    Link do Bootstrap >>   -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+        <link rel="shortcut icon" href="img/Icons/favicon_io (1)/favicon-32x32.png" type="image/x-icon">
+        <link href="./Bootstrap/css/bootstrap.css" type=" text/css" rel="stylesheet">
+
+        {% block head %}
+        <!--    Link do Bootstrap >>  https://boxicons.com/ -->
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+        <link href="{{ url_for('static', filename='css/trabalho.css') }}" rel="stylesheet" type=" text/css">
+        <link href="{{ url_for('static', filename='css/navbar.css') }}" rel="stylesheet" type=" text/css">
+        <link href="{{ url_for('static', filename='css/botao.css') }}" rel="stylesheet" type="text/css">
+        {% endblock %}
+
+        {% block titulo %}
+        <title>DIVTECHNE | Vagas</title>
+        {% endblock %}
+    </head>
+
+    <body>
+
+    {% block nav %}
+        {% include 'dev/navbar_profissional.html' %}
+    {% endblock %}
+
+        <!--    pagina  -->
+        <div class="container-fluid h-100 m-0 p-0" id="pagina">
+            <div class="container-fluid row mx-auto h-100 p-0 m-0">
+
+            {% block perfil %}
+                {% include 'dev/perfil_profissional.html' %}
+            {% endblock %}
+
+        <!--    conteudo da pagina  -->
+        <div class="container-fluid col-12 col-lg-9 m-0 p-0 mx-auto"id="Paginaconteudo" >
+            <section>
+                <div class="container-fluid row mx-auto m-0 p-0 ">
+
+                     <!-- Lista de alertas flash !-->
+                    <!-- Mesagens vai ser = pegue todas as mensagens flask e deixa elas serem personalzidas !-->
+                    {% with mensagens = get_flashed_messages(with_categories=True) %}
+                        <!-- Se essa mensagem existir !-->
+                        {% if mensagens %}
+                            <!-- Unpacking dessa lista de mensagens -> categoria = personalização -> mensagem = texto da mensagem !-->
+                            {% for categoria, mensagem in mensagens %}
+                                <div class="alert fixed-top mx-auto {{ categoria }} alert-dismissible fade show" role="alert">
+                                    {{ mensagem }}
+                                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                </div>
+                            {% endfor %}
+                        {% endif %}
+                    {% endwith %}
+
+
+        <!--    conteudo da pagina  -->
+        {% block card %}
+            <div class="container-fluid col-12 col-sm-11 col-md-10 mx-auto mt-3 pb-4" id="cardpagina">
+            {% for vaga in vagas %}
+                <div class="container-fluid mt-3 mb-5 card">
+                    <div class="container row mx-auto m-0 p-0 pt-3">
+
+                        <div class="container col-12 col-lg-3 me-0 ms-0 pe-0 ps-0 mx-auto my-auto">
+                            <div class="row mx-auto my-auto m-0 p-0">
+                                <div class="container col-12 m-0 p-0 mx-auto my-auto">
+                                  <center><img src="{{ url_for('static', filename='posts/{}'.format(vaga.foto)) }}" class="img-fluid mx-auto"</center>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="col-12 col-lg-9 m-0 p-0">
+                            <div class="row">
+
+                                <div class="container col-12 mt-4 mb-2" >
+                                    <div class="container-fluid"><h4>{{ vaga.nome }}</h4></div>
+                                </div>
+
+                                <div class="container col-12 mb-2" >
+                                    <div class="container-fluid"><h6>{{ vaga.nivel }}</h6></div>
+                                </div>
+
+
+                                <div class="container col-12 mb-1 idioma">
+                                    <label for="validationServer01" class="form-label ms-2 ps-1">idiomas:</label>
+                                    <div class="container">
+                                        <div class="row mx-auto p-1">
+
+                                            <div class="col-5 col-md-4 col-lg-3  text-center col-lg-3  m-1 p-1 m-0 p-0 me-auto">
+                                                <div class="container habilidades">
+                                                    {{ vaga.idioma }}
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="container col-12 mx-auto mt-3 mb-3 m-0 p-0 tecnologia">
+                            <label for="validationServer01" class="form-label ms-2 ps-1">Requesitos tecnologicos:</label>
+                            <div class="container-fluid">
+                                <div class="row mx-auto p-1">
+
+                                    <div class="col-5 col-md-4 col-lg-3  text-center col-lg-3  m-1 p-1 m-0 p-0 me-auto">
+                                        <div class="container habilidades">
+                                            <p>{{ vaga.requisitos }}</p>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="container col-12 texto">
+                            <label for="validationServer01" class="form-label m-0 p-0">Descrição da Empresa:</label>
+                            <div class="container-fluid">
+                                <div class="row m-0 p-0">
+                                    <div class="col-12  m-1 p-1 m-0 p-0 mx-auto">
+                                        <p class="caixa">{{ vaga.descricao_empresa }}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="container col-12 texto">
+                            <label for="validationServer01" class="form-label m-0 p-0">Descrição da Vaga:</label>
+                            <div class="container-fluid">
+                                <div class="row m-0 p-0">
+                                    <div class="col-12  m-1 p-1 m-0 p-0 mx-auto">
+                                        <p class="caixa">{{ vaga.descricao }}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="container col-12 m-0 p-0 mb-3 mx-auto my-auto">
+                            <div class="row mt-3  mb-2 m-0 p-0">
+                                <div class="col-3 mx-auto"><a class="btn btn-primary botao2"  href="{{ url_for('ver_mais_vaga_profissional', id=vaga.id) }}">Ver mais</a></div>
+                                <div class="col-3 mx-auto"><a class="btn btn-primary botao2"  href="{{ url_for('candidatar_vaga', id=vaga.id) }}">Candidatar-se</a></div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+        <!--    conteudo da pagina  -->
+        {% include 'dev/modal_saiba_mais_vaga.html' %}
+        {% endfor %}
+              </div>
+        </div>
+        {% endblock %}
+        </section>
+    </div>
+    </div>
+</div>
+
+
+<!--    fim da pagina  -->
+
+{% include 'dev/modal_mudar_senha_profissional.html' %}
+
+        <!--    fim moldais do saiba mais    -->
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js" integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N" crossorigin="anonymous"></script>
+        <script src="{{ url_for('static', filename='js/nav.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/temas.js') }}"></script>
+    </body>
+</html>

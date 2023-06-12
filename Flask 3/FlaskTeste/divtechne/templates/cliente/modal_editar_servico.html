@@ -1,0 +1,132 @@
+<!--    editar perfil   -->
+        <div class="modal fade" id="editarservico" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered modal-lg">
+                <div class="modal-content">
+
+                    <div class="modal-header" id="modalhome">
+                        <h1 class="modal-title fs-5" id="exampleModalToggleLabel">Editar Serviço</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+
+                    <form method="POST" action="">
+                        {{ form.csrf_token }}
+                        <div class="modal-body">
+                            <div class="row">
+
+                                <div class="col-12 col-md-11 mb-3 mx-auto">
+                                    <div class="row  m-0 p-0">
+
+                                <div class="col-11 mb-3 mx-auto">
+                                  {{ form.nome_servico.label(class="form-control-label") }}
+
+                                  <!-- caso tenha algum erro de preenchimento do campo !-->
+                                  {% if form.nome_servico.errors %}
+                                    <!-- Marca a borda da caixa do campo em vermelho pela classe is-invalid !-->
+                                    {{ form.nome_servico(class="form-control is-invalid") }}
+                                  <!-- E exibe a mensagem de erro personalizada pela classe invalid-feedback !-->
+                                  <div class="invalid-feedback">
+                                    {% for erro in form.nome_servico.errors %}
+                                      {{ erro }}
+                                    {% endfor %}
+                                  </div>
+
+                                  <!-- Caso contrário exibe a caixa normalmente !-->
+                                  {% else %}
+                                    {{ form.nome_servico(class="form-control") }}
+                                  {% endif %}
+                                </div>
+
+                                <div class="col-11 mb-3 mx-auto">
+                                  {{ form.empregador_servico.label(class="form-control-label") }}
+
+                                  <!-- caso tenha algum erro de preenchimento do campo !-->
+                                  {% if form.empregador_servico.errors %}
+                                    <!-- Marca a borda da caixa do campo em vermelho pela classe is-invalid !-->
+                                    {{ form.empregador_servico(class="form-control is-invalid") }}
+                                  <!-- E exibe a mensagem de erro personalizada pela classe invalid-feedback !-->
+                                  <div class="invalid-feedback">
+                                    {% for erro in form.empregador_servico.errors %}
+                                      {{ erro }}
+                                    {% endfor %}
+                                  </div>
+
+                                  <!-- Caso contrário exibe a caixa normalmente !-->
+                                  {% else %}
+                                    {{ form.empregador_servico(class="form-control") }}
+                                  {% endif %}
+                                </div>
+
+                                <div class="col-11 mb-3 mx-auto">
+                                  {{ form.requisitos_servico.label(class="form-control-label") }}
+
+                                  <!-- caso tenha algum erro de preenchimento do campo !-->
+                                  {% if form.requisitos_servico.errors %}
+                                    <!-- Marca a borda da caixa do campo em vermelho pela classe is-invalid !-->
+                                    {{ form.requisitos_servico(class="form-control is-invalid") }}
+                                  <!-- E exibe a mensagem de erro personalizada pela classe invalid-feedback !-->
+                                  <div class="invalid-feedback">
+                                    {% for erro in form.requisitos_servico.errors %}
+                                      {{ erro }}
+                                    {% endfor %}
+                                  </div>
+
+                                  <!-- Caso contrário exibe a caixa normalmente !-->
+                                  {% else %}
+                                    {{ form.requisitos_servico(class="form-control") }}
+                                  {% endif %}
+                                </div>
+                                        
+                                 <div class="col-11 mb-3 mx-auto">
+                                  {{ form.salario_servico.label(class="form-control-label") }}
+
+                                  <!-- caso tenha algum erro de preenchimento do campo !-->
+                                  {% if form.salario_servico.errors %}
+                                    <!-- Marca a borda da caixa do campo em vermelho pela classe is-invalid !-->
+                                    {{ form.salario_servico(class="form-control is-invalid") }}
+                                  <!-- E exibe a mensagem de erro personalizada pela classe invalid-feedback !-->
+                                  <div class="invalid-feedback">
+                                    {% for erro in form.salario_servico.errors %}
+                                      {{ erro }}
+                                    {% endfor %}
+                                  </div>
+
+                                  <!-- Caso contrário exibe a caixa normalmente !-->
+                                  {% else %}
+                                    {{ form.salario_servico(class="form-control") }}
+                                  {% endif %}
+                                </div>       
+
+                                <div class="col-11 mb-3 mx-auto">
+                                  {{ form.descricao_servico.label(class="form-control-label") }}
+
+                                  <!-- caso tenha algum erro de preenchimento do campo !-->
+                                  {% if form.descricao_servico.errors %}
+                                    <!-- Marca a borda da caixa do campo em vermelho pela classe is-invalid !-->
+                                    {{ form.descricao_servico(class="form-control is-invalid") }}
+                                  <!-- E exibe a mensagem de erro personalizada pela classe invalid-feedback !-->
+                                  <div class="invalid-feedback">
+                                    {% for erro in form.descricao_servico.errors %}
+                                      {{ erro }}
+                                    {% endfor %}
+                                  </div>
+
+                                  <!-- Caso contrário exibe a caixa normalmente !-->
+                                  {% else %}
+                                    {{ form.descricao_servico(class="form-control") }}
+                                  {% endif %}
+                                </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="modal-footer" id="modalhome2">
+                            {{ form.botao_editar_servico(class="btn botao") }}
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+ <!--   fim do editar perfil    -->

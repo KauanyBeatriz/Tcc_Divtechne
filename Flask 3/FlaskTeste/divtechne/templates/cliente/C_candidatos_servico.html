@@ -1,0 +1,67 @@
+{% extends 'cliente/C_home.html' %}
+
+{% block head %}
+<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+<link href="{{ url_for('static', filename='css/favoritos.css') }}" rel="stylesheet" type=" text/css">
+<link href="{{ url_for('static', filename='css/navbar.css') }}" rel="stylesheet" type=" text/css">
+<link href="{{ url_for('static', filename='css/botao.css') }}" rel="stylesheet" type="text/css">
+{% endblock %}
+
+
+{% block pesquisa %}
+{% endblock %}
+
+{% block titulo %}
+        <title>DIVTECHNE | Candidatos Serviço</title>
+{% endblock %}
+
+{% block card %}
+<div class="container-fluid h-100 m-0 p-0" id="pagina">
+    <div class="container-fluid row mx-auto h-100 p-0 m-0">
+
+<!--    conteudo da pagina  -->
+                <div class="container-fluid col-12 col-lg-9 m-0 p-0 mx-auto" id="Paginaconteudo" >
+                        <div class="container-fluid row mx-auto" id="cardpagina">
+                            {% for profissional in servico.candidatar_servico %}
+                            <div class="container-fluid col-12 col-md-11 mx-auto card">
+                                
+                                <div class="container-fluid row mt-3 mb-5">
+                                    <div class="col-12 mb-4 mx-auto lista">
+                                        <div class="row p-1">
+    
+                                            <div class="col-3 m-0 p-0 my-auto">
+                                                <center class="m-0 p-0 my-auto"><img src="{{ url_for('static', filename='posts/{}'.format(profissional.profissional.foto)) }}" class="img-fluid mx-auto rounded-circle"></center>
+                                            </div>
+    
+                                            <div class="col-9 m-0 p-0">
+
+                                                <div class="col-12 mt-5">
+                                                    <div class="container">
+                                                        <h5>{{ profissional.profissional.nome }}</h5>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-12 mt-5">
+                                                    <div class="container">
+                                                        <h5>{{ profissional.profissional.email }}</h5>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-12 mt-5">
+                                                    <div class="container row">
+                                                        <div class="col-5 mb-2 me-auto"><a class="btn btn-primary botao2"  href="{{ url_for('perfil_profissional', id_profissional=profissional.profissional.id) }}" role="button">Ver perfil</a></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        {% endfor %}
+                        </div>
+                </div>
+        </div>
+
+</div>
+{% endblock %}

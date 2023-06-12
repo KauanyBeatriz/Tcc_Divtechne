@@ -1,0 +1,143 @@
+{% extends 'cliente/C_home.html' %}
+
+{% block head %}
+<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+<link href="{{ url_for('static', filename='css/perfil.css') }}" rel="stylesheet" type=" text/css">
+<link href="{{ url_for('static', filename='css/navbar.css') }}" rel="stylesheet" type=" text/css">
+<link href="{{ url_for('static', filename='css/botao.css') }}" rel="stylesheet" type="text/css">
+{% endblock %}
+
+{% block titulo %}
+        <title>DIVTECHNE | Serviços</title>
+{% endblock %}
+
+{% block pesquisa %}
+{% endblock %}
+
+{% block card %}
+<!--    pagina  -->
+    <div class="container-fluid h-100 m-0 p-0" id="pagina">
+        <div class="container-fluid row mx-auto h-100 p-0 m-0">
+
+<!--    conteudo da pagina  -->
+            <div class="container-fluid col-11 m-0 p-0 mx-auto"id="Paginaconteudo" >
+                <section>
+                    <div class="container-fluid row mx-auto" id="cardpagina">
+                        <div class="container-fluid col-12 col-md-11 mx-auto mt-5 card">
+
+                            <div class="container-fluid mt-3 mb-5">
+                                <div class="container row mx-auto m-0 p-0">
+
+                                    <div class="container col-11 mt-3 mb-1 mx-auto">
+                                        <div class="container row text-center ">
+                                            <h2 class="col-5 mx-auto">Ver mais Serviço</h2>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-12 col-md-8 col-lg-9 m-0 p-0">
+                                        <div class="row">
+
+                                            <div class="container col-12 mt-4 mb-1" >
+                                                <label for="nome" class="form-label m-0 p-0">Nome:</label>
+                                                <div class="container-fluid" id="nome">
+
+                                                     <div class="row">
+                                                        <div class="col-12  m-1 p-1 m-0 p-0 mx-auto">
+                                                            <p class="caixa">{{ servico.nome }}</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="container col-12 mt-4 mb-1" >
+                                                <label for="telefone" class="form-label m-0 p-0">Empregador:</label>
+                                                <div class="container-fluid" id="telefone">
+                                                    <div class="row">
+                                                        <div class="col-12  m-1 p-1 m-0 p-0 mx-auto">
+                                                            <p class="caixa">{{ servico.empregador }}</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="container col-12 mx-auto mt-3 mb-3 m-0 p-0 tecnologia">
+                                        <label for="validationServer01" class="form-label ms-2 ps-1">Tecnologias necessarias:</label>
+                                        <div class="container-fluid">
+                                            <div class="row mx-auto p-1">
+
+                                                <div class="col-5 col-md-4 col-lg-3  text-center col-lg-3  m-1 p-1 m-0 p-0 me-auto">
+                                                    <div class="container habilidades">
+                                                        <p>{{ servico.requisitos }}</p>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="container col-12 mb-1 texto">
+                                        <label for="validationServer01" class="form-label m-0 p-0">Salário:</label>
+                                        <div class="container-fluid">
+                                            <div class="row">
+                                                <div class="col-12  m-1 p-1 m-0 p-0 mx-auto">
+                                                    <p class="caixa">{{ servico.salario }}</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="container col-12 mb-1 texto">
+                                        <label for="validationServer01" class="form-label m-0 p-0">Data de Criação:</label>
+                                        <div class="container-fluid">
+                                            <div class="row">
+                                                <div class="col-12  m-1 p-1 m-0 p-0 mx-auto">
+                                                    <p class="caixa">{{ servico.data_criacao }}</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="container col-12 mb-1 texto">
+                                        <label for="validationServer01" class="form-label m-0 p-0">Descricao:</label>
+                                        <div class="container-fluid">
+                                            <div class="row">
+                                                <div class="col-12  m-1 p-1 m-0 p-0 mx-auto">
+                                                    <p class="caixa">{{ servico.descricao }}</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    {% if current_user == servico.cliente %}
+                                    <div class="container col-12 mx-auto my-auto">
+                                        <div class="row">
+                                            <div class="col-4 ms-auto">
+                                                <a class="btn btn-primary botao2" data-bs-target="#editarservico" data-bs-toggle="modal">Editar Servico</a>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    {% else %}
+                                    {% endif %}
+
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <br>
+
+                </section>
+            </div>
+<!--    conteudo da pagina  --> 
+        </div>
+    </div>
+<!--    fim da pagina  -->
+
+{% include 'cliente/modal_editar_servico.html' %}
+
+{% endblock %}

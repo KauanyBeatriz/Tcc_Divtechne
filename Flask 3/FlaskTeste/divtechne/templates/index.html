@@ -1,0 +1,885 @@
+<!DOCTYPE html>
+<html lang="pt">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+<!--    Versão usada do Bootstrap foi a 5.3    -->
+        <!--    Link do Bootstrap >> https://getbootstrap.com/docs/5.3/getting-started/introduction/  -->
+
+<!--    Link do Bootstrap >>   -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+        <link rel="shortcut icon" href="img/Icons/favicon_io (1)/favicon-32x32.png" type="image/x-icon">	
+        <link href="./Bootstrap/css/bootstrap.css" type="text/css" rel="stylesheet">
+
+<!--    Link do Bootstrap >>  https://boxicons.com/ -->
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+        <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet" type="text/css">
+        <link href="{{ url_for('static', filename='css/botao.css') }}" rel="stylesheet" type="text/css">
+        <link href="{{ url_for('static', filename='css/cadastro_cliente.css') }}" rel="stylesheet" type="text/css">
+        <link href="{{ url_for('static', filename='css/cadastro_dev.css') }}" rel="stylesheet" type="text/css">
+        <title>DIVTECHNE</title>
+    </head>
+    <body>
+    {% include 'nav.html' %}
+
+
+    <!-- Lista de alertas flash !-->
+        <!-- Mesagens vai ser = pegue todas as mensagens flask e deixa elas serem personalzidas !-->
+        {% with mensagens = get_flashed_messages(with_categories=True) %}
+            <!-- Se essa mensagem existir !-->
+            {% if mensagens %}
+                <!-- Unpacking dessa lista de mensagens -> categoria = personalização -> mensagem = texto da mensagem !-->
+                {% for categoria, mensagem in mensagens %}
+                    <div class="alert fixed-top mx-auto {{ categoria }} alert-dismissible fade show" role="alert">
+                        {{ mensagem }}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+
+<!--    Banner    -->
+        <div class="container-fluid m-0 p-0"><img src="{{ url_for('static', filename='fixos/Img/banner1.jpg') }}" id="banner"></div>
+    
+<!--    conteudo da pagina    -->
+
+<br>
+<br>
+<br>
+
+<!--    inicio do sobre nos    -->
+        <div class="container-fluid row my-auto m-0 p-0" id="sobre">
+                
+            <div class="col-11 col-sm-10 col-lg-9 mx-auto my-auto">                        
+                <h3 class="text-center fw-bolder">O que é a DIVTECHNE? E qual é o seu propósito?</h3>
+            <br>
+            <br>
+
+            <p class="fs-5 lh-base mx-auto mt-2 mb-4">
+                A DIVTECHNE nada mais é do que uma plataforma voltada para a área da tecnologia, o seu propósito é servir como intermédiario entre empresas, micro-empresas ou freelancers que estejam em busca de um determinado especialista no ramo da tecnologia. E ajudar programadores iniciantes e juniores a ingressar no mercado de trabalho tecnológico.
+            </p>
+
+            </div>  
+        
+            <div class="container col-12 lg-6 mx-auto my-auto">
+                <br>
+            
+                <div class="container row justify-content-between mx-auto my-auto">
+                    <div class="col-12 col-lg-8 mx-auto my-auto">
+                        <br>
+                        <br>
+                        
+                        <div class="row mx-auto">
+                            
+                            <div class="container col-5 col-lg-4 mx-auto my-auto mb-3">  
+                                <center>                            
+                                    <button type="button" data-bs-toggle="modal" data-bs-target="#login" class="btn botao2">Entrar</button>
+                                </center>                 
+                            </div>
+
+                            <div class="container col-5 col-lg-4 mx-auto my-auto mb-3">  
+                                <center>                            
+                                    <button type="button" data-bs-toggle="modal" data-bs-target="#cadastro" class="btn botao2">Cadastre-se</button>
+                                </center>          
+                            </div>
+
+                        </div>     
+
+                    </div>
+                </div>              
+             
+            </div>
+            
+    <!--    fim do inicio do sobre nos -->               
+        </div>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+    
+        <div class="container-fluid  row mx-auto my-auto m-0 p-0" id="vantagens">
+            <center>
+                <br>
+                <br> 
+                <h3 class="text-center fw-bolder mt-4 ">Por que utilizar a plataforma DIVTECHNE?</h3>   
+                <br>
+            </center>
+                
+        
+            <div class="container col-12 col-sm-11 col-md-10 mt-5 mb-5 mx-auto my-auto">
+                <div class="container row mx-auto my-auto"> 
+
+                    <div class="container col-12 col-sm-11 col-md-10 mx-auto my-auto mt-2 mb-2 m-0 p-0" id="margin">
+                        <div class="clearfix mx-auto my-auto m-0 p-0">
+                            <center class="container col-8 col-sm-7 col-md-6 col-lg-5 col-xl-3 float-xl-start mb-3 mx-auto my-auto">
+                            <img src="{{ url_for('static', filename='fixos/Img/progamador.png') }}"></center>
+                            <p class="col-12 col-lg-10 col-xl-9 mx-auto my-auto">Porque temos um amplo leque de profissionais da área de tecnologia, como designers, front-ends, back-ends e analistas, entre eles.</p>                 
+                        </div>                      
+                    </div>
+
+                    <div class="container col-12 col-sm-11 col-md-10 mx-auto my-auto mt-2 mb-2 m-0 p-0" id="margin">
+                        <div class="clearfix mx-auto my-auto m-0 p-0">
+                            <center class="container col-8 col-sm-7 col-md-6 col-lg-5 col-xl-3 float-xl-end mb-3 mx-auto my-auto">
+                            <img src="{{ url_for('static', filename='fixos/Img/ideias.png') }}"></center>
+                            <p class="col-12 col-lg-10 col-xl-9 mx-auto my-auto">Você pode criar e publicar suas ideias para que outras pessoas as apoiem, seja com mão de obra, financeiramente ou se preferir você mesmo pode apoiar uma ideia.</p>               
+                        </div>                      
+                    </div>
+
+                    <div class="container col-12 col-sm-11 col-md-10 mx-auto my-auto mt-2 mb-2 m-0 p-0" id="margin">
+                        <div class="clearfix mx-auto my-auto m-0 p-0">
+                            <center class="container col-8 col-sm-7 col-md-6 col-lg-5 col-xl-3 float-xl-start mb-3 mx-auto my-auto">
+                            <img src="{{ url_for('static', filename='fixos/Img/multiPlataforma.png') }}"></center>
+                            <p class="col-12 col-lg-10 col-xl-9 mx-auto my-auto">Com uma interface bonita, simples e eficiente e totalmente responsiva, podendo ser acessada por smartphone, tablet e desktop.</p>                
+                        </div>                      
+                    </div>
+                    
+                </div>   
+            </div>
+
+        </div>
+        
+<br> 
+
+<!-- inicio dos cards -->
+<div class="container-fluid row mx-auto my-auto m-0 p-0" id="cards">
+
+    <center>
+    <br>
+    <br>
+        <h3 class="text-center fw-bolder mt-4">Conheça alguns de nossos programadoress</h3>
+        <br>
+    <br>
+    </center>
+    <br>
+    <br>
+    <br>
+
+    <div class="col-12 col-lg-11 mx-auto">
+        <div class="row">
+
+            <div class="col-12 col-md-10 col-lg-8 col-xl-6 col-xxl-5 mb-4 mx-auto my-auto">
+                <div class="shadow-sm p-1 bg-body-tertiary rounded sombra">
+                    <div class="card">
+                        <div class="row mx-auto my-auto p-0 m-0">
+
+                            <div class="container col-6 col-md-3 mx-auto my-auto">
+                                <center><img src="{{ url_for('static', filename='fixos/Img/marcio.jpg') }}" class=" rounded-circle mx-auto my-auto mt-2 mb-2"></center>
+                            </div>
+
+                            <div class="container col-12 col-md-9 mx-auto my-auto p-0 m-0">
+                                <div class="container row card-body mt-3 mx-auto">
+
+                                    <div class="col-12 mb-2">
+                                        <h5 class="card-title nome">Marcio Ferreira de Andrade</h5>
+                                    </div>
+
+                                    <div class="col-5 col-lg-6 text-center my-auto mx-auto p-1 m-0 p-0">
+                                        <div class="container atributos mx-auto my-auto">
+                                            <p>PhP</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-5 col-lg-6 text-center my-auto mx-auto p-1 m-0 p-0">
+                                        <div class="container atributos mx-auto my-auto">
+                                            <p>C#</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-5 col-lg-6 text-center my-auto mx-auto p-1 m-0 p-0">
+                                        <div class="container atributos mx-auto my-auto">
+                                            <p>Python</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-5 col-lg-6 text-center my-auto mx-auto p-1 m-0 p-0">
+                                        <div class="container atributos mx-auto my-auto">
+                                            <p>Java</p>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div class="container col-sm-12 mx-auto my-auto">
+                                <div class="container-fluid">
+                                    <p class="card-text sobre mb-2">
+                                        Tenho 34 anos, sou Back-end com conhecimento e experiência em PhP, C#, Python, mas a linguagem que mais tenho familiaridade experiencia é o Java.
+                                    </p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <br>
+
+            <div class="col-12 col-md-10 col-lg-8 col-xl-6 col-xxl-5 mb-4 mx-auto my-auto">
+                <div class="shadow-sm p-1 bg-body-tertiary rounded sombra">
+                    <div class="card">
+                        <div class="row mx-auto my-auto p-0 m-0">
+
+                            <div class="container col-6 col-md-3 mx-auto my-auto">
+                                <center><img src="{{ url_for('static', filename='fixos/Img/angela.jpg') }}" class=" rounded-circle mx-auto my-auto mt-2 mb-2"></center>
+                            </div>
+
+                            <div class="container col-12 col-md-9 mx-auto my-auto p-0 m-0">
+                                <div class="container row card-body mt-3 mx-auto">
+
+                                    <div class="col-12 mb-2">
+                                        <h5 class="card-title nome">Angela Mariana da Silva</h5>
+                                    </div>
+
+                                    <div class="col-5 col-lg-6 text-center my-auto mx-auto p-1 m-0 p-0">
+                                        <div class="container atributos mx-auto my-auto">
+                                            <p>Figma</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-5 col-lg-6 text-center my-auto mx-auto p-1 m-0 p-0">
+                                        <div class="container atributos mx-auto my-auto">
+                                            <p>Gimp</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-5 col-lg-6 text-center my-auto mx-auto p-1 m-0 p-0">
+                                        <div class="container atributos mx-auto my-auto">
+                                            <p>Canvas</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-5 col-lg-6 text-center my-auto mx-auto p-1 m-0 p-0">
+                                        <div class="container atributos mx-auto my-auto">
+                                            <p>Krita</p>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div class="container col-sm-12 mx-auto my-auto">
+                                <div class="container-fluid">
+                                    <p class="card-text sobre mb-2">Tenho 19 anos, comecei como designer a um pouca mais de 6 messes, sou dedicada e detalhista, minha ferramenta favorita é o figma.</p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <br>
+
+            <div class="col-12 col-md-10 col-lg-8 col-xl-6 col-xxl-5 mb-4 mx-auto my-auto">
+                <div class="shadow-sm p-1 bg-body-tertiary rounded sombra">
+
+                    <div class="card">
+                        <div class="row mx-auto my-auto p-0 m-0">
+
+                            <div class="container col-6 col-md-3 mx-auto my-auto">
+                                <center><img src="{{ url_for('static', filename='fixos/Img/nicolas.jpg') }}" class=" rounded-circle mx-auto my-auto mt-2 mb-2"></center>
+                            </div>
+
+                            <div class="container col-12 col-md-9 mx-auto my-auto p-0 m-0">
+                                <div class="container row card-body mt-3 mx-auto">
+
+                                    <div class="col-12 mb-2">
+                                        <h5 class="card-title nome">Nicolas Ferrari de Almeida</h5>
+                                    </div>
+
+                                    <div class="col-5 col-lg-6 text-center my-auto mx-auto p-1 m-0 p-0">
+                                        <div class="container atributos mx-auto my-auto">
+                                            <p>Excel</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-5 col-lg-6 text-center my-auto mx-auto p-1 m-0 p-0">
+                                        <div class="container atributos mx-auto my-auto">
+                                            <p>Power Bi</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-5 col-lg-6 text-center my-auto mx-auto p-1 m-0 p-0">
+                                        <div class="container atributos mx-auto my-auto">
+                                            <p>R</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-5 col-lg-6 text-center my-auto mx-auto p-1 m-0 p-0">
+                                        <div class="container atributos mx-auto my-auto">
+                                            <p>Python</p>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div class="container col-sm-12 mx-auto my-auto">
+                                <div class="container-fluid">
+                                    <p class="card-text sobre mb-2">Tenho 28 anos, trabalho como analista a 5 anos, sou dedicado, comunicativo e focado no que faço, sou especialista em Excel e Python.</p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <br>
+
+            <div class="col-12 col-md-10 col-lg-8 col-xl-6 col-xxl-5 mb-4 mx-auto my-auto">
+                <div class="shadow-sm p-1 bg-body-tertiary rounded sombra">
+
+
+                    <div class="card">
+                        <div class="row mx-auto my-auto p-0 m-0">
+
+                            <div class="container col-6 col-md-3 mx-auto my-auto">
+                                <center><img src="{{ url_for('static', filename='fixos/Img/vanessa2.jpg') }}" class=" rounded-circle mx-auto my-auto mt-2 mb-2"></center>
+                            </div>
+
+                            <div class="container col-12 col-md-9 mx-auto my-auto p-0 m-0">
+                                <div class="container row card-body mt-3 mx-auto">
+
+                                    <div class="col-12 mb-2">
+                                        <h5 class="card-title nome">Maria Albuquerque de Lima</h5>
+                                    </div>
+
+                                    <div class="col-5 col-lg-6 text-center my-auto mx-auto p-1 m-0 p-0">
+                                        <div class="container atributos mx-auto my-auto">
+                                            <p>Scss</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-5 col-lg-6 text-center my-auto mx-auto p-1 m-0 p-0">
+                                        <div class="container atributos mx-auto my-auto">
+                                            <p>JS</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-5 col-lg-6 text-center my-auto mx-auto p-1 m-0 p-0">
+                                        <div class="container atributos mx-auto my-auto">
+                                            <p>Figma</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-5 col-lg-6 text-center my-auto mx-auto p-1 m-0 p-0">
+                                        <div class="container atributos mx-auto my-auto">
+                                            <p>React</p>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div class="container col-sm-12 mx-auto my-auto">
+                                <div class="container-fluid">
+                                    <p class="card-text sobre mb-2">Tenho 21 anos e sou de porto alegre, minha experiência na programação esta totalmente voltada para o Front-end, e atualmente focada no React.</p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+<!--   fim do inicio dos cards -->
+</div>
+
+
+<!--    inicio do rodape -->
+        <div class="container-fluid mt-5 " id="rodape">
+            <center><div class="container w-75 border-bottom border-secondary pt-5"></div></center>
+
+            <div class="row mx-auto my-auto">
+                <div class="col-12 col-lg-11  m-0 p-0 pt-3 mx-auto my-auto">
+                    <div class="row mt-5 mx-auto my-auto">
+
+    <!--    logo do rodape -->                    
+                        <div class="col-10 col-xl-2 pb-5 mx-auto my-auto">           
+                            <center>  
+                                <img src="{{ url_for('static', filename='fixos/Img/Icons/favicon_io (1)/android-chrome-512x512.png') }}" class="rounded-circle mx-auto my-auto" height="150px" width="150px">
+                            </center>               
+                        </div>
+                        <br>
+                        <br>
+
+                        <div class=" col-6  col-md-4 col-xl-2 mb-5  mx-auto my-auto">           
+                            <div class="container-fluid row mx-auto my-auto m-0 p-0">
+
+                                <div class="col-11 mx-auto my-auto ps-4">Central de ajuda</div>
+
+                                <div class="col-11 mx-auto my-auto">
+                                    <a class="btn btn-link"  id="link" href="www.google.com.br">FAQ</a>
+                                </div>
+
+                                <div class="col-11 mx-auto my-auto">
+                                    <a class="btn btn-link"  id="link" href="www.google.com.br">Fale conosco</a>
+                                </div>
+
+                                <div class="col-11 mx-auto my-auto">
+                                    <a class="btn btn-link"  id="link" href="www.google.com.br">Feedback</a>
+                                </div>
+
+                            </div>              
+                        </div>
+
+                        <br>
+                        <br>
+                        
+
+                        <div class=" col-6  col-md-4 col-xl-2 mb-5  mx-auto my-auto">           
+                            <div class="container-fluid row mx-auto my-auto m-0 p-0">
+
+                                <div class="col-11 mx-auto my-auto">
+                                    <a class="btn btn-link"  id="link" href="#sobre">Sobre nós</a>
+                                </div>
+
+                                <div class="col-11 mx-auto my-auto">
+                                    <a class="btn btn-link"  id="link" href="www.google.com.br">História</a>
+                                </div>
+
+                                <div class="col-11 mx-auto my-auto">
+                                    <a class="btn btn-link"  id="link" href="www.google.com.br">Quem somos</a>
+                                </div>
+
+                                <div class="col-11 mx-auto my-auto">
+                                    <a class="btn btn-link"  id="link" href="#sobre">Nosso projeto</a>
+                                </div>
+
+                            </div>              
+                        </div>
+
+    <!--    rede social do site do Rodape    -->
+                        <div class="col-12 col-lg-10 col-xl-4 mt-4 mx-auto my-auto">           
+                            <div class="container-fluid">
+                                <div class="row m-0 p-0 mx-auto">
+                                    
+                                    <div class="col-12 m-0 p-0">
+                                        <div class="row m-0 p-0">                                   
+                                            <div class="col-12 m-0 p-0">
+                                                <div class="row m-0 p-0">
+                                            
+                                                    <div class="col-3 col-md-3 mx-auto my-auto">
+                                                        <center>     
+                                                            <a href="https://www.instagram.com/divtechne/">
+                                                                <i class='bx bxl-instagram' id="icone2"></i>
+                                                            </a>
+                                                        </center> 
+                                                    </div>
+
+                                                    <div class="col-3 col-md-3 mx-auto my-auto">
+                                                        <center>
+                                                            <a href="https://twitter.com/divtechne">
+                                                                <i class='bx bxl-twitter' id="icone2"></i>
+                                                            </a>
+                                                        </center>
+                                                    </div>
+
+                                                    <div class="col-3 col-md-3 mx-auto my-auto">
+                                                        <center>
+                                                            <a href="https://www.facebook.com/profile.php?id=100092584705141">
+                                                                <i class='bx bxl-facebook' id="icone2"></i>
+                                                            </a>
+                                                        </center>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div> 
+
+                                    <div class="col-12 m-0 p-0 mt-5">
+                                        <div class="row  m-0 p-0"> 
+    <!--    sobre nos do site do Rodape    -->
+                                            <div class="col-12 col-lg-11  mx-auto">
+                                                <p class="justify-content-sm-end ">Nosso propósito é a criação de uma plataforma que seja capaz de divulgar oportunidades de emprego e capacitar profissionais iniciantes da área de TI.</p>
+                                            </div>
+                                        </div>
+                                    </div> 
+
+                                </div>
+                            </div>              
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container-fluid border-bottom border-secondary pt-5" ></div>
+
+    <!--    termos de uso e politica de privacidade do site do Rodape    -->
+            <div class="container w-100">
+                <div class="row p-2">
+
+                    <div class="col-10 col-sm-6 col-md-3  col-xl-1 mx-auto my-auto ">
+                        <center>
+                            <a class="btn btn-link" data-bs-toggle="modal" data-bs-target="#politica" id="link"> Privacidade</a>
+                        </center> 
+                    </div>
+
+                    <div class="col-10 col-sm-6 col-md-4  col-xl-3 mx-auto my-auto ">
+                        <center>
+                            <a class="btn btn-link" data-bs-toggle="modal" data-bs-target="#termos" id="link">Termos e condições de uso </a>
+                        </center> 
+                    </div>
+
+                    <div class="col-12 col-sm-6 col-md-5 col-xl-7 mx-auto my-auto">
+                        <center>
+                            <small>Copyright © 2023 | DIVTECHNE</small>
+                        </center> 
+                    </div>  
+                    
+                </div>
+            </div>
+
+    <!--    fim do rodape   -->
+        </div> 
+
+
+<!--    conteudo da pagina    -->
+
+
+<!------------    Modal da pagina    ------------>
+
+<!--    Modal do login -->
+        <div class="modal fade" id="login" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5 ps-2" id="exampleModalToggleLabel">Login</h1>
+                        <button type="button button-dark" class="btn-close " data-bs-dismiss="modal" aria-label="Close" id="Close"></button>
+                    </div>
+
+                    <div class="modal-body">   
+<!--    form   -->
+                        <form method="POST">
+                            <!-- para segurança do form -->
+                            {{ form.csrf_token }}
+                            <div class="row">
+
+                                <div class="col-10 mb-2 mt-3 mx-auto">
+                                    <div class="mb-3 ">
+
+                                        {{ form.email.label(class="form-label") }}
+
+                                        <!-- caso tenha algum erro de preenchimento do campo !-->
+                                        {% if form.email.errors %}
+                                        <!-- Marca a borda da caixa do campo em vermelho pela classe is-invalid !-->
+                                            {{ form.email(class="form-control is-invalid") }}
+                                        <!-- E exibe a mensagem de erro personalizada pela classe invalid-feedback !-->
+                                          <div class="invalid-feedback">
+                                            {% for erro in form.email.errors %}
+                                              {{ erro }}
+                                            {% endfor %}
+                                          </div>
+                                        {% else %}
+                                            {{ form.email(class="form-control input") }}
+                                        {% endif %}
+                                    </div>
+                                </div>
+
+                                <div class="col-10 mb-2 mx-auto">
+                                    <div class="mb-3">
+
+                                        {{ form.senha.label(class="form-label") }}
+
+                                        <!-- caso tenha algum erro de preenchimento do campo !-->
+                                        {% if form.senha.errors %}
+                                        <!-- Marca a borda da caixa do campo em vermelho pela classe is-invalid !-->
+                                            {{ form.senha(class="form-control is-invalid") }}
+                                        <!-- E exibe a mensagem de erro personalizada pela classe invalid-feedback !-->
+                                          <div class="invalid-feedback">
+                                            {% for erro in form.senha.errors %}
+                                              {{ erro }}
+                                            {% endfor %}
+                                          </div>
+                                        {% else %}
+                                            {{ form.senha(class="form-control input") }}
+                                        {% endif %}
+                                    </div>
+                                </div>
+
+                                <div class="col-10 mb-2 mx-auto">
+                                    <div class="mb-3 form-check">
+                                        {{ form.lembrar_dados.label(class="form-check-label") }}
+                                        {{ form.lembrar_dados(class="form-check-input") }}
+                                    </div>
+                                </div>
+
+                                <div class="modal-footer">
+
+                                    <a href="{{ url_for('esqueci_senha') }}" class="btn btn-link " tabindex="-1" role="button" aria-disabled="true" id="linkModal">Esqueci minha senha </a>
+                                    <a href="#" data-bs-toggle="modal" data-bs-target="#cadastro" class="btn btn-link " tabindex="-1" role="button" aria-disabled="true" id="linkModal2">Cadastre-se </a>
+                                    {{ form.botao(class="btn botao", id="botao") }}
+
+                                </div>
+
+                            </div>
+                        </form>
+                        
+                    </div>   
+                    
+
+                </div>
+            </div>
+        </div>
+<!--    fim do Modal do login -->
+
+
+<!--    Modal de escolha de cadastro    -->
+        <div class="modal fade " id="cadastro" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered modal-lg">
+                <div class="modal-content">
+
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalToggleLabel">Que tipo de usuário você pretende ser?</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+
+                    <div class="modal-body">
+                  
+                        <div class="row mx-auto">
+
+                            <div class="col-12 col-md-6 mx-auto">
+                                <center>
+                                    <img src="{{ url_for('static', filename='fixos/img/Mobile login-pana.png') }}" class="mx-auto">
+                                </center>
+                            </div>
+
+                            <div class="col-8 col-md-6 mx-auto my-auto">
+                                <div class="row">
+
+                                    <div class="col-10 mx-auto mt-2 mb-3 my-auto">
+                                        <center>
+                                            <button class="btn btn-primary botao2" data-bs-target="#profissional" data-bs-toggle="modal"> Profissional</button>
+                                        </center>
+                                    </div>
+
+                                    <div class="col-10 mx-auto mt-3 mb-2 my-auto">
+                                        <center>
+                                            <button class="btn btn-primary botao2" data-bs-target="#cliente" data-bs-toggle="modal">Cliente</button>
+                                        </center>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+<!--    fim do Modal de escolha de cadastro     -->
+
+<!--    Modal do termos de uso -->
+        <div class="modal fade" id="termos" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-lg">
+                <div class="modal-content">
+                    
+                    <div class="modal-header">
+                        <h5 class="modal-title">Termos e Condições de Uso da Plataforma de Contratação de Profissionais</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+
+                    <div class="modal-body">   
+                        <p class="justify-content-sm-end">
+                            Bem-vindo à nossa plataforma de contratação de profissionais! Antes de começar a utilizar nossos serviços, é importante que você leia e compreenda os seguintes termos e condições de uso. Ao acessar e utilizar nossa plataforma, você concorda em cumprir todas as disposições aqui estabelecidas. Se você não concordar com estes termos, solicitamos que não utilize nossa plataforma.
+                            <br>
+                            <br>
+                            <b>Aceitação dos Termos</b>
+                            <br>
+                            1.1. Estes Termos e Condições de Uso (doravante denominados "Termos") estabelecem os direitos e obrigações de todos os usuários (doravante denominados "Usuários" ou "Você") em relação ao uso da nossa plataforma de contratação de profissionais (doravante denominada "Plataforma").
+                            <br>
+                            1.2. Ao utilizar nossa Plataforma, você declara ter pelo menos 18 anos de idade e possuir a capacidade legal para celebrar contratos vinculativos.
+                            <br>
+                            1.3. Reservamo-nos o direito de modificar ou atualizar estes Termos a qualquer momento, sem aviso prévio. É responsabilidade do usuário revisar periodicamente os Termos atualizados. O uso contínuo da Plataforma após a publicação de quaisquer alterações constitui aceitação dessas alterações.
+                            <br>
+                            <br>
+                            <b>Descrição da Plataforma</b>
+                            <br>
+                            2.1. Nossa Plataforma é um serviço online que facilita o contato entre contratantes (empresas ou indivíduos) e profissionais qualificados.
+                            <br>
+                            2.2. A Plataforma permite que os Usuários criem perfis, publiquem vagas de emprego e candidaturas, além de facilitar a comunicação entre as partes interessadas.
+                            <br>
+                            <br>
+                            <b>Cadastro do Usuário</b>
+                            <br>
+                            3.1. Para utilizar nossa Plataforma, é necessário criar uma conta de usuário.
+                            <br>
+                            3.2. Ao se cadastrar, você concorda em fornecer informações verdadeiras, precisas, atualizadas e completas.
+                            <br>
+                            3.3. Você é responsável por manter a confidencialidade de suas informações de login e por todas as atividades que ocorrerem em sua conta.
+                            <br>
+                            <br>
+                            <b>Responsabilidades do Usuário</b>
+                            <br>
+                            4.1. Ao utilizar nossa Plataforma, você concorda em:
+                            <br>
+                            4.1.1. Cumprir todas as leis e regulamentos aplicáveis;
+                            <br>
+                            4.1.2. Não violar os direitos de propriedade intelectual de terceiros;
+                            <br>
+                            4.1.3. Não publicar conteúdo difamatório, obsceno, ameaçador, abusivo ou ilegal;
+                            <br>
+                            4.1.4. Não divulgar informações falsas ou enganosas;
+                            <br>
+                            4.1.5. Não enviar spam ou realizar atividades de phishing;
+                            <br>
+                            4.1.6. Não acessar ou utilizar contas de outros Usuários sem autorização;
+                            <br>
+                            4.1.7. Não interferir no funcionamento adequado da Plataforma ou prejudicar sua segurança.
+                            <br>
+                            <br>
+                            <b>Responsabilidades da Plataforma</b>
+                            <br>
+                            5.1. Nós nos esforçamos para fornecer uma Plataforma segura e confiável, mas não garantimos a exatidão, integridade ou confiabilidade das informações e conteúdos disponibilizados pelos Usuários.
+                            <br>
+                            5.2. A Plataforma não é responsável por qualquer ação ou omissão dos Usuários, nem por quaisquer danos ou prejuízos decorrentes das relações estabelecidas entre os Usuários.
+                            <br>
+                            <br>
+                            <b>Propriedade Intelectual</b>
+                            <br>
+                            6.1. Todos os direitos de propriedade intelectual relacionados à Plataforma e ao seu conteúdo pertencem à nossa empresa. Você concorda em não copiar, modificar, distribuir, transmitir, exibir, vender, licenciar ou explorar qualquer parte da Plataforma sem nossa autorização prévia por escrito.
+                            <br>
+                            <br>
+                            <b>Suspensão e Rescisão</b>
+                            <br>
+                            7.1. Reservamo-nos o direito de suspender ou encerrar sua conta e seu acesso à Plataforma a qualquer momento, caso você viole estes Termos ou sejamos obrigados por lei.
+                            <br>
+                            7.2. Em caso de suspensão ou rescisão, você perderá o acesso a quaisquer dados ou conteúdos associados à sua conta.
+                            <br>
+                            <br>
+                            <b>Ação de Responsabilidade</b>
+                            <br>
+                            8.1. Em nenhuma circunstância seremos responsáveis por quaisquer danos diretos, indiretos, incidentais, consequenciais ou punitivos decorrentes do uso ou incapacidade de uso da Plataforma.
+                            <br>
+                            <br>
+                            <b>Disposições Gerais</b>
+                            <br>
+                            9.1. Estes Termos são regidos pelas leis do país onde a nossa empresa está estabelecida.
+                            <br>
+                            9.2. Caso qualquer disposição destes Termos seja considerada inválida ou inexequível, as demais disposições permanecerão em pleno vigor e efeito.
+                            <br>
+                            9.3. Estes Termos constituem o acordo integral entre você e nós em relação ao uso da Plataforma e substituem todos os acordos anteriores.
+                            <br>
+                            Ao utilizar nossa Plataforma, você concorda em cumprir estes Termos e Condições de Uso. Se tiver alguma dúvida, entre em contato conosco através dos canais de suporte disponíveis.
+                        </p>         
+                    </div>   
+
+                </div>
+            </div>
+        <!--    fim do Modal do termos de uso -->
+        </div>
+
+
+<!--    Modal do politica de privacidade -->
+        <div class="modal fade" id="politica" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-lg">
+                <div class="modal-content">
+
+                    <div class="modal-header">
+                        <h5 class="modal-title">Política de Privacidade.</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+
+                    <div class="modal-body">   
+                        <p class="justify-content-sm-end ">
+                            Esta Política de Privacidade descreve como nós, como operadores da plataforma de contratação de profissionais, coletamos, usamos, compartilhamos e protegemos as informações pessoais dos usuários. Ao utilizar nossa plataforma, você concorda com as práticas descritas nesta política.
+                            <br>
+                            <br>
+                            <b><h6> Ações Coletadas</h6></b>
+                            <br>
+                            <b>1.1.</b> Coletamos as seguintes informações pessoais dos usuários:
+                            Informações de identificação, como nome, endereço, número de telefone e endereço de e-mail.
+                            Informações profissionais, como histórico de empregos, experiência, habilidades e certificações.
+                            Informações de login, como nome de usuário e senha criptografada.
+                            Informações de pagamento, quando necessário para processar transações.
+                            Outras informações fornecidas voluntariamente pelos usuários, como currículo, carta de apresentação e informações adicionais relevantes para fins de contratação.
+                            <br>
+                            <br>
+                            <b>1.2. </b>Podemos coletar informações automaticamente por meio do uso de cookies, pixels de rastreamento e tecnologias similares. Essas informações podem incluir endereço IP, tipo de navegador, dispositivo utilizado, páginas visualizadas, tempo gasto na plataforma e outras estatísticas relacionadas ao uso da plataforma.
+                            <br>
+                            <br>
+                            <h6><b>Uso das Informações</b></h6>
+                            <br>
+                            <b>2.1.</b> Utilizamos as informações coletadas para os seguintes fins:
+
+                            Facilitar o processo de contratação, incluindo a publicação de vagas, busca de candidatos e comunicação entre empregadores e profissionais.
+                            Personalizar a experiência do usuário, fornecendo conteúdo relevante e recomendações com base em suas preferências e histórico.
+                            Processar transações, quando necessário, para pagamento de serviços ou taxas relacionadas à plataforma.
+                            Melhorar e otimizar nossa plataforma, incluindo a análise de dados e o desenvolvimento de novos recursos.
+                            Cumprir com obrigações legais e regulatórias.
+                            Enviar comunicações de marketing ou informativas, desde que o usuário tenha dado seu consentimento prévio.
+                            <br>
+                            <br>
+                            <h6><b>Compartilhamento de Informações</b></h6>
+                            <br>
+                            <b>3.1.</b> Podemos compartilhar informações pessoais dos usuários nas seguintes circunstâncias:
+
+                            Com empregadores ou profissionais interessados em uma contratação, para facilitar a comunicação e o processo de seleção.
+                            Com prestadores de serviços terceirizados que auxiliam na operação da plataforma, como processamento de pagamentos, análise de dados e suporte técnico. Esses prestadores de serviços estão sujeitos a obrigações de confidencialidade.
+                            Quando exigido por lei ou acreditarmos de boa-fé que o compartilhamento é necessário para cumprir com uma solicitação legal, proteger nossos direitos ou garantir a segurança dos usuários.
+                            Em caso de fusão, aquisição ou venda de ativos da plataforma, onde as informações pessoais podem ser transferidas como parte da transação.
+                            <br>
+                            <br>
+                            <h6><b>Segurança das Informações</b></h5>
+                            <br>
+                            <b>4.1.</b> Implementamos medidas de segurança adequadas para proteger as informações pessoais dos usuários contra acesso não autorizado, uso indevido ou divulgação.
+                            <br>
+                            <br>
+                            <b>4.2.</b> No entanto, nenhum método de transmissão pela internet ou sistema de armazenamento eletrônico é 100% seguro. Portanto, não podemos garantir a segurança absoluta das informações fornecidas pelos usuários.
+                            <br>
+                            <br>
+                            <h6><b>Retenção de Informações</b></h6>
+                            <br>
+                            <b>5.1.</b> Manteremos as informações pessoais dos usuários apenas pelo tempo necessário para cumprir os propósitos descritos nesta Política de Privacidade, a menos que um período de retenção mais longo seja exigido ou permitido por lei.
+                            <br>
+                            <br>
+                            <h6><b>Direitos dos Usuários</b></h6>
+                            <br>
+                            <b>6.1.</b> Os usuários têm o direito de acessar, corrigir, atualizar ou excluir suas informações pessoais, conforme permitido pela lei aplicável. Também têm o direito de se opor ao processamento de suas informações pessoais para fins de marketing direto.
+                            <br>
+                            <br>
+                            <b>6.2.</b> Para exercer esses direitos ou se tiver qualquer dúvida ou preocupação em relação às informações pessoais, os usuários podem entrar em contato conosco através dos canais de suporte disponíveis.
+                            <br>
+                            <br>
+                            <h6><b>Alterações a esta Política de Privacidade</b></h6>
+                            <br>
+                            <b>7.1.</b> Reservamo-nos o direito de modificar esta Política de Privacidade a qualquer momento, mediante a publicação da versão atualizada em nossa plataforma. É responsabilidade do usuário revisar periodicamente esta política.
+                            <br>
+                            <br>
+                            Ao utilizar nossa plataforma, você concorda com a coleta, uso e compartilhamento de suas informações pessoais de acordo com esta Política de Privacidade.
+                        </p>         
+                    </div> 
+
+                </div>
+            </div>      
+        </div>
+
+        <!-- Incluindo os modais de cadastro -->
+        {% include 'modal_cadastro_cliente.html' %}
+        {% include 'modal_cadastro_dev.html' %}
+        
+<!--    fim do Modal da política de privacidade -->
+
+        <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js" integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N" crossorigin="anonymous"></script>  
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js" integrity="sha384-zYPOMqeu1DAVkHiLqWBUTcbYfZ8osu1Nd6Z89ify25QV9guujx43ITvfi12/QExE" crossorigin="anonymous"></script>
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+        <script src="{{ url_for('static', filename='js/nav.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/temas.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/cadastro_cliente.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/cadastro_dev.js') }}"></script>
+    </body>
+</html>

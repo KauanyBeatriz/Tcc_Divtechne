@@ -1,0 +1,61 @@
+        <!--    lista de contatos e grupos  -->
+                <div class="container-fluid col-1 col-lg-3 m-0 p-0" id="touch">
+                    <nav class="navbar navbar-expand-lg h-100">
+
+                        <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+                            <div class="offcanvas-header">
+                                <h5 class="offcanvas-title" id="offcanvasExampleLabel">DIVTECHNE</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                            </div>
+
+                            <div class="offcanvas-body m-0 p-0" >
+        <!--    lista de contatos  -->
+
+                                <div class="container list m-0">
+                                    <nav>
+                                        <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                                            <button class="btn active mx-auto botao3" id="nav-contato-tab" onclick="changeColor ('nav-contato-tab')" data-bs-toggle="tab" data-bs-target="#nav-contato" type="button" role="tab" aria-controls="nav-contato" aria-selected="true">Contatos</button>
+                                            <button class="btn mx-auto botao3" id="nav-grupo-tab" onclick="changeColor ('nav-grupo-tab')" data-bs-toggle="tab" data-bs-target="#nav-grupo" type="button" role="tab" aria-controls="nav-grupo" aria-selected="false">Grupos</button>
+                                        </div>
+                                    </nav>
+
+                                    <div class="tab-content m-0 p-0" id="nav-tabContent">
+                                        <div class="tab-pane fade show active m-0 p-0 " id="nav-contato" role="tabpanel" aria-labelledby="nav-contato-tab" tabindex="0">
+                                            <div class="container meus-contatos row mx-auto m-0 p-0">
+
+<!--back-end dos contatos-->                    {% for contato in contatos %}
+
+                                                <a class="container contato col-12 col-lg-11 mx-auto my-auto m-0 p-0 mt-3" href="{{ url_for('chat_cliente', id=contato.profissional.id) }}">
+                                                    <div class="container row m-0 p-0">
+                                                        <div class="container col-3 m-0 p-1"><img src="{{ url_for('static', filename='posts/{}'.format(contato.profissional.foto)) }}" class="img-fluid"></div>
+                                                        <div class="container itens col-9 my-auto ms-0"><p>{{ contato.profissional.nome }}</p></div>
+                                                    </div>
+                                                </a>
+
+                                                {% endfor %}
+
+<!--/back-end-->
+                                            </div>
+                                        </div>
+
+                                        <div class="tab-pane fade" id="nav-grupo" role="tabpanel" aria-labelledby="nav-grupo-tab" tabindex="0">
+                                            <div class="container meus-grupos row col-12 m-0 p-0">
+<!--back-end do grupo-->
+                                                <a class="container grupo col-12 col-lg-11 mx-auto my-auto m-0 p-0 mt-3">
+                                                    <div class="container row m-0 p-0">
+                                                        <div class="container col-3 m-0 p-1"><img src="{{ url_for('static', filename='fixos/Img/maria.jpg') }}" class="img-fluid"></div>
+                                                        <div class="container itens col-9 my-auto ms-0"><p>maria joana da silva</p></div>
+                                                    </div>
+                                                </a>
+<!--/back-end-->
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+        <!--    fim do perfil  -->
