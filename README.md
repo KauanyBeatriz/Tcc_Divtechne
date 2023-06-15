@@ -13,6 +13,8 @@ pip install flask_bcrypt
 
 pip install flask_mail
 
+pip install flask_admin
+
 pip install flask_login
 
 pip install email_validator
